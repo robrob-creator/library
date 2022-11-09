@@ -14,7 +14,7 @@ export const SideDisplay = <
 >({}: PROPS): JSX.Element => {
   return (
     <div
-      className={`flex  font-Poppins justify-center bg-main bg-cover`}
+      className={`flex  font-Poppins justify-center`}
       style={{ width: "550px", height: "832px" }}
     >
       <div className="flex-row mt-32 ">
