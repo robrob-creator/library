@@ -20,3 +20,15 @@ export const Form = <PROPS extends FormProps>({
     </form>
   );
 };
+export const OutlinedForm = <PROPS extends FormProps>({
+  children,
+}: PROPS): JSX.Element => {
+  return (
+    <form
+      className="flex items-center justify-center px-24 pt-10 pb-9 bg-white border rounded-3xl border-gray-300"
+      style={{ width: "602px", height: "400px" }}
+    >
+      {children}
+    </form>
+  );
+};

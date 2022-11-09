@@ -1,18 +1,15 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
 import {
-  Layout,
-  LayoutProps,
-  Form,
+  OutlinedForm,
+  FormProps,
+  BlueIsaacLogo,
   InputField,
-  HeaderText,
-  Checkbox,
-  Button,
 } from "../components";
 
 const meta: Meta = {
   title: "Layout",
-  component: Layout,
+  component: OutlinedForm,
   argTypes: {
     children: {
       control: {
@@ -27,31 +24,54 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<LayoutProps> = (args) => (
-  <Layout {...args}>
-    <div>
-      <HeaderText text="Sign In" color="black" className="mt-10" />
-      <Form>
-        <InputField placeholder="Email" className="my-12" />
-        <InputField placeholder="Password" className="my-6" type="password" />
-        <div className="flex justify-between">
-          <Checkbox label="Remember me?" />
-          <a className="flex text-blue-700">forgot password?</a>
+const Template: Story<FormProps> = (args) => (
+  <div className="flex flex-col justify-center items-center">
+    <BlueIsaacLogo className="my-4" />
+    <OutlinedForm>
+      <div
+        className="inline-flex flex-col space-y-11 items-center justify-end"
+        style={{ width: "402px", height: "323px" }}
+      >
+        <div className="flex flex-col space-y-1.5 items-center justify-start">
+          <p className="text-2xl font-bold tracking-wider">Forgot password?</p>
+          <p className="text-sm tracking-wider text-gray-500">
+            No worries, we’ll send you reset instructions.
+          </p>
         </div>
-        <div className="flex justify-between">
-          <Button
-            type="primary"
-            text="Sign In"
-            className="mt-8"
-            onClick={() => {}}
-          />
-          <div className="flex mt-8">
-            Not a member yet ? <a className="text-blue-700 ml-2"> Sign Up</a>
+        <div
+          className="flex flex-col space-y-12 items-center justify-end"
+          style={{ width: "402px", height: "146px" }}
+        >
+          <div className="flex flex-col items-start justify-center px-5 py-1 rounded-xl">
+            <InputField
+              className=""
+              placeholder="Email"
+              style={{ width: "400px", height: "56px" }}
+            />
+          </div>
+          <div className="relative" style={{ width: "400px", height: "40px" }}>
+            <div
+              className="inline-flex items-center justify-center px-5 py-2 bg-blue-700 rounded-lg"
+              style={{ width: "400px ", height: "40px" }}
+            >
+              <p className="text-xs font-semibold leading-snug text-center text-gray-50">
+                Submit
+              </p>
+            </div>
           </div>
         </div>
-      </Form>
-    </div>
-  </Layout>
+        <div className="inline-flex space-x-2.5 items-center justify-start">
+          <img
+            className="w-1/6 h-full rounded-lg"
+            src="https://via.placeholder.com/24x24"
+          />
+          <p className="text-sm tracking-wider text-gray-700">
+            Back to sign in
+          </p>
+        </div>
+      </div>
+    </OutlinedForm>
+  </div>
 );
 
 // By passing using the Args format for exported stories, you can control the props for a component for reuse in a test

@@ -21,14 +21,14 @@ export const SideDisplay = <
         backgroundImage: `url(${background})`,
       }}
     >
-      <div className="flex-row mt-24 ">
+      <div className="flex-row mt-20 ">
         <img className="w-80 h-20" src={logo} />
         <div
           className="flex flex-col mt-12 space-y-2 items-center justify-end"
           style={{ width: "432px", height: "206px" }}
         >
           <p
-            className={`text-4xl font-bold tracking-wider text-white`}
+            className={`text-4xl font-bold tracking-wider text-white mb-4`}
             style={{ width: "432px" }}
           >
             Welcome guest!

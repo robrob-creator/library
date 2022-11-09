@@ -6,18 +6,19 @@ export interface InputProps {
   message?: string;
   placeholder?: string;
   size?: Size;
+  style?: object;
   className: string;
 }
 function getStylesBySize(size: Size) {
   switch (size) {
-    case 'lg':
-      return { input: ' h-16 ', label: '-mt-16 peer-placeholder-shown:-mt-11' };
-    case 'md':
-      return { input: ' h-14 ', label: '-mt-14 peer-placeholder-shown:-mt-10' };
-    case 'sm':
-      return { input: 'h-12', label: '-mt-12 peer-placeholder-shown:-mt-9' };
+    case "lg":
+      return { input: " h-16 ", label: "-mt-16 peer-placeholder-shown:-mt-11" };
+    case "md":
+      return { input: " h-14 ", label: "-mt-14 peer-placeholder-shown:-mt-10" };
+    case "sm":
+      return { input: "h-12", label: "-mt-12 peer-placeholder-shown:-mt-9" };
     default:
-      return { input: 'h-12', label: '-mt-12 peer-placeholder-shown:-mt-9' };
+      return { input: "h-12", label: "-mt-12 peer-placeholder-shown:-mt-9" };
   }
 }
 export const InputField = ({
@@ -25,13 +26,14 @@ export const InputField = ({
   placeholder,
   size = "lg",
   className,
+  style,
 }: InputProps) => {
   const stylesBySize = getStylesBySize(size);
 
   return (
     <div
       className={`relative flex flex-col items-start ${className}`}
-      style={{ width: "487px", height: "56px" }}
+      style={style}
     >
       <input
         type={type}
