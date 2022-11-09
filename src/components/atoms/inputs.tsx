@@ -1,13 +1,12 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable react/no-unknown-property */
-
-import * as React from "react";
 import { Size } from "../types";
 export interface InputProps {
   type?: string;
   message?: string;
   placeholder?: string;
   size?: Size;
+  className: string;
 }
 function getStylesBySize(size: Size) {
   switch (size) {
@@ -21,12 +20,17 @@ function getStylesBySize(size: Size) {
       return { input: "h-12", label: "-mt-12 peer-placeholder-shown:-mt-9" };
   }
 }
-export const InputField = ({ type, placeholder, size = "lg" }: InputProps) => {
+export const InputField = ({
+  type,
+  placeholder,
+  size = "lg",
+  className,
+}: InputProps) => {
   const stylesBySize = getStylesBySize(size);
 
   return (
     <div
-      className="relative flex flex-col items-start my-12"
+      className={`relative flex flex-col items-start ${className}`}
       style={{ width: "487px", height: "56px" }}
     >
       <input

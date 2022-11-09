@@ -11,7 +11,7 @@
     "build:tailwind": "npx tailwindcss -o ./dist/tailwind.css --minify",
     "build:rollup": "rollup -c",
     "copy-assets": "cp -rv ./assets/images ./dist/assets/",
-    "build:lib": "yarn build:tailwind && yarn build:rollup && npm run copy-assets",
+    "build:lib": "npm run copy-assets && yarn build:tailwind && yarn build:rollup",
     "dev": "react-scripts start",
     "prepare": "yarn build:lib"
   },

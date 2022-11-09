@@ -2,6 +2,7 @@
 /* eslint-disable no-empty-pattern */
 /* eslint-disable prettier/prettier */
 import logo from "../../../assets/images/logo-white.svg";
+import background from "../../../assets/images/bg.png";
 import { Text, HeaderText } from "../atoms/Text";
 
 export type SideDisplayProps = {
@@ -14,10 +15,14 @@ export const SideDisplay = <
 >({}: PROPS): JSX.Element => {
   return (
     <div
-      className={`flex  font-Poppins justify-center`}
-      style={{ width: "550px", height: "832px" }}
+      className={`flex  font-Poppins justify-center bg-cover`}
+      style={{
+        width: "550px",
+        height: "832px",
+        backgroundImage: `url(${background})`,
+      }}
     >
-      <div className="flex-row mt-32 ">
+      <div className="flex-row mt-24 ">
         <img className="w-80 h-20" src={logo} />
         <div
           className="flex flex-col space-y-2 items-center justify-end"
