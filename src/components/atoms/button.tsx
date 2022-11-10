@@ -59,22 +59,3 @@ export const Button = ({
     </button>
   );
 };
-
-export const FullButton = ({
-  size = "md",
-  text,
-  type = "primary",
-  className = "",
-  onClick,
-}: ButtonProps) => {
-  const stylesBySize = getStylesBySize(size);
-  const stylesByType = getStylesByType(type);
-  return (
-    <button
-      onClick={onClick}
-      className={`${stylesBySize} ${stylesByType} font-poppins inline-flex items-center justify-center font-semibold tracking-wider  text-center rounded-lg  ${className}`}
-    >
-      {text}
-    </button>
-  );
-};

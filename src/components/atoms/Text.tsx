@@ -13,6 +13,8 @@ export interface TextProps {
 
 function getHeaderBySize(type: Size) {
   switch (type) {
+    case "xl":
+      return "text-5xl";
     case "lg":
       return "text-4xl";
     case "md":
