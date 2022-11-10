@@ -144,12 +144,12 @@ const Template: Story<FormProps> = (args) => (
         </div>
       </div>
     </div>
-    <div className="grid content-center w-full">
+    <div className="grid content-center">
       {/*second part */}
-      <div className="flex p-8 items-center">
+      <div className="flex p-8 items-center overflow-x-auto">
         <div
           className="inline-flex space-x-12 items-center justify-center "
-          style={{ width: "100%", height: 40, overflowX: "scroll" }}
+          style={{ width: "100%", height: 40 }}
         >
           <div className="flex space-x-2 items-center justify-start flex-1 px-3 py-2.5 bg-gray-100 border rounded-lg border-gray-600">
             <p className="flex-1 text-sm leading-tight text-gray-600">
@@ -225,7 +225,7 @@ const Template: Story<FormProps> = (args) => (
         </div>
       </div>
       {/**third */}
-      <div className="grid  lg:gap-2   lg:grid-cols-4 grid-cols-2 lg:mx-8">
+      <div className="lg:grid lg:gap-2 sm:grid-cols-2 lg:grid-cols-4 grid-cols-2 mx-4">
         {data.map((item, index) => {
           return (
             <Card
