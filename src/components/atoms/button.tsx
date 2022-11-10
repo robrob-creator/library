@@ -28,15 +28,15 @@ function getStylesBySize(size: Size) {
 function getStylesByType(type: Type) {
   switch (type) {
     case "primary":
-      return "bg-purple-700 hover:bg-purple-900 text-gray-50 hover:bg-violet-600 active:bg-gray-900 focus:outline-none focus:ring-8 focus:ring-purple-200";
+      return "bg-blue-700 hover:bg-blue-900 text-gray-50 hover:bg-violet-600 active:bg-gray-900 focus:outline-none focus:ring-8 focus:ring-blue-200";
     case "secondary":
-      return " border-2 border-purple-700 hover:border-purple-900 text-purple-700 hover:text-purple-900 active:bg-violet-700  focus:outline-none focus:ring-8 focus:ring-gray-100";
+      return " border-2 border-blue-700 hover:border-blue-900 text-blue-700 hover:text-blue-900 active:bg-violet-700  focus:outline-none focus:ring-8 focus:ring-gray-100";
     case "subtle":
-      return " border-2 border-gray-200 text-purple-700 hover:text-purple-900 active:bg-violet-700  focus:outline-none focus:ring-8 focus:ring-gray-100";
+      return " border-2 border-gray-200 text-blue-700 hover:text-blue-900 active:bg-violet-700  focus:outline-none focus:ring-8 focus:ring-gray-100";
     case "text":
-      return "focus:bg-gray-100 border-2 border-gray-50 border-opacity-0 text-purple-700";
+      return "focus:bg-gray-100 border-2 border-gray-50 border-opacity-0 text-blue-700";
     default:
-      return "bg-purple-700 hover:bg-purple-900 text-gray-50 hover:bg-violet-600 active:bg-gray-900 focus:outline-none focus:ring-8 focus:ring-purple-200";
+      return "bg-blue-700 hover:bg-blue-900 text-gray-50 hover:bg-violet-600 active:bg-gray-900 focus:outline-none focus:ring-8 focus:ring-blue-200";
   }
 }
 

@@ -7,7 +7,7 @@ export interface InputProps {
   placeholder?: string;
   size?: Size;
   style?: object;
-  className: string;
+  className?: string;
 }
 function getStylesBySize(size: Size) {
   switch (size) {

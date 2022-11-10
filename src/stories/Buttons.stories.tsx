@@ -3,9 +3,10 @@ import { Meta, Story } from "@storybook/react";
 import { Button, ButtonProps } from "../components";
 
 const meta: Meta = {
-  title: "Button",
+  title: "Isaac Button",
   component: Button,
   argTypes: {
+    color: { control: "color" },
     children: {
       control: {
         type: "text",
