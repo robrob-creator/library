@@ -1,5 +1,4 @@
 /* eslint-disable prettier/prettier */
-import * as React from 'react';
 
 export type CardProps = {
   title?: string;
@@ -22,7 +21,7 @@ export const Card = <PROPS extends CardProps>({
     <div className="inline-flex m-4 flex-col justify-end w-64 h-72 pl-0.5 pb-2">
       <div
         className="relative bg-gray-300 rounded-2xl"
-        style={{ width: '258px', height: '193px' }}
+        style={{ width: "258px", height: "193px" }}
       >
         <img className="w-64 h-48 rounded-2xl" src={imgUrl} />
       </div>
@@ -78,12 +77,12 @@ export const Card = <PROPS extends CardProps>({
               src="https://via.placeholder.com/12x12"
             />
             <p className="text-xs leading-7 text-gray-600">
-              Stack:{' '}
+              Stack:{" "}
               {stacks
-                ?.map(item => {
+                ?.map((item) => {
                   return item.name;
                 })
-                .join(', ')}
+                .join(", ")}
             </p>
           </div>
         )}

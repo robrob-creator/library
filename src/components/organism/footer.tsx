@@ -1,7 +1,6 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-empty-pattern */
 /* eslint-disable prettier/prettier */
-import * as React from 'react';
 
 export type FooterProps = {
   title?: string;
@@ -16,7 +15,7 @@ export const Footer = <PROPS extends FooterProps>({}: PROPS): JSX.Element => {
   return (
     <div
       className="relative bg-gray-100"
-      style={{ width: '100%', height: 395 }}
+      style={{ width: "100%", height: 395 }}
     >
       <div
         className="inline-flex flex-col space-y-6 items-start justify-start w-80 h-44 absolute"

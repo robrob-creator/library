@@ -1,8 +1,6 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable react/no-unknown-property */
 
-import * as React from 'react';
-
 export interface SliderProps {
   label?: string;
   checked?: boolean;

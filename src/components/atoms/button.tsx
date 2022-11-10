@@ -1,7 +1,6 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-unused-vars */
 /* eslint-disable prettier/prettier */
-import * as React from "react";
 import { Size, Type } from "../types";
 
 export interface ButtonProps {

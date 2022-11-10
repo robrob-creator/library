@@ -1,7 +1,6 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-empty-pattern */
 /* eslint-disable prettier/prettier */
-import * as React from "react";
 
 export type NavigationProps = { logo: any };
 
