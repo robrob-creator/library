@@ -28,7 +28,7 @@ export const NavigationBar = <
       <div className="w-full block flex-grow lg:flex lg:items-center lg:justify-center lg:w-auto">
         <div className="text-sm lg:flex-grow lg:flex lg:items-center lg:justify-center">
           <span className="flex  items-center lg:mt-0 text-black hover:text-blue-400 mr-4">
-            <p className="text-sm font-medium">App</p>
+            <p className="text-sm font-medium">Apps</p>
             <ArrowStrokeDown className="mx-2 lg:visible invisible" />
           </span>
           <span className="flex  items-center mt-4 lg:mt-0 text-black hover:text-blue-400  mr-4">
