@@ -8,6 +8,7 @@ import { Puzzle, GridIcon, CogIcon } from "../atoms/logo";
 export type SideDisplayProps = {
   header?: string;
   content?: string;
+  className?: string;
 };
 
 export const SideDisplay = <
@@ -46,24 +47,24 @@ export const SideDisplay = <
     </div>
   );
 };
-export const SideBar = <
-  PROPS extends SideDisplayProps
->({}: PROPS): JSX.Element => {
+export const SideBar = <PROPS extends SideDisplayProps>({
+  className,
+}: PROPS): JSX.Element => {
   return (
-    <div className="w-48 shadow-md">
+    <div className={`lg:w-48 p w-24 shadow-md ${className}`}>
       <div className="flex items-start justify-center flex-1 pb-96 bg-white ">
-        <div className="inline-flex flex-col items-center justify-start flex-1 pb-96">
+        <div className="lg:ml-0 ml-8 inline-flex flex-col items-center justify-start flex-1 pb-96">
           <div className="inline-flex space-x-2.5 items-center justify-start w-full h-1/3 px-5 py-10  text-gray-600 hover:font-semibold hover:bg-gray-200 hover:text-blue-700">
             <CogIcon />
-            <p className="text-xs  ">Account Settings</p>
+            <p className="text-xs  lg:visible invisible">Account Settings</p>
           </div>
           <div className="inline-flex space-x-2.5 items-center justify-start w-full h-1/3 px-5 py-10  text-gray-600 hover:font-semibold hover:bg-gray-200 hover:text-blue-700">
             <GridIcon />
-            <p className="text-xs">Dashboards</p>
+            <p className="text-xs lg:visible invisible">Dashboards</p>
           </div>
           <div className="inline-flex space-x-2.5 items-center justify-start w-full h-1/3 px-5 py-10  text-gray-600 hover:font-semibold hover:bg-gray-200 hover:text-blue-700">
             <Puzzle />
-            <p className="text-xs">My Apps</p>
+            <p className="text-xs lg:visible invisible">My Apps</p>
           </div>
         </div>
       </div>
