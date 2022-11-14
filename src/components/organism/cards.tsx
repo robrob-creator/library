@@ -18,15 +18,17 @@ export const Card = <PROPS extends CardProps>({
   stacks,
 }: PROPS): JSX.Element => {
   return (
-    <div className="inline-flex m-4 flex-col justify-end w-64 h-72 pl-0.5 pb-2">
+    <div className="inline-flex lg:m-4 flex-col justify-end lg:w-64 md:w-38 md:mx-4  h-72 pl-0.5 pb-2">
       <div
         className="relative bg-gray-300 rounded-2xl"
         style={{ width: "100%", height: "193px" }}
       >
-        <img className="w-64 h-48 rounded-2xl" src={imgUrl} />
+        <img className="w-full lg:w-64 h-48 rounded-2xl" src={imgUrl} />
       </div>
       <div className="inline-flex space-x-8 items-center justify-start">
-        <p className="w-36 h-6 text-sm font-semibold leading-normal">{title}</p>
+        <p className="w-full lg:w-36 h-6 text-sm font-semibold leading-normal">
+          {title}
+        </p>
         <div className="flex space-x-2.5 items-start justify-start">
           {downloads && (
             <div className="flex space-x-0.5 items-center justify-start">

@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable react/no-unknown-property */
 
-import * as React from 'react';
+import * as React from "react";
 
 export interface ToggleProps {
   label?: string;
@@ -20,27 +20,27 @@ export const ToggleSwitch = ({
   const getStylesByStatus = (checked: boolean, disabled: boolean) => {
     if (checked && !disabled) {
       setStyle({
-        container: 'bg-purple-700 hover:bg-purple-900',
-        dot: 'border-purple-700',
-        opacity: 'opacity-100',
+        container: "bg-purple-700 hover:bg-purple-900",
+        dot: "border-purple-700",
+        opacity: "opacity-100",
       });
     } else if (!checked && disabled) {
       setStyle({
-        container: 'bg-gray-200 hover:bg-gray-400',
-        dot: 'border-gray-200',
-        opacity: 'opacity-50',
+        container: "bg-gray-200 hover:bg-gray-400",
+        dot: "border-gray-200",
+        opacity: "opacity-50",
       });
     } else if (disabled) {
       setStyle({
-        container: 'bg-purple-700 ',
-        dot: 'border-purple-700',
-        opacity: 'opacity-50',
+        container: "bg-purple-700 ",
+        dot: "border-purple-700",
+        opacity: "opacity-50",
       });
     } else {
       setStyle({
-        container: 'bg-gray-200 hover:bg-gray-400',
-        dot: 'border-gray-200',
-        opacity: 'opacity-100',
+        container: "bg-gray-200 hover:bg-gray-400",
+        dot: "border-gray-200",
+        opacity: "opacity-100",
       });
     }
   };
@@ -63,7 +63,7 @@ export const ToggleSwitch = ({
             disabled={disabled}
             className="sr-only"
             checked={isChecked}
-            onChange={() => setIsChecked(prev => !prev)}
+            onChange={() => setIsChecked((prev) => !prev)}
           />
 
           <div

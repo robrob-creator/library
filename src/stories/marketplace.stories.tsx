@@ -2,9 +2,11 @@ import { Meta, Story } from "@storybook/react";
 import {
   OutlinedForm,
   FormProps,
+  Tabs,
   Card,
   Banner,
   NavigationBar,
+  Footer,
 } from "../components";
 const data = [
   "1",
@@ -43,9 +45,11 @@ const Template: Story<FormProps> = (args) => (
   <div>
     <NavigationBar logo="" />
 
+    <Banner />
     <div className="grid content-center">
+      <Tabs />
       {/**third */}
-      <div className="lg:grid lg:gap-2 sm:grid-cols-2 lg:grid-cols-4 grid-cols-2 mx-4">
+      <div className="lg:grid lg:gap-2 grid-cols-2 lg:grid-cols-4 mx-2 ">
         {data.map((item, index) => {
           return (
             <Card
@@ -77,7 +81,7 @@ const Template: Story<FormProps> = (args) => (
         </div>
       </div>
       {/**end offourth */}
-      {/* /*<Footer />** */}
+      <Footer />
     </div>
   </div>
 );

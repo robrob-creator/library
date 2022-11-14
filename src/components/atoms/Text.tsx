@@ -9,6 +9,7 @@ export interface TextProps {
   size?: Size;
   className?: string;
   children?: React.ReactNode;
+  style?: object;
 }
 
 function getHeaderBySize(type: Size) {
@@ -45,10 +46,14 @@ export const Text = ({
   size = "md",
   className,
   children,
+  style,
 }: TextProps) => {
   const stylesBySize = getTextBySize(size);
   return (
-    <p className={`${stylesBySize} tracking-wider text-${color} ${className}`}>
+    <p
+      className={`${stylesBySize} tracking-wider text-${color} ${className}`}
+      style={style}
+    >
       {text && text}
       {children}
     </p>

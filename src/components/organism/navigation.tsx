@@ -3,7 +3,7 @@
 /* eslint-disable prettier/prettier */
 import { Button } from "../atoms/button";
 import { ArrowStrokeDown, BlueIsaacLogo, Search } from "../atoms/logo";
-export type NavigationProps = { logo?: any };
+export type NavigationProps = { logo?: any; profileImage?: string };
 
 export const NavigationBar = <
   PROPS extends NavigationProps
@@ -66,7 +66,7 @@ export const NavigationBar = <
 
 export const Tabs = <PROPS extends NavigationProps>({}: PROPS): JSX.Element => {
   return (
-    <div className="flex p-8 items-center overflow-x-auto">
+    <div className="flex p-8 w-full items-center overflow-x-auto">
       <div
         className="inline-flex space-x-12 items-center justify-center "
         style={{ width: "100%", height: 40 }}
@@ -140,6 +140,27 @@ export const Tabs = <PROPS extends NavigationProps>({}: PROPS): JSX.Element => {
           />
           <p className="text-sm leading-tight text-gray-600">Filter</p>
         </div>
+      </div>
+    </div>
+  );
+};
+export const WhiteNavBar = <PROPS extends NavigationProps>({
+  profileImage,
+}: PROPS): JSX.Element => {
+  return (
+    <div
+      className="flex items-center justify-center py-2.5 px-16 bg-white drop-shadow-md"
+      style={{ width: "100%", height: 60 }}
+    >
+      <BlueIsaacLogo className="w-32 h-3/4" />
+      <div
+        className="flex space-x-96 items-center justify-end"
+        style={{ width: "100%", height: 40 }}
+      >
+        <img
+          className="w-10 h-full rounded-full"
+          src={profileImage || "https://via.placeholder.com/40x40"}
+        />
       </div>
     </div>
   );

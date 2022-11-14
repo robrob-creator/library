@@ -16,3 +16,4 @@ export * from "./organism/sideDisplay";
 export * from "./organism/form";
 export * from "./organism/layouts";
 export * from "./organism/banner";
+export * from "./molecules/select";
