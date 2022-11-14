@@ -59,7 +59,7 @@ export const NavigationBar = <
     </nav>
   );
 };
-
+/*
 export const Tabs = <PROPS extends NavigationProps>({}: PROPS): JSX.Element => {
   return (
     <div className="flex p-8 items-center overflow-x-auto">
@@ -140,3 +140,4 @@ export const Tabs = <PROPS extends NavigationProps>({}: PROPS): JSX.Element => {
     </div>
   );
 };
+*/
