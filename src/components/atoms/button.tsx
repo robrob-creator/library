@@ -1,7 +1,6 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-unused-vars */
 /* eslint-disable prettier/prettier */
-import { useEffect, useState } from "react";
 import { Size, Type } from "../types";
 
 export interface ButtonProps {
@@ -18,13 +17,13 @@ function getStylesBySize(size: Size) {
     case "xl":
       return "w-full px-8 py-3.5 leading-7 text-base ";
     case "lg":
-      return "w-full px-8 py-3.5 leading-7 text-base ";
+      return "w-48 px-8 py-3.5 leading-7 text-base ";
     case "md":
-      return "h-12 w-full px-8 py-3.5 leading-7 text-base ";
+      return "h-12 w-48 px-8 py-3.5 leading-7 text-base ";
     case "sm":
       return "w-28 px-6 py-2 leading-normal text-sm ";
     default:
-      return "h-12 w-full px-8 py-3.5 leading-7 text-base ";
+      return "h-12 w-48 px-8 py-3.5 leading-7 text-base ";
   }
 }
 function getStylesByType(type: Type) {
@@ -49,12 +48,8 @@ export const Button = ({
   className = "",
   onClick,
 }: ButtonProps) => {
-  const [stylesBySize, setStyleBySize] = useState(getStylesBySize(size));
-  const [stylesByType, setStyleByType] = useState(getStylesByType(type));
-  useEffect(() => {
-    setStyleBySize(getStylesBySize(size));
-    setStyleByType(getStylesByType(type));
-  }, [size, type]);
+  const stylesBySize = getStylesBySize(size);
+  const stylesByType = getStylesByType(type);
   return (
     <button
       onClick={onClick}
