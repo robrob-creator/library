@@ -31,12 +31,16 @@ const Template: Story<LayoutProps> = (args) => (
     <div>
       <HeaderText text="Sign Up" color="black" className="mt-10" size="lg" />
       <Form>
-        <InputField placeholder="Name" className="my-6" />
-        <InputField placeholder="Email address" className="my-6" type="email" />
-        <InputField placeholder="Password" className="my-6" type="password" />
+        <InputField placeholder="Name" className="my-10" />
+        <InputField
+          placeholder="Email address"
+          className="my-14=0"
+          type="email"
+        />
+        <InputField placeholder="Password" className="my-10" type="password" />
         <InputField
           placeholder="Confirm password"
-          className="my-6"
+          className="my-10"
           type="Confirm password"
         />
 

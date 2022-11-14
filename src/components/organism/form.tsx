@@ -14,7 +14,7 @@ export const Form = <PROPS extends FormProps>({
   return (
     <form
       className="w-full max-w-lg"
-      style={{ width: "487px", height: "56px", left: "677px", top: "239px" }}
+      style={{ width: "487px", left: "677px", top: "239px" }}
     >
       {children}
     </form>

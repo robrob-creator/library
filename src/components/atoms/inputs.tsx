@@ -12,7 +12,7 @@ export interface InputProps {
 function getStylesBySize(size: Size) {
   switch (size) {
     case "lg":
-      return { input: " h-16 ", label: "-mt-16 peer-placeholder-shown:-mt-11" };
+      return { input: " h-16 ", label: "-mt-14 peer-placeholder-shown:-mt-11" };
     case "md":
       return { input: " h-14 ", label: "-mt-14 peer-placeholder-shown:-mt-10" };
     case "sm":
