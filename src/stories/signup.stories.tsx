@@ -45,12 +45,14 @@ const Template: Story<LayoutProps> = (args) => (
         />
 
         <div className="flex justify-between mt-16">
-          <Button
-            type="primary"
-            text="NEXT"
-            className="mt-8"
-            onClick={() => {}}
-          />
+          <div className="w-48">
+            <Button
+              type="primary"
+              text="NEXT"
+              className="mt-8 "
+              onClick={() => {}}
+            />
+          </div>
           <div className="flex mt-8">
             Already a member ? <a className="text-blue-700 ml-2"> Sign In</a>
           </div>
