@@ -15,3 +15,4 @@ export * from "./organism/modals";
 export * from "./organism/sideDisplay";
 export * from "./organism/form";
 export * from "./organism/layouts";
+export * from "./organism/banner";
