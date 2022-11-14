@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-unused-vars */
 /* eslint-disable prettier/prettier */
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Size, Type } from "../types";
 
 export interface ButtonProps {
@@ -49,12 +49,12 @@ export const Button = ({
   className = "",
   onClick,
 }: ButtonProps) => {
-  let stylesBySize = getStylesBySize(size);
-  let stylesByType = getStylesByType(type);
+  const [stylesBySize, setStyleBySize] = useState(getStylesBySize(size));
+  const [stylesByType, setStyleByType] = useState(getStylesByType(type));
   useEffect(() => {
-    stylesBySize = getStylesBySize(size);
-    stylesByType = getStylesByType(type);
-  }, []);
+    setStyleBySize(getStylesBySize(size));
+    setStyleByType(getStylesByType(type));
+  }, [size, type]);
   return (
     <button
       onClick={onClick}
