@@ -73,7 +73,7 @@ export const Button = ({
     </button>
   );
 };
-export const fullButton = ({
+export const FullButton = ({
   size = "md",
   text,
   type = "primary",
