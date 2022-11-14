@@ -26,6 +26,20 @@ function getStylesBySize(size: Size) {
       return "h-12 w-48 px-8 py-3.5 leading-7 text-base ";
   }
 }
+function getStylesByfullSize(size: Size) {
+  switch (size) {
+    case "xl":
+      return "px-8 py-3.5 leading-7 text-base ";
+    case "lg":
+      return "px-8 py-3.5 leading-7 text-base ";
+    case "md":
+      return "h-12 px-8 py-3.5 leading-7 text-base ";
+    case "sm":
+      return "px-6 py-2 leading-normal text-sm ";
+    default:
+      return "h-12 x-8 py-3.5 leading-7 text-base ";
+  }
+}
 function getStylesByType(type: Type) {
   switch (type) {
     case "primary":
@@ -48,12 +62,30 @@ export const Button = ({
   className = "",
   onClick,
 }: ButtonProps) => {
-  const stylesBySize = getStylesBySize(size);
+  const stylesBySize = getStylesByfullSize(size);
   const stylesByType = getStylesByType(type);
   return (
     <button
       onClick={onClick}
       className={`${className} ${stylesBySize} ${stylesByType} font-poppins inline-flex items-center justify-center font-semibold tracking-wider  text-center rounded-lg`}
+    >
+      {text}
+    </button>
+  );
+};
+export const fullButton = ({
+  size = "md",
+  text,
+  type = "primary",
+  className = "",
+  onClick,
+}: ButtonProps) => {
+  const stylesBySize = getStylesBySize(size);
+  const stylesByType = getStylesByType(type);
+  return (
+    <button
+      onClick={onClick}
+      className={`${className}${stylesBySize} ${stylesByType} w-full font-poppins inline-flex items-center justify-center font-semibold tracking-wider  text-center rounded-lg`}
     >
       {text}
     </button>
