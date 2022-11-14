@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-unused-vars */
 /* eslint-disable prettier/prettier */
+import { useEffect } from "react";
 import { Size, Type } from "../types";
 
 export interface ButtonProps {
@@ -48,12 +49,16 @@ export const Button = ({
   className = "",
   onClick,
 }: ButtonProps) => {
-  const stylesBySize = getStylesBySize(size);
-  const stylesByType = getStylesByType(type);
+  let stylesBySize = getStylesBySize(size);
+  let stylesByType = getStylesByType(type);
+  useEffect(() => {
+    stylesBySize = getStylesBySize(size);
+    stylesByType = getStylesByType(type);
+  }, []);
   return (
     <button
       onClick={onClick}
-      className={`${stylesBySize} ${stylesByType} font-poppins inline-flex items-center justify-center font-semibold tracking-wider  text-center rounded-lg  ${className}`}
+      className={`${className} ${stylesBySize} ${stylesByType} font-poppins inline-flex items-center justify-center font-semibold tracking-wider  text-center rounded-lg`}
     >
       {text}
     </button>

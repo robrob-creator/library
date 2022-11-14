@@ -79,7 +79,7 @@ const Template: Story<FormProps> = (args) => (
         <div className="relative" style={{ width: 400, height: 40 }}>
           <Button
             text="Reset Password"
-            size="sm"
+            size="xl"
             className="w-full"
             type="primary"
             onClick={() => {}}
