@@ -30,7 +30,7 @@ const Template: Story<LayoutProps> = (args) => (
   <Layout>
     <div>
       <HeaderText text="Sign Up" color="black" className="mt-10" size="lg" />
-      <Form>
+      <Form className="w-full">
         <div className="grid grid-cols-2 gap-2">
           <div>
             <InputField placeholder="First Name" className="my-14" />
