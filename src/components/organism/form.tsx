@@ -7,17 +7,16 @@ import React from "react";
 export type FormProps = {
   children?: React.ReactNode;
   className?: string;
+  style?: object;
 };
 
 export const Form = <PROPS extends FormProps>({
   children,
   className,
+  style,
 }: PROPS): JSX.Element => {
   return (
-    <form
-      className={`w-full max-w-lg ${className}`}
-      style={{ width: "487px", left: "677px", top: "239px" }}
-    >
+    <form className={`w-full max-w-lg ${className}`} style={style}>
       {children}
     </form>
   );

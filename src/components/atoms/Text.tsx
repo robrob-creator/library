@@ -29,7 +29,7 @@ function getHeaderBySize(type: Size) {
 function getTextBySize(type: Size) {
   switch (type) {
     case "xl":
-      return "text-xl";
+      return "sm:text-xl text:base";
     case "lg":
       return "text-lg";
     case "md":
@@ -51,7 +51,7 @@ export const Text = ({
   const stylesBySize = getTextBySize(size);
   return (
     <p
-      className={`${stylesBySize} tracking-wider text-${color} ${className}`}
+      className={`${stylesBySize}  tracking-wider text-${color} ${className}`}
       style={style}
     >
       {text && text}

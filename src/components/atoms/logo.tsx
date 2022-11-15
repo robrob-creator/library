@@ -2,6 +2,7 @@
 /* eslint-disable react/no-unknown-property */
 import { Size } from "../types";
 import logo from "../../../assets/images/blue-logo.png";
+import avatar from "../../../assets/images/avatar.svg";
 
 export interface LogoProps {
   size?: Size;
@@ -104,7 +105,7 @@ export const Search = ({
 export const Line = ({
   size = "sm",
   className,
-  color = "#626365",
+  color = "#e6e5e4",
   width = "1",
   height = "6",
 }: LogoProps) => {
@@ -183,7 +184,6 @@ export const CogIcon = ({
       width={width}
       height={height}
       viewBox="0 0 26 25"
-      opacity={50}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -195,4 +195,7 @@ export const CogIcon = ({
       />
     </svg>
   );
+};
+export const UserAvatar = ({ size, className }: LogoProps) => {
+  return <img className={`${className}`} src={avatar} />;
 };

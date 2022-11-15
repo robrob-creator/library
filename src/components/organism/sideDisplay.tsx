@@ -51,7 +51,9 @@ export const SideBar = <PROPS extends SideDisplayProps>({
   className,
 }: PROPS): JSX.Element => {
   return (
-    <div className={`lg:w-48 p w-24 shadow-md ${className}`}>
+    <div
+      className={`lg:w-48 sm:visible invisible w-0 sm:w-24 shadow-md ${className}`}
+    >
       <div className="flex items-start justify-center flex-1 pb-96 bg-white ">
         <div className="lg:ml-0 ml-8 inline-flex flex-col items-center justify-start flex-1 pb-96">
           <div className="inline-flex space-x-2.5 items-center justify-start w-full h-1/3 px-5 py-10  text-gray-600 hover:font-semibold hover:bg-gray-200 hover:text-blue-700">

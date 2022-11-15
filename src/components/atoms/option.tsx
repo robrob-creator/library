@@ -3,19 +3,15 @@
 
 export interface OptionProps {
   label?: string;
-  checked?: boolean;
-  disabled?: boolean;
-  min?: number;
-  max?: number;
-  value: number;
+  onClick?: () => void;
 }
 
-export const Option = ({ label }: OptionProps) => {
+export const Option = ({ label, onClick }: OptionProps) => {
   return (
     <li className="">
       <a
-        className="rounded-t  hover:bg-gray-200 py-2 px-4 block whitespace-no-wrap"
-        href="#"
+        className="rounded-t bg-white hover:bg-gray-200 py-2 px-4 block whitespace-no-wrap"
+        onClick={onClick}
       >
         {label}
       </a>

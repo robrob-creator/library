@@ -2,8 +2,15 @@
 /* eslint-disable no-empty-pattern */
 /* eslint-disable prettier/prettier */
 import { Button } from "../atoms/button";
-import { ArrowStrokeDown, BlueIsaacLogo, Search } from "../atoms/logo";
-export type NavigationProps = { logo?: any; profileImage?: string };
+import {
+  ArrowStrokeDown,
+  BlueIsaacLogo,
+  Search,
+  UserAvatar,
+} from "../atoms/logo";
+import { Dropdown } from "../molecules/dropdown";
+import { Option } from "../atoms/option";
+export type NavigationProps = { logo?: string; profileImage?: string };
 
 export const NavigationBar = <
   PROPS extends NavigationProps
@@ -28,16 +35,26 @@ export const NavigationBar = <
       <div className="w-full block flex-grow lg:flex lg:items-center lg:justify-center lg:w-auto">
         <div className="text-sm lg:flex-grow lg:flex lg:items-center lg:justify-center">
           <span className="flex  items-center lg:mt-0 text-black hover:text-blue-400 mr-4">
-            <p className="text-sm font-medium">Apps</p>
-            <ArrowStrokeDown className="mx-2 lg:visible invisible" />
+            <Dropdown label="Apps">
+              <Option label="Apps" />
+            </Dropdown>
           </span>
           <span className="flex  items-center mt-4 lg:mt-0 text-black hover:text-blue-400  mr-4">
-            <p className="text-sm font-medium">Community</p>
-            <ArrowStrokeDown className="mx-2 lg:visible invisible" />
+            {/*<p className="text-sm font-medium">Community</p>
+              <ArrowStrokeDown className="mx-2 lg:visible invisible" />
+            */}
+
+            <Dropdown label="Community">
+              <Option label="Community" />
+            </Dropdown>
           </span>
           <span className="flex  items-center mt-4 lg:mt-0 text-black hover:text-blue-400  mr-4">
-            <p className="text-sm font-medium">Pricing</p>
-            <ArrowStrokeDown className="mx-2 lg:visible invisible" />
+            {/*  <p className="text-sm font-medium">Pricing</p>
+            <ArrowStrokeDown className="mx-2 lg:visible invisible" />*/}
+
+            <Dropdown label="Pricing">
+              <Option label="Pricing" />
+            </Dropdown>
           </span>
         </div>
         <div>
@@ -146,21 +163,27 @@ export const Tabs = <PROPS extends NavigationProps>({}: PROPS): JSX.Element => {
 };
 export const WhiteNavBar = <PROPS extends NavigationProps>({
   profileImage,
+  logo,
 }: PROPS): JSX.Element => {
   return (
     <div
       className="flex items-center justify-center py-2.5 px-16 bg-white drop-shadow-md"
       style={{ width: "100%", height: 60 }}
     >
-      <BlueIsaacLogo className="w-32 h-3/4" />
+      {logo ? (
+        <img className="w-15 h-10" src={logo} />
+      ) : (
+        <BlueIsaacLogo className="w-32 h-3/4" />
+      )}
       <div
         className="flex space-x-96 items-center justify-end"
         style={{ width: "100%", height: 40 }}
       >
-        <img
-          className="w-10 h-full rounded-full"
-          src={profileImage || "https://via.placeholder.com/40x40"}
-        />
+        {profileImage ? (
+          <img className="w-10 h-full rounded-full" src={profileImage} />
+        ) : (
+          <UserAvatar className="w-10 h-full rounded-full" />
+        )}
       </div>
     </div>
   );
