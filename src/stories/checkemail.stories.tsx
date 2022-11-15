@@ -12,7 +12,7 @@ import {
 } from "../components";
 
 const meta: Meta = {
-  title: "Checkmail",
+  title: "pages/Checkmail",
   component: OutlinedForm,
   argTypes: {
     children: {

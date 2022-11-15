@@ -12,7 +12,7 @@ import {
 } from "../components";
 
 const meta: Meta = {
-  title: "Set new password",
+  title: "pages/Set new password",
   component: OutlinedForm,
   argTypes: {
     children: {

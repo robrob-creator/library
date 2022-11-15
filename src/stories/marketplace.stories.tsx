@@ -28,7 +28,7 @@ const data = [
   "1",
 ];
 const meta: Meta = {
-  title: "marketplace",
+  title: "pages/marketplace",
   component: OutlinedForm,
   argTypes: {
     children: {

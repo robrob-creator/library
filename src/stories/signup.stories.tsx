@@ -10,7 +10,7 @@ import {
 } from "../components";
 
 const meta: Meta = {
-  title: "Sign up",
+  title: "pages/Sign up",
   component: Layout,
   argTypes: {
     children: {

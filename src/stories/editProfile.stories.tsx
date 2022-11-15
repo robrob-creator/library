@@ -12,7 +12,7 @@ import {
 } from "../components";
 
 const meta: Meta = {
-  title: "WhiteNav",
+  title: "pages/WhiteNav",
   component: WhiteNavBar,
   argTypes: {
     children: {
