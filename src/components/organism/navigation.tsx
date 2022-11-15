@@ -1,35 +1,28 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-empty-pattern */
 /* eslint-disable prettier/prettier */
-import { Button } from "../atoms/button";
 import {
   ArrowStrokeDown,
   BlueIsaacLogo,
   Search,
   UserAvatar,
 } from "../atoms/logo";
-import { Dropdown } from "../molecules/dropdown";
-import { Option } from "../atoms/option";
+import React from "react";
 export type NavigationProps = {
   logo?: string;
   profileImage?: string;
-  logoClick?: () => void;
-  signInClick?: () => void;
-  tryItClick?: () => void;
+  centerElements?: React.ReactNode;
+  rightElements?: React.ReactNode;
 };
 
 export const NavigationBar = <PROPS extends NavigationProps>({
   logo,
-  logoClick,
-  signInClick,
-  tryItClick,
+  rightElements,
+  centerElements,
 }: PROPS): JSX.Element => {
   return (
     <nav className="flex items-center justify-between flex-wrap  py-3.5 pl-11 pr-14">
-      <div
-        className="flex items-center flex-shrink-0 text-white mr-6"
-        onClick={logoClick}
-      >
+      <div className="flex items-center flex-shrink-0 text-white mr-6">
         {logo ? (
           <img className="w-15 h-10" src={logo} />
         ) : (
@@ -49,53 +42,8 @@ export const NavigationBar = <PROPS extends NavigationProps>({
         </button>
       </div>
       <div className="w-full block flex-grow lg:flex lg:items-center lg:justify-center lg:w-auto">
-        <div className="text-sm lg:flex-grow lg:flex lg:items-center lg:justify-center">
-          <span className="flex  items-center lg:mt-0 text-black hover:text-blue-400 mr-4">
-            <Dropdown label="Apps">
-              <Option label="Apps" />
-            </Dropdown>
-          </span>
-          <span className="flex  items-center mt-4 lg:mt-0 text-black hover:text-blue-400  mr-4">
-            {/*<p className="text-sm font-medium">Community</p>
-              <ArrowStrokeDown className="mx-2 lg:visible invisible" />
-            */}
-
-            <Dropdown label="Community">
-              <Option label="Community" />
-            </Dropdown>
-          </span>
-          <span className="flex  items-center mt-4 lg:mt-0 text-black hover:text-blue-400  mr-4">
-            {/*  <p className="text-sm font-medium">Pricing</p>
-            <ArrowStrokeDown className="mx-2 lg:visible invisible" />*/}
-
-            <Dropdown label="Pricing">
-              <Option label="Pricing" />
-            </Dropdown>
-          </span>
-        </div>
-        <div>
-          <div className="flex space-x-6 items-center justify-start">
-            <Search size="sm" className="lg:visible invisible" />
-            <p
-              className="text-sm font-medium leading-tight text-blue-700 w-24 cursor-pointer"
-              onClick={signInClick}
-            >
-              Sign in
-            </p>
-
-            <div className="relative" style={{ width: "100%", height: 40 }}>
-              <div
-                className="inline-flex items-center justify-center px-5 py-2 bg-blue-700 rounded-lg"
-                style={{ width: "100%", height: 40 }}
-                onClick={tryItClick}
-              >
-                <p className="text-xs font-semibold leading-snug text-center text-gray-50">
-                  Try it free
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        {centerElements}
+        <div>{rightElements}</div>
       </div>
     </nav>
   );
