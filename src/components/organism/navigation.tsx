@@ -42,8 +42,8 @@ export const NavigationBar = <PROPS extends NavigationProps>({
         </button>
       </div>
       <div className="w-full block flex-grow lg:flex lg:items-center lg:justify-center lg:w-auto">
-        {centerElements}
-        <div>{rightElements}</div>
+        {centerElements && centerElements}
+        <div>{rightElements && rightElements}</div>
       </div>
     </nav>
   );
