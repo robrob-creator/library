@@ -10,15 +10,31 @@ import {
 } from "../atoms/logo";
 import { Dropdown } from "../molecules/dropdown";
 import { Option } from "../atoms/option";
-export type NavigationProps = { logo?: string; profileImage?: string };
+export type NavigationProps = {
+  logo?: string;
+  profileImage?: string;
+  logoClick?: () => void;
+  signInClick?: () => void;
+  tryItClick?: () => void;
+};
 
-export const NavigationBar = <
-  PROPS extends NavigationProps
->({}: PROPS): JSX.Element => {
+export const NavigationBar = <PROPS extends NavigationProps>({
+  logo,
+  logoClick,
+  signInClick,
+  tryItClick,
+}: PROPS): JSX.Element => {
   return (
     <nav className="flex items-center justify-between flex-wrap  py-3.5 pl-11 pr-14">
-      <div className="flex items-center flex-shrink-0 text-white mr-6">
-        <BlueIsaacLogo />
+      <div
+        className="flex items-center flex-shrink-0 text-white mr-6"
+        onClick={logoClick}
+      >
+        {logo ? (
+          <img className="w-15 h-10" src={logo} />
+        ) : (
+          <BlueIsaacLogo className="w-32 h-3/4" />
+        )}
       </div>
       <div className="block lg:hidden">
         <button className="flex items-center px-3 py-2 border rounded text-gray-200 border-gray-400 hover:text-white hover:border-white">
@@ -60,7 +76,10 @@ export const NavigationBar = <
         <div>
           <div className="flex space-x-6 items-center justify-start">
             <Search size="sm" className="lg:visible invisible" />
-            <p className="text-sm font-medium leading-tight text-blue-700 w-24">
+            <p
+              className="text-sm font-medium leading-tight text-blue-700 w-24"
+              onClick={signInClick}
+            >
               Sign in
             </p>
 
@@ -68,6 +87,7 @@ export const NavigationBar = <
               <div
                 className="inline-flex items-center justify-center px-5 py-2 bg-blue-700 rounded-lg"
                 style={{ width: "100%", height: 40 }}
+                onClick={tryItClick}
               >
                 <p className="text-xs font-semibold leading-snug text-center text-gray-50">
                   Try it free
