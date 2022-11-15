@@ -6,7 +6,11 @@ module.exports = {
     fontFamily: {
       Poppins: ["Poppins", "sans-serif"],
     },
-    extend: {},
+    extend: {
+      spacing: {
+        128: "832px",
+      },
+    },
   },
   plugins: [],
 };

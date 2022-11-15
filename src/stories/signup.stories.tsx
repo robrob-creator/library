@@ -44,7 +44,7 @@ const Template: Story<LayoutProps> = (args) => (
           type="Confirm password"
         />
 
-        <div className="flex justify-between mt-16">
+        <div className="flex flex-wrap justify-between mt-16">
           <div className="w-48">
             <Button
               type="primary"

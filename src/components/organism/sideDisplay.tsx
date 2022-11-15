@@ -16,10 +16,9 @@ export const SideDisplay = <
 >({}: PROPS): JSX.Element => {
   return (
     <div
-      className={`flex  font-Poppins justify-center bg-cover`}
+      className={`invisible md:invisible lg:visible xl:visible  md:h-0 lg:h-screen xl:h-screen h-0 flex  font-Poppins justify-center bg-cover`}
       style={{
         width: "550px",
-        height: "832px",
         backgroundImage: `url(${background})`,
       }}
     >
