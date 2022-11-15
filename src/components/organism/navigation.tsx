@@ -77,7 +77,7 @@ export const NavigationBar = <PROPS extends NavigationProps>({
           <div className="flex space-x-6 items-center justify-start">
             <Search size="sm" className="lg:visible invisible" />
             <p
-              className="text-sm font-medium leading-tight text-blue-700 w-24"
+              className="text-sm font-medium leading-tight text-blue-700 w-24 cursor-pointer"
               onClick={signInClick}
             >
               Sign in
