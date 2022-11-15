@@ -16,7 +16,7 @@ export const Form = <PROPS extends FormProps>({
   style,
 }: PROPS): JSX.Element => {
   return (
-    <form className={`w-full max-w-lg ${className}`} style={style}>
+    <form className={`${className} w-full max-w-lg `} style={style}>
       {children}
     </form>
   );
