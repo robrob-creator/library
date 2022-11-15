@@ -30,9 +30,16 @@ const Template: Story<LayoutProps> = (args) => (
   <Layout>
     <div>
       <HeaderText text="Sign In" color="black" className="mt-10" />
-      <Form>
-        <InputField placeholder="Email" className="my-12" />
-        <InputField placeholder="Password" className="my-6" type="password" />
+      <Form className="space-y-4 mt-7">
+        <div className="relative z-0 w-full mb-5">
+          <InputField placeholder="Email" className="my-12" name="email" />
+          <InputField
+            placeholder="Password"
+            className="my-6"
+            type="password"
+            name="password"
+          />
+        </div>
       </Form>
       <div className="flex mt-10 justify-between">
         <Checkbox label="Remember me?" />
