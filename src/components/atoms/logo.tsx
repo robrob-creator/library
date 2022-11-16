@@ -2,6 +2,7 @@
 /* eslint-disable react/no-unknown-property */
 import { Size } from "../types";
 import logo from "../../../assets/images/blue-logo.png";
+import isaacLogo from "../../../assets/images/isaacLogo.svg";
 import avatar from "../../../assets/images/avatar.svg";
 
 export interface LogoProps {
@@ -26,7 +27,7 @@ function getStylesBySize(type: Size) {
 }
 
 export const BlueIsaacLogo = ({ size, className }: LogoProps) => {
-  return <img className={`w-44 h-10 ${className}`} src={logo} />;
+  return <img className={`w-44 h-10 ${className}`} src={isaacLogo} />;
 };
 
 export const ArrowLeft = ({

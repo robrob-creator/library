@@ -20,11 +20,7 @@ const meta: Meta = {
 export default meta;
 
 const Template: Story<InputProps> = (args) => (
-  <div className="mt-36">
-    <InputField onChange={(e) => {}} {...args} />
-    <InputField onChange={(e) => {}} {...args} />
-    <InputField onChange={(e) => {}} {...args} />
-  </div>
+  <InputField onChange={(e) => {}} {...args} />
 );
 
 // By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
