@@ -6,6 +6,7 @@ import dummyProduct from "../../../assets/images/dummyProduct.png";
 import React from "react";
 
 export type BannerProps = {
+  imgURL?: string;
   title?: string;
   description?: string;
   extra?: React.ReactNode;
@@ -15,12 +16,16 @@ export const ProductBanner = <PROPS extends BannerProps>({
   title,
   description,
   extra,
+  imgURL,
 }: PROPS): JSX.Element => {
   return (
     <div className="relative w-screen" style={{ height: 540 }}>
       <div
         className="relative bg-cover w-screen bg-gray-300"
-        style={{ height: 540, backgroundImage: `url(${dummyProduct})` }}
+        style={{
+          height: 540,
+          backgroundImage: `url(${imgURL || dummyProduct})`,
+        }}
       >
         <div
           className="w-screen   opacity-50 bg-gradient-to-b from-black to-black"
@@ -159,6 +164,123 @@ export const Banner = <PROPS extends BannerProps>({}: PROPS): JSX.Element => {
           </div>
         </div>
       </div>
+    </div>
+  );
+};
+export const Bannesr = <PROPS extends BannerProps>({}: PROPS): JSX.Element => {
+  return (
+    <div
+      className="flex items-center justify-content-center w-screen  bg-gray-300 overflow-x-auto"
+      style={{ height: "173px" }}
+    >
+      {/**new */}
+      <div className="inline-flex justify-items-center w-36 px-28 flex-col  space-y-96 border-r-2 border-gray-400">
+        <div className="inline-flex flex-col items-center justify-end w-16 h-24">
+          <p className="w-full text-base font-bold leading-10 text-center text-gray-700">
+            Ratings
+          </p>
+          <p className="text-3xl font-semibold leading-10 text-center text-gray-700">
+            4.5
+          </p>
+          <div className="inline-flex space-x-0.5 items-start justify-start">
+            <img
+              className="w-1/6 h-full rounded-full"
+              src="https://via.placeholder.com/10x10"
+            />
+            <img
+              className="w-1/6 h-full rounded-full"
+              src="https://via.placeholder.com/10x10"
+            />
+            <img
+              className="w-1/6 h-full rounded-full"
+              src="https://via.placeholder.com/10x10"
+            />
+            <img
+              className="w-1/6 h-full rounded-full"
+              src="https://via.placeholder.com/10x10"
+            />
+            <img
+              className="w-1/6 h-full rounded-full"
+              src="https://via.placeholder.com/10x10"
+            />
+          </div>
+        </div>
+      </div>
+      {/**new */}
+      {/**new */}
+      <div className="inline-flex flex-col  space-y-96 w-36 px-28 border-r-2 border-gray-400">
+        <div className="relative h-24" style={{ width: "81px" }}>
+          <p className="absolute right-0 top-0 w-16 text-center text-base font-bold leading-10 text-gray-700">
+            Chart
+          </p>
+          <p
+            className="absolute w-full text-3xl font-semibold leading-10 text-gray-700"
+            style={{ left: " 9px", top: "35px" }}
+          >
+            No. 5
+          </p>
+          <p className="absolute right-0 w-16 bottom-0 text-center mt-2 text-xs leading-10 text-gray-700">
+            Point of sale
+          </p>
+        </div>
+      </div>
+      {/**new */}
+      {/**new */}
+      <div className="w-36 px-28 border-r-2 border-gray-400 flex justify-center space-y-96">
+        <div
+          className="flex justify-center relative h-24"
+          style={{ width: "81px" }}
+        >
+          <p className="absolute top-0 w-16 text-center text-base font-bold leading-10 text-gray-700">
+            Developer
+          </p>
+          <img
+            className="absolute a w-8 h-8 text-3xl font-semibold leading-10 text-gray-700"
+            style={{ top: "35px" }}
+            src="https://via.placeholder.com/40x40"
+          />
+          <p className="absolute bottom-0 text-center mt-2 text-xs leading-10 text-gray-700">
+            Point of sale
+          </p>
+        </div>
+      </div>
+      {/**new */}
+      {/**new */}
+      <div className="inline-flex flex-col  space-y-96 w-36 px-28 border-r-2 border-gray-400">
+        <div className="relative h-24" style={{ width: "81px" }}>
+          <p className="absolute right-0 top-0 w-16 text-center text-base font-bold leading-10 text-gray-700">
+            Language
+          </p>
+          <p
+            className="absolute w-full text-3xl font-semibold leading-10 text-gray-700"
+            style={{ left: " 30px", top: "35px" }}
+          >
+            EN
+          </p>
+          <p className="absolute right-0 bottom-0  w-16 text-center mt-2 text-xs leading-10 text-gray-700">
+            +5 more
+          </p>
+        </div>
+      </div>
+      {/**new */}
+      {/**new */}
+      <div className="inline-flex w-36 px-28  flex-col  space-y-96">
+        <div className="relative h-24" style={{ width: "81px" }}>
+          <p className="absolute right-0 top-0 w-16 text-center text-base font-bold leading-10 text-gray-700">
+            Size
+          </p>
+          <p
+            className="absolute w-full text-3xl font-semibold leading-10 text-gray-700"
+            style={{ left: " 9px", top: "35px" }}
+          >
+            235.5
+          </p>
+          <p className="absolute right-0 bottom-0 w-16 text-center mt-2 text-xs leading-10 text-gray-700">
+            MB
+          </p>
+        </div>
+      </div>
+      {/**new */}
     </div>
   );
 };

@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
-
+import imageOne from "../../../assets/images/cover1.png";
+import imagetwo from "../../../assets/images/cover2.png";
 export type CardProps = {
   title?: string;
   imgUrl?: string;
@@ -275,6 +276,322 @@ export const CardTwo = <PROPS extends CardProps>({}: PROPS): JSX.Element => {
             >
               235.5
             </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+export const DescriptionCard = <
+  PROPS extends CardProps
+>({}: PROPS): JSX.Element => {
+  return (
+    <div className="px-12 border-b-2 border-gray-200 py-10">
+      <div className="grid sm:grid-cols-2 gap-2 ">
+        <img className="w-full h-72 mx-2" src={imageOne} />
+        <img className="w-full h-72 mx-2" src={imagetwo} />
+      </div>
+      <div
+        className="inline-flex space-x-24 items-start justify-start pt-8 pb-16 w-11/12"
+        style={{ height: "179px" }}
+      >
+        <p
+          className="text-lg leading-loose text-justify text-gray-900"
+          style={{ width: "879px", height: " 89px" }}
+        >
+          Set up new stores quickly and easily with just an internet connection.
+          Then use your Point of Sale everywhere, anytime. While an internet
+          connection is required to start the Point of Sale, it will stay
+          operational even after complete disconnection.
+        </p>
+        <div className="inline-flex flex-col space-y-1.5 items-end justify-start">
+          <p className="text-lg font-medium text-justify text-blue-700">
+            Project Moonshot Inc.
+          </p>
+          <div className="inline-flex space-x-2.5 items-center justify-center">
+            <p className="text-xl font-medium text-justify text-gray-700">
+              Support
+            </p>
+            <img
+              className="w-6 h-6 rounded-lg"
+              src="https://via.placeholder.com/24x24"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+export const WhatsNewCard = <
+  PROPS extends CardProps
+>({}: PROPS): JSX.Element => {
+  return (
+    <div className="px-12 border-b-2 border-gray-200 py-10">
+      <div
+        className="inline-flex space-x-96 items-start justify-start pt-8 pb-16 w-screen"
+        style={{ height: 308 }}
+      >
+        <p className="text-justify text-gray-900">
+          What’s New
+          <br />
+          Updates:
+          <br />
+          Set up new stores quickly and easily with just an internet connection.
+          <br />
+          Set up new stores quickly and easily with just an internet connection.
+          <br />
+          Set up new stores quickly and easily with just an internet connection.
+          <br />
+          Set up new stores quickly and easily with just an internet connection.
+        </p>
+        <div className="inline-flex flex-col space-y-1.5 items-end justify-start">
+          <p className="text-lg font-medium text-right text-blue-700">
+            Version History
+          </p>
+          <p className="text-lg font-medium text-right text-gray-600">
+            1w ago
+            <br />
+            Version 7.1.1
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+export const InformationCard = <
+  PROPS extends CardProps
+>({}: PROPS): JSX.Element => {
+  return (
+    <div className="px-12 border-b-2 border-gray-200 py-10">
+      <div className="relative w-screen" style={{ height: 507 }}>
+        <p
+          className="absolute text-2xl font-semibold leading-10 text-justify text-gray-900"
+          style={{ left: 0, top: 30 }}
+        >
+          Information
+        </p>
+        <div
+          className="inline-flex space-x-32 items-start justify-start absolute"
+          style={{ width: 1157, height: 316, left: 0, top: 87 }}
+        >
+          <div className="inline-flex flex-col space-y-12 items-start justify-start">
+            <div className="relative" style={{ width: 213, height: 72 }}>
+              <p className="absolute left-0 top-0 text-xl leading-10 text-justify text-gray-600">
+                Developer
+              </p>
+              <p className="absolute left-0 bottom-0 text-xl font-medium leading-10 text-justify text-gray-900">
+                Project Moonshot Inc.
+              </p>
+            </div>
+            <div className="relative" style={{ width: 171, height: 72 }}>
+              <p className="absolute left-0 top-0 text-xl leading-10 text-justify text-gray-600">
+                Compatibility
+              </p>
+              <p className="absolute left-0 bottom-0 text-xl font-medium leading-10 text-justify text-gray-900">
+                Windows, MacOS
+              </p>
+            </div>
+            <div className="relative" style={{ width: 234, height: 72 }}>
+              <p className="absolute left-0 top-0 text-xl leading-10 text-justify text-gray-600">
+                Copyright
+              </p>
+              <p className="absolute left-0 bottom-0 text-xl leading-10 text-justify text-gray-900">
+                © Project Moonshot Inc.
+              </p>
+            </div>
+          </div>
+          <div className="inline-flex flex-col space-y-12 items-start justify-start">
+            <div className="relative" style={{ width: 89, height: 72 }}>
+              <p className="absolute left-0 top-0 text-xl leading-10 text-justify text-gray-600">
+                Size
+              </p>
+              <p className="absolute left-0 bottom-0 text-xl font-medium leading-10 text-justify text-gray-900">
+                235.5 MB
+              </p>
+            </div>
+            <div className="relative" style={{ width: 192, height: 72 }}>
+              <p className="absolute left-0 top-0 text-xl leading-10 text-justify text-gray-600">
+                Language
+              </p>
+              <p className="absolute left-0 bottom-0 text-xl font-medium leading-10 text-justify text-gray-900">
+                English and 4 more
+              </p>
+            </div>
+            <div className="relative" style={{ width: 123, height: 72 }}>
+              <p className="absolute left-0 top-0 text-xl leading-10 text-justify text-gray-600">
+                Category
+              </p>
+              <p className="absolute left-0 bottom-0 text-xl font-semibold leading-10 text-justify text-gray-900">
+                Point of Sale
+              </p>
+            </div>
+          </div>
+          <div className="inline-flex flex-col space-y-12 items-start justify-start">
+            <div className="relative" style={{ width: 64, height: 72 }}>
+              <p className="absolute left-0 top-0 text-xl leading-10 text-justify text-gray-600">
+                Rating
+              </p>
+              <p className="absolute left-0 bottom-0 text-xl font-medium leading-10 text-justify text-gray-900">
+                4.5
+              </p>
+            </div>
+            <div className="relative" style={{ width: 165, height: 72 }}>
+              <p className="absolute left-0 top-0 text-xl leading-10 text-justify text-gray-600">
+                Release date
+              </p>
+              <p className="absolute left-0 bottom-0 text-xl font-medium leading-10 text-justify text-gray-900">
+                January 01, 2022
+              </p>
+            </div>
+            <div className="relative" style={{ width: 127, height: 72 }}>
+              <p className="absolute left-0 top-0 text-xl leading-10 text-justify text-gray-600">
+                Build Version
+              </p>
+              <p className="absolute left-0 bottom-0 text-xl font-medium leading-10 text-justify text-gray-900">
+                7.1.1
+              </p>
+            </div>
+          </div>
+          <div className="inline-flex flex-col space-y-12 items-start justify-start">
+            <div className="relative" style={{ width: 111, height: 72 }}>
+              <p className="absolute left-0 top-0 text-xl leading-10 text-justify text-gray-600">
+                Downloads
+              </p>
+              <p className="absolute left-0 bottom-0 text-xl font-medium leading-10 text-justify text-gray-900">
+                405
+              </p>
+            </div>
+            <div className="relative" style={{ width: 194, height: 92 }}>
+              <p className="absolute left-0 top-0 text-xl leading-10 text-justify text-gray-600">
+                Technology Stacks
+              </p>
+              <p className="absolute left-0 bottom-0 text-xl font-medium text-justify text-gray-900">
+                React, React Native
+                <br />
+                C#
+              </p>
+            </div>
+          </div>
+        </div>
+        <img
+          className="w-32 h-20 absolute rounded-lg"
+          style={{ left: 1022, top: 30 }}
+          src="https://via.placeholder.com/134x87"
+        />
+      </div>
+    </div>
+  );
+};
+export const MoreCard = <PROPS extends CardProps>({}: PROPS): JSX.Element => {
+  return (
+    <div className="px-12 border-b-2 border-gray-200 py-10 bg-gray-300">
+      <div className="" style={{ height: 365 }}>
+        <div
+          className="inline-flex space-x-96 w-screen items-start justify-start"
+          style={{ height: 40 }}
+        >
+          <p className="text-2xl font-semibold leading-10 text-justify text-gray-900">
+            More by Project Moonshoot Inc.
+          </p>
+          <div className="flex space-x-2.5 items-center justify-start">
+            <p className="text-2xl font-medium leading-10 text-right text-blue-700">
+              See All
+            </p>
+            <img
+              className="w-6 h-6 rounded-lg"
+              src="https://via.placeholder.com/24x24"
+            />
+          </div>
+        </div>
+        <div className="inline-flex space-x-8 items-center justify-end w-80 h-36">
+          <img
+            className="w-1/2 h-full rounded-lg"
+            src="https://via.placeholder.com/157.74647521972656x140"
+          />
+          <div className="inline-flex flex-col space-y-2 items-start justify-start w-32 h-32">
+            <p className="text-xl font-semibold leading-10 text-justify">
+              App name
+            </p>
+            <p className="text-base leading-10 text-justify text-gray-900">
+              Description
+            </p>
+            <div className="inline-flex items-center justify-center w-full h-9 px-4 py-2 bg-blue-700 rounded-full">
+              <p className="text-xs font-semibold leading-snug text-center text-gray-50">
+                ₱ 2,000.00
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+export const SimilarCard = <
+  PROPS extends CardProps
+>({}: PROPS): JSX.Element => {
+  return (
+    <div className="px-12 border-b-2 border-gray-200 py-10 ">
+      <div
+        className="inline-flex flex-col space-y-6 items-center w-screen justify-start"
+        style={{ height: 427 }}
+      >
+        <p className="text-2xl font-semibold leading-10 text-justify text-gray-900">
+          Similar Apps
+        </p>
+        <div
+          className="inline-flex w-screen space-x-12 items-start justify-start"
+          style={{ height: 362 }}
+        >
+          <div className="inline-flex flex-col space-y-3 items-start justify-start overflow-x-auto">
+            <img
+              className="w-10/12 h-56 rounded-lg"
+              src="https://via.placeholder.com/355x225"
+            />
+            <div className="flex flex-col space-y-0.5 items-center justify-end w-10/12 h-32">
+              <p className="text-2xl font-semibold leading-10 text-justify">
+                App Name
+              </p>
+              <p className="w-full h-2/3 text-xs text-justify">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
+          </div>
+          <div className="inline-flex flex-col space-y-3 items-start justify-start">
+            <img
+              className="w-10/12 h-56 rounded-lg"
+              src="https://via.placeholder.com/355x225"
+            />
+            <div className="flex flex-col space-y-0.5 items-center justify-end  w-10/12 h-32">
+              <p className="text-2xl font-semibold leading-10 text-justify">
+                App Name
+              </p>
+              <p className="w-full h-2/3 text-xs text-justify">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
+          </div>
+          <div className="inline-flex flex-col space-y-3 items-start justify-start">
+            <img
+              className="w-10/12 h-56 rounded-lg"
+              src="https://via.placeholder.com/355x225"
+            />
+            <div className="flex flex-col space-y-0.5 items-center justify-end  w-10/12 h-32">
+              <p className="text-2xl font-semibold leading-10 text-justify">
+                App Name
+              </p>
+              <p className="w-full h-2/3 text-xs text-justify">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
           </div>
         </div>
       </div>
