@@ -8,6 +8,7 @@ export type CardProps = {
   rating?: string;
   platforms?: { name: string; icon: string }[];
   stacks?: { name: string }[];
+  onClick?: () => void;
 };
 
 export const Card = <PROPS extends CardProps>({
@@ -17,9 +18,13 @@ export const Card = <PROPS extends CardProps>({
   rating,
   platforms,
   stacks,
+  onClick,
 }: PROPS): JSX.Element => {
   return (
-    <div className="inline-flex lg:m-4 flex-col justify-end lg:w-64 md:w-38 md:mx-4  h-72 pl-0.5 pb-2">
+    <div
+      className="inline-flex lg:m-4 flex-col justify-end lg:w-64 md:w-38 md:mx-4  h-72 pl-0.5 pb-2"
+      onClick={onClick}
+    >
       <div
         className="relative bg-gray-300 rounded-2xl"
         style={{ width: "100%", height: "193px" }}
