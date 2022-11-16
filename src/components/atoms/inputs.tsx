@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable react/no-unknown-property */
-import { useRef } from "react";
+import React, { useRef } from "react";
 import { Size } from "../types";
 import { Text } from "./Text";
 
@@ -12,7 +12,7 @@ export interface InputProps {
   size?: Size;
   style?: object;
   className?: string;
-  onChange?: () => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 function getStylesBySize(size: Size) {
   switch (size) {
@@ -80,7 +80,7 @@ export const InputField = ({
 
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="peer-focus:visible hover:visible invisible pointer-events-auto w-8 h-8 absolute top-10 transform -translate-y-1/2 right-3"
+          className="peer-focus:visible hover:visible invisible pointer-events-auto w-8 h-8 absolute top-10 transform -translate-y-1/2 right-3 pt-4"
           onClick={handleClick}
         >
           <path stroke="black" strokeWidth="2" d="M1 11L11 1"></path>
