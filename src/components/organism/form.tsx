@@ -19,11 +19,7 @@ export const Form = <PROPS extends FormProps>({
 }: PROPS): JSX.Element => {
   return (
     <div
-      className={`${className}  ${
-        bordered
-          ? "sm:w-screen md:w-11/12  xl:w-screen w-11/12 max-w-xl"
-          : "flex items-center justify-center sm:px-24 pt-10 pb-9 bg-white sm:border sm:rounded-3xl sm:border-gray-300"
-      }`}
+      className={`${className} sm:w-screen md:w-11/12  xl:w-screen w-11/12 max-w-xl`}
       style={style}
     >
       {children}
