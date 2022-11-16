@@ -12,6 +12,7 @@ export interface InputProps {
   size?: Size;
   style?: object;
   className?: string;
+  onChange?: () => void;
 }
 function getStylesBySize(size: Size) {
   switch (size) {
@@ -33,6 +34,7 @@ export const InputField = ({
   className,
   style,
   errorMessage,
+  onChange,
 }: InputProps) => {
   const inputRef = useRef<HTMLFormElement | null>(null);
   const stylesBySize = getStylesBySize(size);
@@ -50,6 +52,7 @@ export const InputField = ({
           type={type}
           id={name}
           placeholder={placeholder}
+          onChange={onChange}
           className={`outline-none  ${
             errorMessage
               ? "border-red-700 border-2"
