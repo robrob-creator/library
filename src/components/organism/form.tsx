@@ -18,16 +18,16 @@ export const Form = <PROPS extends FormProps>({
   bordered = false,
 }: PROPS): JSX.Element => {
   return (
-    <form
+    <div
       className={`${className}  ${
         bordered
-          ? "flex items-center justify-center sm:px-24 pt-10 pb-9 bg-white sm:border sm:rounded-3xl sm:border-gray-300"
-          : "sm:w-screen md:w-11/12  xl:w-screen w-11/12 max-w-xl"
+          ? "sm:w-screen md:w-11/12  xl:w-screen w-11/12 max-w-xl"
+          : "flex items-center justify-center sm:px-24 pt-10 pb-9 bg-white sm:border sm:rounded-3xl sm:border-gray-300"
       }`}
       style={style}
     >
       {children}
-    </form>
+    </div>
   );
 };
 export const OutlinedForm = <PROPS extends FormProps>({
