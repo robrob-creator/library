@@ -43,9 +43,9 @@ export const InputField = ({
     inputRef.current && inputRef.current.reset();
   };
   return (
-    <form ref={inputRef}>
+    <form ref={inputRef} className={`relative ${className}`}>
       <div
-        className={`flex flex-col items-start mb-2 z-0 ${stylesBySize.input} ${className}`}
+        className={`flex flex-col items-start mb-2 z-0 ${stylesBySize.input} `}
         style={style}
       >
         <input
@@ -80,7 +80,7 @@ export const InputField = ({
 
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="peer-focus:visible hover:visible invisible pointer-events-auto w-8 h-8 absolute top-10 transform -translate-y-1/2 right-3 pt-4"
+          className="peer-focus:visible hover:visible invisible pointer-events-auto w-8 h-8 absolute top-10 transform -translate-y-1/2 right-3"
           onClick={handleClick}
         >
           <path stroke="black" strokeWidth="2" d="M1 11L11 1"></path>
