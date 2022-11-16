@@ -10,6 +10,7 @@ export interface TextProps {
   className?: string;
   children?: React.ReactNode;
   style?: object;
+  fontStyle?: string;
   onClick?: () => void;
 }
 
@@ -69,12 +70,13 @@ export const HeaderText = ({
   size = "lg",
   className,
   children,
+  fontStyle = "font-bold",
   onClick,
 }: TextProps) => {
   const stylesBySize = getHeaderBySize(size);
   return (
     <p
-      className={`${stylesBySize} font-bold tracking-wider text-${color} ${className}`}
+      className={`${stylesBySize} ${fontStyle} tracking-wider text-${color} ${className}`}
       onClick={onClick}
     >
       {text && text}
