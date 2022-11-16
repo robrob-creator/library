@@ -2,14 +2,70 @@
 import { HeaderText, Text } from "../atoms/Text";
 import { Search } from "../atoms/logo";
 import background from "../../../assets/images/bg-full.png";
+import dummyProduct from "../../../assets/images/dummyProduct.png";
+import React from "react";
 
 export type BannerProps = {
   title?: string;
-  imgUrl?: string;
-  downloads?: string;
-  rating?: string;
-  platforms?: { name: string; icon: string }[];
-  stacks?: { name: string }[];
+  description?: string;
+  extra?: React.ReactNode;
+};
+
+export const ProductBanner = <PROPS extends BannerProps>({
+  title,
+  description,
+  extra,
+}: PROPS): JSX.Element => {
+  return (
+    <div className="relative w-screen" style={{ height: 540 }}>
+      <div
+        className="relative bg-cover w-screen bg-gray-300"
+        style={{ height: 540, backgroundImage: `url(${dummyProduct})` }}
+      >
+        <div
+          className="w-screen   opacity-50 bg-gradient-to-b from-black to-black"
+          style={{
+            height: 540,
+            width: "100vw",
+          }}
+        />
+
+        <div
+          className="inline-flex  flex-col space-y-6 items-center justify-end w-80 h-36 absolute"
+          style={{ left: 62, top: 150 }}
+        >
+          <p className="w-80 h-1/5 text-5xl font-semibold leading-tight text-white">
+            {title}
+          </p>
+        </div>
+        <div
+          className="inline-flex flex-col space-y-6 items-center  justify-end w-72 h-24 absolute"
+          style={{ left: 62, top: 294 }}
+        >
+          <p className="text-lg sm:text-left text-center leading-relaxed text-white">
+            {description}
+          </p>
+        </div>
+        {extra}
+        {/* <div
+          className="inline-flex items-center justify-center w-36 px-5 py-2 absolute bg-blue-700 rounded-lg"
+          style={{ left: 61, top: 440 }}
+        >
+          <p className="text-xs font-semibold leading-snug text-center text-gray-50">
+            ₱ 2,000.00
+          </p>
+        </div>
+        <div
+          className="inline-flex items-center justify-center w-36 px-5 py-2 absolute bg-gray-900 border rounded-lg border-gray-300"
+          style={{ left: 226, top: 440 }}
+        >
+          <p className="text-xs font-semibold leading-snug text-center text-gray-50">
+            Demo
+          </p>
+  </div>*/}
+      </div>
+    </div>
+  );
 };
 
 export const Banner = <PROPS extends BannerProps>({}: PROPS): JSX.Element => {
