@@ -1,6 +1,8 @@
 /* eslint-disable prettier/prettier */
 import imageOne from "../../../assets/images/cover1.png";
 import imagetwo from "../../../assets/images/cover2.png";
+import sampleApp from "../../../assets/images/sampleApp.png";
+import { ArrowStrokeDown } from "../atoms/logo";
 export type CardProps = {
   title?: string;
   imgUrl?: string;
@@ -291,25 +293,25 @@ export const DescriptionCard = <
   PROPS extends CardProps
 >({}: PROPS): JSX.Element => {
   return (
-    <div className="px-12 border-b-2 border-gray-200 py-10">
+    <div className="px-12 border-b-2 border-gray-200 py-10 w-screen">
       <div className="grid sm:grid-cols-2 gap-2 ">
-        <img className="w-full h-72 mx-2" src={imageOne} />
-        <img className="w-full h-72 mx-2" src={imagetwo} />
+        <img className="w-full h-full mx-2" src={imageOne} />
+        <img className="w-full h-full mx-2" src={imagetwo} />
       </div>
       <div
-        className="inline-flex space-x-24 items-start justify-start pt-8 pb-16 w-11/12"
+        className="flex justify-between pt-8 pb-16 "
         style={{ height: "179px" }}
       >
         <p
-          className="text-lg leading-loose text-justify text-gray-900"
-          style={{ width: "879px", height: " 89px" }}
+          className="text-lg w-screen leading-loose text-justify text-gray-900"
+          style={{ height: " 89px" }}
         >
           Set up new stores quickly and easily with just an internet connection.
           Then use your Point of Sale everywhere, anytime. While an internet
           connection is required to start the Point of Sale, it will stay
           operational even after complete disconnection.
         </p>
-        <div className="inline-flex flex-col space-y-1.5 items-end justify-start">
+        <div className="inline-flex flex-col w-1/3 space-y-1.5 items-end justify-start">
           <p className="text-lg font-medium text-justify text-blue-700">
             Project Moonshot Inc.
           </p>
@@ -317,10 +319,20 @@ export const DescriptionCard = <
             <p className="text-xl font-medium text-justify text-gray-700">
               Support
             </p>
-            <img
-              className="w-6 h-6 rounded-lg"
-              src="https://via.placeholder.com/24x24"
-            />
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M19.5999 9.99999C19.5999 15.3019 15.3018 19.6 9.9999 19.6C4.69797 19.6 0.399902 15.3019 0.399902 9.99999C0.399902 4.69806 4.69797 0.399994 9.9999 0.399994C15.3018 0.399994 19.5999 4.69806 19.5999 9.99999ZM9.99992 6.39999C9.55726 6.39999 9.16902 6.63905 8.95972 7.00087C8.62787 7.57454 7.8938 7.77057 7.32013 7.43872C6.74645 7.10687 6.55042 6.3728 6.88227 5.79912C7.50292 4.72621 8.6659 3.99999 9.99992 3.99999C11.9881 3.99999 13.5999 5.61177 13.5999 7.59999C13.5999 9.16746 12.5981 10.5009 11.1999 10.9951V11.2C11.1999 11.8627 10.6627 12.4 9.99992 12.4C9.33718 12.4 8.79992 11.8627 8.79992 11.2V9.99999C8.79992 9.33725 9.33718 8.79999 9.99992 8.79999C10.6627 8.79999 11.1999 8.26274 11.1999 7.59999C11.1999 6.93725 10.6627 6.39999 9.99992 6.39999ZM9.9999 16C10.6626 16 11.1999 15.4627 11.1999 14.8C11.1999 14.1373 10.6626 13.6 9.9999 13.6C9.33716 13.6 8.7999 14.1373 8.7999 14.8C8.7999 15.4627 9.33716 16 9.9999 16Z"
+                fill="#3C4043"
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -331,12 +343,12 @@ export const WhatsNewCard = <
   PROPS extends CardProps
 >({}: PROPS): JSX.Element => {
   return (
-    <div className="px-12 border-b-2 border-gray-200 py-10">
+    <div className="px-12 border-b-2 border-gray-200 py-10 ">
       <div
         className="inline-flex space-x-96 items-start justify-start pt-8 pb-16 w-screen"
         style={{ height: 308 }}
       >
-        <p className="text-justify text-gray-900">
+        <p className="text-justify text-gray-900 ">
           What’s New
           <br />
           Updates:
@@ -349,7 +361,7 @@ export const WhatsNewCard = <
           <br />
           Set up new stores quickly and easily with just an internet connection.
         </p>
-        <div className="inline-flex flex-col space-y-1.5 items-end justify-start">
+        <div className="inline-flex w-1/3 flex-col space-y-1.5 items-end justify-start">
           <p className="text-lg font-medium text-right text-blue-700">
             Version History
           </p>
@@ -478,11 +490,6 @@ export const InformationCard = <
             </div>
           </div>
         </div>
-        <img
-          className="w-32 h-20 absolute rounded-lg"
-          style={{ left: 1022, top: 30 }}
-          src="https://via.placeholder.com/134x87"
-        />
       </div>
     </div>
   );
@@ -490,41 +497,37 @@ export const InformationCard = <
 export const MoreCard = <PROPS extends CardProps>({}: PROPS): JSX.Element => {
   return (
     <div className="px-12 border-b-2 border-gray-200 py-10 bg-gray-300">
-      <div className="" style={{ height: 365 }}>
-        <div
-          className="inline-flex space-x-96 w-screen items-start justify-start"
-          style={{ height: 40 }}
-        >
+      <div className="flex justify-between">
+        <div>
           <p className="text-2xl font-semibold leading-10 text-justify text-gray-900">
             More by Project Moonshoot Inc.
           </p>
-          <div className="flex space-x-2.5 items-center justify-start">
+          <div className="inline-flex space-x-8 items-center justify-end w-80 h-36">
+            <img className="w-1/2 h-full rounded-lg" src={sampleApp} />
+            <div className="inline-flex flex-col space-y-2 items-start justify-start w-32 h-32">
+              <p className="text-xl font-semibold leading-10 text-justify">
+                App name
+              </p>
+              <p className="text-base leading-10 text-justify text-gray-900">
+                Description
+              </p>
+              <div className="inline-flex items-center justify-center w-full h-9 px-4 py-2 bg-blue-700 rounded-full">
+                <p className="text-xs font-semibold leading-snug text-center text-gray-50">
+                  ₱ 2,000.00
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="inline-flex space-x-96  items-start "
+          style={{ height: 40 }}
+        >
+          <div className="inline-flex space-x-2.5 items-center w-36 ">
             <p className="text-2xl font-medium leading-10 text-right text-blue-700">
               See All
             </p>
-            <img
-              className="w-6 h-6 rounded-lg"
-              src="https://via.placeholder.com/24x24"
-            />
-          </div>
-        </div>
-        <div className="inline-flex space-x-8 items-center justify-end w-80 h-36">
-          <img
-            className="w-1/2 h-full rounded-lg"
-            src="https://via.placeholder.com/157.74647521972656x140"
-          />
-          <div className="inline-flex flex-col space-y-2 items-start justify-start w-32 h-32">
-            <p className="text-xl font-semibold leading-10 text-justify">
-              App name
-            </p>
-            <p className="text-base leading-10 text-justify text-gray-900">
-              Description
-            </p>
-            <div className="inline-flex items-center justify-center w-full h-9 px-4 py-2 bg-blue-700 rounded-full">
-              <p className="text-xs font-semibold leading-snug text-center text-gray-50">
-                ₱ 2,000.00
-              </p>
-            </div>
+            <ArrowStrokeDown />
           </div>
         </div>
       </div>
@@ -535,12 +538,12 @@ export const SimilarCard = <
   PROPS extends CardProps
 >({}: PROPS): JSX.Element => {
   return (
-    <div className="px-12 border-b-2 border-gray-200 py-10 ">
+    <div className="px-12 border-b-2 border-gray-200 py-10 overflow-x-auto">
       <div
-        className="inline-flex flex-col space-y-6 items-center w-screen justify-start"
+        className="inline-flex flex-col text-left space-y-6 items-center w-screen justify-start"
         style={{ height: 427 }}
       >
-        <p className="text-2xl font-semibold leading-10 text-justify text-gray-900">
+        <p className=" text-2xl font-semibold leading-10 text-justify text-gray-900">
           Similar Apps
         </p>
         <div
@@ -549,10 +552,10 @@ export const SimilarCard = <
         >
           <div className="inline-flex flex-col space-y-3 items-start justify-start overflow-x-auto">
             <img
-              className="w-10/12 h-56 rounded-lg"
+              className="w-96 h-56 rounded-lg"
               src="https://via.placeholder.com/355x225"
             />
-            <div className="flex flex-col space-y-0.5 items-center justify-end w-10/12 h-32">
+            <div className="flex flex-col space-y-0.5 items-center justify-end w-96 h-32">
               <p className="text-2xl font-semibold leading-10 text-justify">
                 App Name
               </p>
@@ -566,10 +569,10 @@ export const SimilarCard = <
           </div>
           <div className="inline-flex flex-col space-y-3 items-start justify-start">
             <img
-              className="w-10/12 h-56 rounded-lg"
+              className="w-96  h-56 rounded-lg"
               src="https://via.placeholder.com/355x225"
             />
-            <div className="flex flex-col space-y-0.5 items-center justify-end  w-10/12 h-32">
+            <div className="flex flex-col space-y-0.5 items-center justify-end  w-96  h-32">
               <p className="text-2xl font-semibold leading-10 text-justify">
                 App Name
               </p>
@@ -583,10 +586,10 @@ export const SimilarCard = <
           </div>
           <div className="inline-flex flex-col space-y-3 items-start justify-start">
             <img
-              className="w-10/12 h-56 rounded-lg"
+              className="w-96 h-56 rounded-lg"
               src="https://via.placeholder.com/355x225"
             />
-            <div className="flex flex-col space-y-0.5 items-center justify-end  w-10/12 h-32">
+            <div className="flex flex-col space-y-0.5 items-center justify-end  w-96  h-32">
               <p className="text-2xl font-semibold leading-10 text-justify">
                 App Name
               </p>
