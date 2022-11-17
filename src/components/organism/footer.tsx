@@ -29,8 +29,8 @@ export const Footer = <PROPS extends FooterProps>({}: PROPS): JSX.Element => {
             <div className="w-10 h-full bg-gray-300 rounded-full" />
           </div>
         </div>
-        <div className="inline-flex flex-wrap space-x-16 items-start justify-start">
-          <div className="inline-flex flex-col space-y-2.5 items-start justify-start">
+        <div className="grid sm:grid-cols-5 grid-cols-2 items-start justify-start">
+          <div className="inline-flex flex-col space-y-2.5 items-start justify-start px-14 mb-4">
             <p className="text-sm font-semibold text-gray-900">Title Header</p>
             <p className="text-sm text-gray-900">Subtext</p>
             <p className="text-sm text-gray-900">Subtext</p>
@@ -38,7 +38,7 @@ export const Footer = <PROPS extends FooterProps>({}: PROPS): JSX.Element => {
             <p className="text-sm text-gray-900">Subtext</p>
             <p className="text-sm text-gray-900">Subtext</p>
           </div>
-          <div className="inline-flex flex-col space-y-2.5 items-start justify-start">
+          <div className="inline-flex flex-col space-y-2.5 items-start justify-start px-14 mb-4">
             <p className="text-sm font-semibold text-gray-900">Title Header</p>
             <p className="text-sm text-gray-900">Subtext</p>
             <p className="text-sm text-gray-900">Subtext</p>
@@ -46,7 +46,7 @@ export const Footer = <PROPS extends FooterProps>({}: PROPS): JSX.Element => {
             <p className="text-sm text-gray-900">Subtext</p>
             <p className="text-sm text-gray-900">Subtext</p>
           </div>
-          <div className="inline-flex flex-col space-y-2.5 items-start justify-start">
+          <div className="inline-flex flex-col space-y-2.5 items-start justify-start px-14 mb-4">
             <p className="text-sm font-semibold text-gray-900">Title Header</p>
             <p className="text-sm text-gray-900">Subtext</p>
             <p className="text-sm text-gray-900">Subtext</p>
@@ -54,7 +54,7 @@ export const Footer = <PROPS extends FooterProps>({}: PROPS): JSX.Element => {
             <p className="text-sm text-gray-900">Subtext</p>
             <p className="text-sm text-gray-900">Subtext</p>
           </div>
-          <div className="inline-flex flex-col space-y-2.5 items-start justify-start">
+          <div className="inline-flex flex-col space-y-2.5 items-start justify-start px-14 mb-4">
             <p className="text-sm font-semibold text-gray-900">Title Header</p>
             <p className="text-sm text-gray-900">Subtext</p>
             <p className="text-sm text-gray-900">Subtext</p>
@@ -62,7 +62,7 @@ export const Footer = <PROPS extends FooterProps>({}: PROPS): JSX.Element => {
             <p className="text-sm text-gray-900">Subtext</p>
             <p className="text-sm text-gray-900">Subtext</p>
           </div>
-          <div className="inline-flex flex-col space-y-2.5 items-start justify-start">
+          <div className="inline-flex flex-col space-y-2.5 items-start justify-start px-14 mb-4">
             <p className="text-sm font-semibold text-gray-900">Title Header</p>
             <p className="text-sm text-gray-900">Subtext</p>
             <p className="text-sm text-gray-900">Subtext</p>
