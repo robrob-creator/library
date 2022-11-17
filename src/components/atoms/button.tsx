@@ -17,13 +17,13 @@ function getStylesBySize(size: Size) {
     case "xl":
       return "w-full px-8 py-3.5 leading-7 text-base ";
     case "lg":
-      return "w-48 px-8 py-3.5 leading-7 text-base ";
+      return "sm:w-48 w-full px-8 py-3.5 leading-7 text-base ";
     case "md":
-      return "h-12 w-48 px-8 py-3.5 leading-7 text-base ";
+      return "h-12 sm:w-48 w-full px-8 py-3.5 leading-7 text-base ";
     case "sm":
-      return "w-28 px-6 py-2 leading-normal text-sm ";
+      return "sm:w-28  w-full px-6 py-2 leading-normal text-sm ";
     default:
-      return "h-12 w-48 px-8 py-3.5 leading-7 text-base ";
+      return "h-12 sm:w-48 w-full px-8 py-3.5 leading-7 text-base ";
   }
 }
 

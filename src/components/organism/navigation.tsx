@@ -77,7 +77,7 @@ export const Tabs = <PROPS extends NavigationProps>({}: PROPS): JSX.Element => {
   return (
     <div>
       <div className="flex  py-8 sm:px-4 sm:w-full w-screen items-center sm:space-x-12  sm:justify-between ">
-        <div className="flex space-x-2 sm:relative absolute sm:w-22 w-18 items-center justify-start flex-1 px-3 py-2.5 bg-gray-100 border rounded-lg border-gray-600">
+        <div className="flex space-x-2 sm:relative absolute sm:w-22 left-4 w-18 items-center justify-start flex-1 px-3 py-2.5 bg-gray-100 border rounded-lg border-gray-600">
           <p className="flex-1 text-sm leading-tight text-gray-600">Popular</p>
           <div className="flex items-center justify-center  h-4 px-0.5 pt-1.5 pb-1">
             <svg
@@ -97,7 +97,7 @@ export const Tabs = <PROPS extends NavigationProps>({}: PROPS): JSX.Element => {
             </svg>
           </div>
         </div>
-        <div className="flex space-x-2.5 sm:visible invisible  sm:w-full w-18 h-full items-start overflow-x-auto">
+        <div className="flex space-x-2.5 sm:visible invisible  sm:w-96 w-18 lg:w-full h-full items-start overflow-x-auto">
           <div className="flex items-center justify-center h-full px-5 py-1 bg-gray-300 rounded-full">
             <p className="text-xs font-semibold tracking-wider leading-normal text-center">
               Discover
@@ -139,7 +139,7 @@ export const Tabs = <PROPS extends NavigationProps>({}: PROPS): JSX.Element => {
             </p>
           </div>
         </div>
-        <div className="flex sm:relative absolute space-x-2 items-center justify-center sm:w-24 sm:right-0 right-4 px-5 py-2.5 bg-gray-100 border rounded-lg border-gray-600">
+        <div className="flex sm:relative absolute space-x-2 items-center justify-center sm:w-24  right-4 px-5 py-2.5 bg-gray-100 border rounded-lg border-gray-600">
           <img
             className="w-6 h-6 rounded-lg"
             src="https://via.placeholder.com/24x24"
