@@ -16,17 +16,17 @@ export const Footer = <PROPS extends FooterProps>({}: PROPS): JSX.Element => {
   return (
     <div className="bg-gray-100 w-screen py-8 px-5">
       <div className="inline-flex flex-wrap w-full relative bg-gray-100  ">
-        <div className="inline-flex flex-col space-y-6 items-start justify-start sm:w-80 w-full h-44 ">
+        <div className="inline-flex px-8 flex-col space-y-6 items-start justify-start sm:w-80 w-full h-64 ">
           <BlueIsaacLogo />
           <Text className="w-full" size="sm" color="gray">
             Ut eu sem integer vitae justo eget magna fermentum iaculis eu non
             diam phasellus vestibulum.
           </Text>
-          <div className="inline-flex space-x-5 items-start justify-start">
-            <div className="w-10 h-full bg-gray-300 rounded-full" />
-            <div className="w-10 h-full bg-gray-300 rounded-full" />
-            <div className="w-10 h-full bg-gray-300 rounded-full" />
-            <div className="w-10 h-full bg-gray-300 rounded-full" />
+          <div className="inline-flex h-16 space-x-5 items-start py-8 justify-start">
+            <div className="w-10 h-10 bg-gray-400 rounded-full" />
+            <div className="w-10 h-10 bg-gray-400 rounded-full" />
+            <div className="w-10 h-10 bg-gray-400 rounded-full" />
+            <div className="w-10 h-10 bg-gray-400 rounded-full" />
           </div>
         </div>
         <div className="grid sm:grid-cols-5 grid-cols-2 items-start justify-start">
