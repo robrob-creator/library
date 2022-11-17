@@ -7,7 +7,7 @@ import {
   Search,
   UserAvatar,
 } from "../atoms/logo";
-import React from "react";
+import React, { useState } from "react";
 export type NavigationProps = {
   logo?: string;
   profileImage?: string;
@@ -20,6 +20,7 @@ export const NavigationBar = <PROPS extends NavigationProps>({
   rightElements,
   centerElements,
 }: PROPS): JSX.Element => {
+  const [showlist, setShowList] = useState(false);
   return (
     <nav className="flex items-center justify-between flex-wrap  py-3.5 pl-11 pr-14">
       <div className="flex items-center flex-shrink-0 text-white mr-6">
@@ -30,18 +31,41 @@ export const NavigationBar = <PROPS extends NavigationProps>({
         )}
       </div>
       <div className="block lg:hidden">
-        <button className="flex items-center px-3 py-2 border rounded text-gray-200 border-gray-400 hover:text-white hover:border-white">
-          <svg
-            className="fill-current h-3 w-3"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
+        {showlist ? (
+          <button
+            className="flex items-center px-3 py-2 border rounded text-gray-200 border-gray-400 hover:text-white hover:border-white"
+            onClick={() => setShowList(false)}
           >
-            <title>Menu</title>
-            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-          </svg>
-        </button>
+            {" "}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="fill-current h-3 w-3"
+            >
+              <path stroke="black" strokeWidth="2" d="M1 11L11 1"></path>
+              <path stroke="black" strokeWidth="2" d="M1 1L11 11"></path>
+            </svg>
+          </button>
+        ) : (
+          <button
+            className="flex items-center px-3 py-2 border rounded text-gray-200 border-gray-400 hover:text-white hover:border-white"
+            onClick={() => setShowList(true)}
+          >
+            <svg
+              className="fill-current h-3 w-3"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+          </button>
+        )}
       </div>
-      <div className="w-full block flex-grow lg:flex lg:items-center lg:justify-center lg:w-auto">
+      <div
+        className={`w-full ${
+          !showlist && "hidden"
+        } sm:block flex-grow lg:flex lg:items-center lg:justify-center lg:w-auto`}
+      >
         {centerElements && centerElements}
         <div>{rightElements && rightElements}</div>
       </div>
