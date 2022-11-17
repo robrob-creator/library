@@ -51,14 +51,11 @@ export const NavigationBar = <PROPS extends NavigationProps>({
 
 export const Tabs = <PROPS extends NavigationProps>({}: PROPS): JSX.Element => {
   return (
-    <div className="flex p-8 w-full items-center overflow-x-auto">
-      <div
-        className="inline-flex space-x-12 items-center justify-center "
-        style={{ width: "100%", height: 40 }}
-      >
-        <div className="flex space-x-2 items-center justify-start flex-1 px-3 py-2.5 bg-gray-100 border rounded-lg border-gray-600">
+    <div>
+      <div className="flex  py-8 sm:px-4 sm:w-full w-screen items-center sm:space-x-12  sm:justify-between ">
+        <div className="flex space-x-2 sm:relative absolute sm:w-22 w-18 items-center justify-start flex-1 px-3 py-2.5 bg-gray-100 border rounded-lg border-gray-600">
           <p className="flex-1 text-sm leading-tight text-gray-600">Popular</p>
-          <div className="flex items-center justify-center w-1/6 h-4 px-0.5 pt-1.5 pb-1">
+          <div className="flex items-center justify-center  h-4 px-0.5 pt-1.5 pb-1">
             <svg
               width="14"
               height="9"
@@ -76,7 +73,7 @@ export const Tabs = <PROPS extends NavigationProps>({}: PROPS): JSX.Element => {
             </svg>
           </div>
         </div>
-        <div className="flex space-x-2.5 items-start justify-start">
+        <div className="flex space-x-2.5 sm:visible invisible  sm:w-full w-18 h-full items-start overflow-x-auto">
           <div className="flex items-center justify-center h-full px-5 py-1 bg-gray-300 rounded-full">
             <p className="text-xs font-semibold tracking-wider leading-normal text-center">
               Discover
@@ -118,12 +115,54 @@ export const Tabs = <PROPS extends NavigationProps>({}: PROPS): JSX.Element => {
             </p>
           </div>
         </div>
-        <div className="flex space-x-2 items-center justify-center w-24 h-full px-5 py-2.5 bg-gray-100 border rounded-lg border-gray-600">
+        <div className="flex sm:relative absolute space-x-2 items-center justify-center sm:w-24 sm:right-0 right-4 px-5 py-2.5 bg-gray-100 border rounded-lg border-gray-600">
           <img
             className="w-6 h-6 rounded-lg"
             src="https://via.placeholder.com/24x24"
           />
           <p className="text-sm leading-tight text-gray-600">Filter</p>
+        </div>
+      </div>
+      <div className="flex space-x-2.5 sm:invisible visible sm:hidden sm:h-0 h4   w-96 overflow-x-auto">
+        <div className="flex items-center justify-center h-full px-5 py-1 bg-gray-300 rounded-full">
+          <p className="text-xs font-semibold tracking-wider leading-normal text-center">
+            Discover
+          </p>
+        </div>
+        <div className="flex items-center justify-center h-full px-5 py-1 border rounded-full border-gray-200">
+          <p className="text-xs tracking-wider leading-normal text-center text-gray-600">
+            Web
+          </p>
+        </div>
+        <div className="flex items-center justify-center h-full px-5 py-1 border rounded-full border-gray-200">
+          <p className="text-xs tracking-wider leading-normal text-center text-gray-600">
+            Mobile app
+          </p>
+        </div>
+        <div className="flex items-center justify-center h-full px-5 py-1 border rounded-full border-gray-200">
+          <p className="text-xs tracking-wider leading-normal text-center text-gray-600">
+            Smart Devices
+          </p>
+        </div>
+        <div className="flex items-center justify-center h-full px-5 py-1 border rounded-full border-gray-200">
+          <p className="text-xs tracking-wider leading-normal text-center text-gray-600">
+            IOT
+          </p>
+        </div>
+        <div className="flex items-center justify-center h-full px-5 py-1 border rounded-full border-gray-200">
+          <p className="text-xs tracking-wider leading-normal text-center text-gray-600">
+            Payments
+          </p>
+        </div>
+        <div className="flex items-center justify-center h-full px-5 py-1 border rounded-full border-gray-200">
+          <p className="text-xs tracking-wider leading-normal text-center text-gray-600">
+            Logistics
+          </p>
+        </div>
+        <div className="flex items-center justify-center h-full px-5 py-1 border rounded-full border-gray-200">
+          <p className="text-xs tracking-wider leading-normal text-center text-gray-600">
+            Systems
+          </p>
         </div>
       </div>
     </div>

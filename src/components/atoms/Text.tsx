@@ -17,7 +17,7 @@ export interface TextProps {
 function getHeaderBySize(type: Size) {
   switch (type) {
     case "xl":
-      return "text-5xl";
+      return "sm:text-5xl text-3xl";
     case "lg":
       return "text-4xl";
     case "md":
@@ -31,7 +31,7 @@ function getHeaderBySize(type: Size) {
 function getTextBySize(type: Size) {
   switch (type) {
     case "xl":
-      return "sm:text-xl text:base";
+      return "sm:text-xl text-sm";
     case "lg":
       return "text-lg";
     case "md":

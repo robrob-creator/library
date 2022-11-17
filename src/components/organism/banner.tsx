@@ -76,10 +76,10 @@ export const ProductBanner = <PROPS extends BannerProps>({
 export const Banner = <PROPS extends BannerProps>({}: PROPS): JSX.Element => {
   return (
     <div
-      className="flex justify-center py-44 bg-cover w-full"
+      className="flex justify-center sm:py-44 py-12 bg-cover w-full"
       style={{ backgroundImage: `url(${background})` }}
     >
-      <div className="sm:h-60 sm:w-7/12 inline-flex flex-col h-80 space-y-10 items-center justify-start">
+      <div className="sm:h-60 sm:w-7/12 inline-flex flex-col h-70 space-y-10 items-center justify-start">
         <div className="flex flex-col space-y-4 items-center justify-start text-center">
           <HeaderText size="xl" color="white">
             Welcome to ISAAC Marketplace!
@@ -90,26 +90,26 @@ export const Banner = <PROPS extends BannerProps>({}: PROPS): JSX.Element => {
           </Text>
         </div>
         <div
-          className="flex flex-col space-y-8 items-center justify-start"
-          style={{ width: "47%", height: 120 }}
+          className="flex flex-col space-y-8 sm:h-24 h-4 items-center justify-start"
+          style={{ width: "47%" }}
         >
           <div
-            className="inline-flex items-center justify-start py-10 pl-10 pr-5 bg-white rounded-full"
-            style={{ width: "140%", height: 60 }}
+            className="inline-flex items-center sm:h-full h-full justify-start sm:py-10 py-7 pl-10 pr-5 bg-white rounded-full"
+            style={{ width: "140%" }}
           >
             <div className="w-full flex space-x-4 items-center justify-start">
               <Search className="sm:w-1/12" />
               <input
                 type="search"
                 id="default-search"
-                className="block p-4 pl-10 w-full text-sm text-gray-900   dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block p-4 pl-10 w-full text-sm text-gray-900 sm:h-4  dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Search Mockups, Logos..."
                 required
               />
             </div>
           </div>
         </div>
-        <div className="w-full sm:inline-flex  h-8 space-x-4  items-center justify-start ">
+        <div className="w-full sm:inline-flex  h-8 space-x-4  items-center sm:justify-center justify-start">
           <p className="text-base leading-normal text-center text-white">
             Top searches
           </p>
