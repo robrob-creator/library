@@ -298,14 +298,8 @@ export const DescriptionCard = <
         <img className="w-full h-full mx-2" src={imageOne} />
         <img className="w-full h-full mx-2" src={imagetwo} />
       </div>
-      <div
-        className="flex justify-between pt-8 pb-16 "
-        style={{ height: "179px" }}
-      >
-        <p
-          className="text-lg w-screen leading-loose text-justify text-gray-900"
-          style={{ height: " 89px" }}
-        >
+      <div className="flex justify-between pt-8 pb-16 ">
+        <p className="text-lg w-screen leading-loose text-justify text-gray-900">
           Set up new stores quickly and easily with just an internet connection.
           Then use your Point of Sale everywhere, anytime. While an internet
           connection is required to start the Point of Sale, it will stay
@@ -344,10 +338,7 @@ export const WhatsNewCard = <
 >({}: PROPS): JSX.Element => {
   return (
     <div className="px-12 border-b-2 border-gray-200 py-10 ">
-      <div
-        className="inline-flex space-x-96 items-start justify-start pt-8 pb-16 w-screen"
-        style={{ height: 308 }}
-      >
+      <div className="inline-flex space-x-96 items-start justify-start pt-8 pb-16 w-screen">
         <p className="text-justify text-gray-900 ">
           What’s New
           <br />
@@ -389,7 +380,7 @@ export const InformationCard = <
         </p>
         <div
           className="inline-flex space-x-32 items-start justify-start absolute"
-          style={{ width: 1157, height: 316, left: 0, top: 87 }}
+          style={{ left: 0, top: 87 }}
         >
           <div className="inline-flex flex-col space-y-12 items-start justify-start">
             <div className="relative" style={{ width: 213, height: 72 }}>
@@ -519,10 +510,7 @@ export const MoreCard = <PROPS extends CardProps>({}: PROPS): JSX.Element => {
             </div>
           </div>
         </div>
-        <div
-          className="inline-flex space-x-96  items-start "
-          style={{ height: 40 }}
-        >
+        <div className="inline-flex space-x-96  items-start ">
           <div className="inline-flex space-x-2.5 items-center w-36 ">
             <p className="text-2xl font-medium leading-10 text-right text-blue-700">
               See All
@@ -539,17 +527,11 @@ export const SimilarCard = <
 >({}: PROPS): JSX.Element => {
   return (
     <div className="px-12 border-b-2 border-gray-200 py-10 overflow-x-auto">
-      <div
-        className="inline-flex flex-col text-left space-y-6 items-center w-screen justify-start"
-        style={{ height: 427 }}
-      >
+      <div className="inline-flex flex-col text-left space-y-6 items-center w-screen justify-start">
         <p className=" text-2xl font-semibold leading-10 text-justify text-gray-900">
           Similar Apps
         </p>
-        <div
-          className="inline-flex w-screen space-x-12 items-start justify-start"
-          style={{ height: 362 }}
-        >
+        <div className="inline-flex w-screen space-x-12 items-start justify-start">
           <div className="inline-flex flex-col space-y-3 items-start justify-start overflow-x-auto">
             <img
               className="w-96 h-56 rounded-lg"
