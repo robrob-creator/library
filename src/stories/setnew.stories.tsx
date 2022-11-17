@@ -59,17 +59,7 @@ const Template: Story<FormProps> = (args) => (
               type="password"
             />
           </div>
-          <div className="inline-flex space-x-0.5 items-center justify-start relative">
-            <p className="text-xs tracking-wider">
-              Password should have at least 8 characters
-              <br />
-              Password should have at least 1 Uppercase letter
-              <br />
-              Password should have at least 1 Lowercase letter
-              <br />
-              Password should have at least 1 special character
-            </p>
-          </div>
+          <div className="inline-flex space-x-0.5 items-center justify-start relative"></div>
           <InputField
             placeholder="Confrim password"
             className="w-full "

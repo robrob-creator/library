@@ -5,6 +5,7 @@ import {
   Form,
   HeaderText,
   InputField,
+  BlueIsaacLogo,
   Button,
   Checkbox,
 } from "../components";
@@ -29,10 +30,24 @@ export default meta;
 const Template: Story<LayoutProps> = (args) => (
   <Layout>
     <div>
-      <HeaderText text="Sign In" color="black" className="mt-10" />
-      <Form className="space-y-4 mt-7">
-        <div className="relative z-0 w-full mb-5">
-          <InputField placeholder="Email" className="my-12" name="email" />
+      <div className="sm:invisible flex flex-col justify-center items-center">
+        <BlueIsaacLogo className="sm:h-0" />
+      </div>
+      <HeaderText
+        text="Sign In"
+        fontStyle="font-medium"
+        color="black"
+        size="md"
+        className="mt-10 "
+      />
+      <Form bordered={false}>
+        <div className="sm:w-full w-80  gap-2">
+          <InputField
+            name="email"
+            placeholder="Email"
+            type="text"
+            className="my-4"
+          />
           <InputField
             placeholder="Password"
             className="my-6"
@@ -45,18 +60,19 @@ const Template: Story<LayoutProps> = (args) => (
         <Checkbox label="Remember me?" />
         <a className="flex text-blue-700 cursor-pointer">forgot password?</a>
       </div>
-      <div className="flex items-center mt-16 justify-between ">
-        <div className="w-48">
-          <Button
-            type="primary"
-            text="Sign In"
-            className="mt-8"
-            onClick={() => {}}
-          />
-        </div>
+      <div className="flex flex-wrap items-center mt-16 xl:justify-between ">
+        <Button
+          type="primary"
+          text="Sign In"
+          className="mt-8"
+          onClick={() => {}}
+        />
+
         <div className="flex mt-8">
           Not a member yet ?{" "}
-          <a className="text-blue-700 ml-2 cursor-pointer">Sign Up</a>
+          <a className="text-blue-700 ml-2 cursor-pointer" onClick={() => {}}>
+            Sign Up
+          </a>
         </div>
       </div>
     </div>

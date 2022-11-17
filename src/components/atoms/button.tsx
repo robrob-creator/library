@@ -19,7 +19,7 @@ function getStylesBySize(size: Size) {
     case "lg":
       return "sm:w-48 w-full px-8 py-3.5 leading-7 text-base ";
     case "md":
-      return "h-12 sm:w-48 w-full px-8 py-3.5 leading-7 text-base ";
+      return "h-12 sm:w-48 w-80 px-8 py-3.5 leading-7 text-base ";
     case "sm":
       return "sm:w-28  w-full px-6 py-2 leading-normal text-sm ";
     default:
