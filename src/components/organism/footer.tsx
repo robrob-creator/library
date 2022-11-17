@@ -14,8 +14,8 @@ export type FooterProps = {
 
 export const Footer = <PROPS extends FooterProps>({}: PROPS): JSX.Element => {
   return (
-    <div className="bg-gray-100 w-screen py-8 px-5">
-      <div className="inline-flex flex-wrap w-full relative bg-gray-100  ">
+    <div className="bg-gray-100 w-screen py-8 px-5 ">
+      <div className="inline-flex flex-wrap w-full relative bg-gray-100  sm:h-96">
         <div className="inline-flex px-8 flex-col space-y-6 items-start justify-start sm:w-80 w-full h-64 ">
           <BlueIsaacLogo />
           <Text className="w-full" size="sm" color="gray">
