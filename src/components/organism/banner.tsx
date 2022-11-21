@@ -1,18 +1,38 @@
 /* eslint-disable prettier/prettier */
 import { HeaderText, Text } from "../atoms/Text";
 import { SearchField } from "../atoms/inputs";
-import { Search } from "../atoms/logo";
+import { Type } from "../types";
 import background from "../../../assets/images/bg-full.png";
 import dummyProduct from "../../../assets/images/dummyProduct.png";
 import React, { useState } from "react";
 
+//banner props
 export type BannerProps = {
   imgURL?: string;
   title?: string;
   description?: string;
   extra?: React.ReactNode;
 };
-
+//banner elements props
+export type BannerElementsProps = {
+  type?: Type;
+};
+//getting styles by type ex. secondary, primary, subtle,text
+function getStylesByType(type: Type) {
+  switch (type) {
+    case "primary":
+      return " inline-flex items-center justify-center h-8 px-5 bg-purple-400 bg-opacity-25 border rounded-full border-white font-light text-center text-white ";
+    case "secondary":
+      return " inline-flex items-center justify-center h-8 px-5 bg-purple-400 bg-opacity-25 border rounded-full border-white text-center text-white ";
+    case "subtle":
+      return " inline-flex items-center justify-center h-8 px-5 bg-purple-400 bg-opacity-25 border rounded-full border-white text-center text-white ";
+    case "text":
+      return " inline-flex items-center justify-center h-8 px-5 font-semibold text-center text-blue-800 ";
+    default:
+      return " inline-flex items-center justify-center h-8 px-5 bg-purple-400 bg-opacity-25 border rounded-full border-white text-center text-white ";
+  }
+}
+//product banner component
 export const ProductBanner = <PROPS extends BannerProps>({
   title,
   description,
@@ -73,10 +93,13 @@ export const ProductBanner = <PROPS extends BannerProps>({
     </div>
   );
 };
-
-export const Banner = <PROPS extends BannerProps>({}: PROPS): JSX.Element => {
+//common banner
+export const Banner = ({}: BannerElementsProps): JSX.Element => {
   const input = React.useRef<HTMLInputElement>(null);
   const [searchMode, setSearchMode] = useState(String);
+  const stylesByType = getStylesByType(!searchMode ? "secondary" : "text");
+
+  //useEffect to trigger search mode
   React.useEffect(() => {
     if (input.current) {
       console.log(input.current);
@@ -106,6 +129,8 @@ export const Banner = <PROPS extends BannerProps>({}: PROPS): JSX.Element => {
             setSearchMode(e.currentTarget.value);
           }}
         />
+        {searchMode && <div className="flex items-center">Results for</div>}
+        <HeaderText>{searchMode}</HeaderText>
         <div className="w-full sm:inline-flex  h-8 space-x-4  items-center sm:justify-center justify-start">
           <p
             className={`text-base leading-normal text-center ${
@@ -116,51 +141,11 @@ export const Banner = <PROPS extends BannerProps>({}: PROPS): JSX.Element => {
           </p>
           <div className="flex items-center">
             <div className="h-8 w-80 sm:w-auto  flex sm:space-x-2.5 items-start justify-start sm:overflow-x-visible overflow-x-scroll">
-              <div className=" inline-flex items-center justify-center h-8 px-5 bg-purple-400 bg-opacity-25 border rounded-full border-white">
-                <Text
-                  color="white"
-                  size="sm"
-                  className="font-light text-center"
-                >
-                  Landing page
-                </Text>
-              </div>
-              <div className="flex items-center justify-center h-full px-5 bg-purple-400 bg-opacity-25 border rounded-full border-white">
-                <Text
-                  color="white"
-                  size="sm"
-                  className="font-light text-center"
-                >
-                  ios
-                </Text>
-              </div>
-              <div className="flex items-center justify-center h-full px-5 bg-purple-400 bg-opacity-25 border rounded-full border-white">
-                <Text
-                  color="white"
-                  size="sm"
-                  className="font-light text-center"
-                >
-                  food
-                </Text>
-              </div>
-              <div className="flex items-center justify-center h-full px-5 bg-purple-400 bg-opacity-25 border rounded-full border-white">
-                <Text
-                  color="white"
-                  size="sm"
-                  className="font-light text-center"
-                >
-                  POS
-                </Text>
-              </div>
-              <div className="flex items-center justify-center h-full px-5 bg-purple-400 bg-opacity-25 border rounded-full border-white">
-                <Text
-                  color="white"
-                  size="sm"
-                  className="font-light text-center"
-                >
-                  Cashier
-                </Text>
-              </div>
+              <div className={`${stylesByType}`}>Landing page</div>
+              <div className={`${stylesByType}`}>ios</div>
+              <div className={`${stylesByType}`}>food</div>
+              <div className={`${stylesByType}`}>POS</div>
+              <div className={`${stylesByType}`}>Cashier</div>
             </div>
           </div>
         </div>

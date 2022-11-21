@@ -91,7 +91,7 @@ const Template: Story<FormProps> = (args) => (
     <div className="grid content-center">
       <Tabs />
       {/**third */}
-      <div className="">
+      <div className="mt-8">
         {data.map((item, index) => {
           return (
             <Card
