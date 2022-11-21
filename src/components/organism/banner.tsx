@@ -1,9 +1,10 @@
 /* eslint-disable prettier/prettier */
 import { HeaderText, Text } from "../atoms/Text";
+import { SearchField } from "../atoms/inputs";
 import { Search } from "../atoms/logo";
 import background from "../../../assets/images/bg-full.png";
 import dummyProduct from "../../../assets/images/dummyProduct.png";
-import React from "react";
+import React, { useState } from "react";
 
 export type BannerProps = {
   imgURL?: string;
@@ -74,44 +75,44 @@ export const ProductBanner = <PROPS extends BannerProps>({
 };
 
 export const Banner = <PROPS extends BannerProps>({}: PROPS): JSX.Element => {
+  const input = React.useRef<HTMLInputElement>(null);
+  const [searchMode, setSearchMode] = useState(String);
+  React.useEffect(() => {
+    if (input.current) {
+      console.log(input.current);
+      setSearchMode(input.current.value);
+    }
+  }, [input]);
   return (
     <div
-      className="flex justify-center sm:py-44 py-12 bg-cover w-full"
-      style={{ backgroundImage: `url(${background})` }}
+      className="flex justify-center sm:py-44 py-12 bg-cover bg-gray-200 w-full"
+      style={{ backgroundImage: `url(${!searchMode && background})` }}
     >
       <div className="sm:h-60 sm:w-7/12 inline-flex flex-col h-70 space-y-10 items-center justify-start">
-        <div className="flex flex-col space-y-4 items-center justify-start text-center">
-          <HeaderText size="xl" color="white">
-            Welcome to ISAAC Marketplace!
-          </HeaderText>
-          <Text size="xl" className="text-center">
-            Ut eu sem integer vitae justo eget magna fermentum iaculis eu non
-            diam phasellus vestibulum lorem sed risus ultricies tristique
-          </Text>
-        </div>
-        <div
-          className="flex flex-col space-y-8 sm:h-24 h-4 items-center justify-start"
-          style={{ width: "47%" }}
-        >
-          <div
-            className="inline-flex items-center sm:h-full h-full justify-start sm:py-10 py-7 pl-10 pr-5 bg-white rounded-full"
-            style={{ width: "140%" }}
-          >
-            <div className="w-full flex space-x-4 items-center justify-start">
-              <Search className="sm:w-1/12" />
-              <input
-                type="search"
-                id="default-search"
-                className="block p-4 pl-10 w-full text-sm text-gray-900 sm:h-4  dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Search Mockups, Logos..."
-                required
-              />
-            </div>
+        {!searchMode && (
+          <div className="flex flex-col space-y-4 items-center justify-start text-center">
+            <HeaderText size="xl" color="white">
+              Welcome to ISAAC Marketplace
+            </HeaderText>
+            <Text size="xl" className="text-center">
+              Ut eu sem integer vitae justo eget magna fermentum iaculis eu non
+              diam phasellus vestibulum lorem sed risus ultricies tristique
+            </Text>
           </div>
-        </div>
+        )}
+        <SearchField
+          width={"700px"}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            setSearchMode(e.currentTarget.value);
+          }}
+        />
         <div className="w-full sm:inline-flex  h-8 space-x-4  items-center sm:justify-center justify-start">
-          <p className="text-base leading-normal text-center text-white">
-            Top searches
+          <p
+            className={`text-base leading-normal text-center ${
+              !setSearchMode ? "text-white" : "text-black"
+            }`}
+          >
+            {!searchMode ? "Top searches" : "Related"}
           </p>
           <div className="flex items-center">
             <div className="h-8 w-80 sm:w-auto  flex sm:space-x-2.5 items-start justify-start sm:overflow-x-visible overflow-x-scroll">

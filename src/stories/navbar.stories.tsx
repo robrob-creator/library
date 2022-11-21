@@ -1,10 +1,10 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
-import { Modal, ModalProps } from "../components";
+import { NavigationBar, NavigationProps } from "../components";
 
 const meta: Meta = {
-  title: "Modal",
-  component: Modal,
+  title: "Navbar",
+  component: NavigationBar,
   argTypes: {
     children: {
       control: {
@@ -19,10 +19,17 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<ModalProps> = (args) => (
-  <Modal {...args}>
-    <p className="bg-white h-8">Hello</p>
-  </Modal>
+const Template: Story<NavigationProps> = (args) => (
+  <NavigationBar
+    centerElements={<p>hellos</p>}
+    rightElements={
+      <div>
+        <p>hello</p>
+        <p>hello</p>
+      </div>
+    }
+    {...args}
+  />
 );
 
 export const Default = Template.bind({});

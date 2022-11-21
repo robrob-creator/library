@@ -4,6 +4,7 @@ import { Size } from "../types";
 import logo from "../../../assets/images/blue-logo.png";
 import isaacLogo from "../../../assets/images/isaacLogo.svg";
 import avatar from "../../../assets/images/avatar.svg";
+import filter from "../../../assets/images/filter.svg";
 
 export interface LogoProps {
   size?: Size;
@@ -199,4 +200,55 @@ export const CogIcon = ({
 };
 export const UserAvatar = ({ size, className }: LogoProps) => {
   return <img className={`${className}`} src={avatar} />;
+};
+
+export const FilterIcon = ({
+  size = "sm",
+  className,
+  color = "#5C5C5C",
+  width = "19",
+  height = "14",
+}: LogoProps) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 19 14"
+      className={`${className}`}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M0.5 1C0.5 0.447715 0.947715 0 1.5 0H17.5C18.0523 0 18.5 0.447715 18.5 1C18.5 1.55228 18.0523 2 17.5 2H1.5C0.947715 2 0.5 1.55228 0.5 1ZM1.5 7C1.5 6.44772 1.94772 6 2.5 6H16.5C17.0523 6 17.5 6.44772 17.5 7C17.5 7.55228 17.0523 8 16.5 8H2.5C1.94772 8 1.5 7.55228 1.5 7ZM2.5 13C2.5 12.4477 2.94772 12 3.5 12H15.5C16.0523 12 16.5 12.4477 16.5 13C16.5 13.5523 16.0523 14 15.5 14H3.5C2.94772 14 2.5 13.5523 2.5 13Z"
+        fill={color}
+      />
+    </svg>
+  );
+};
+export const DownloadIcon = ({
+  size = "sm",
+  className,
+  color = "#5C5C5C",
+  width = "19",
+  height = "14",
+}: LogoProps) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      className={className}
+      viewBox="0 0 10 10"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M1.5 7.5C1.5 8.05228 1.94772 8.5 2.5 8.5L7.5 8.5C8.05228 8.5 8.5 8.05228 8.5 7.5L8.5 7C8.5 6.72386 8.72386 6.5 9 6.5C9.27614 6.5 9.5 6.72386 9.5 7L9.5 7.5C9.5 8.60457 8.60457 9.5 7.5 9.5L2.5 9.5C1.39543 9.5 0.5 8.60457 0.5 7.5L0.5 7C0.5 6.72386 0.723857 6.5 1 6.5C1.27614 6.5 1.5 6.72386 1.5 7L1.5 7.5ZM2.64645 4.64645C2.84171 4.45118 3.15829 4.45118 3.35355 4.64645L4.5 5.79289L4.5 1C4.5 0.723858 4.72386 0.5 5 0.5C5.27614 0.5 5.5 0.723858 5.5 1L5.5 5.79289L6.64645 4.64645C6.84171 4.45118 7.15829 4.45118 7.35355 4.64645C7.54882 4.84171 7.54882 5.15829 7.35355 5.35355L5.35355 7.35355C5.15829 7.54882 4.84171 7.54882 4.64645 7.35355L2.64645 5.35355C2.45118 5.15829 2.45118 4.84171 2.64645 4.64645Z"
+        fill={color}
+      />
+    </svg>
+  );
 };

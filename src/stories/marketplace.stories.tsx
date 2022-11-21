@@ -91,7 +91,7 @@ const Template: Story<FormProps> = (args) => (
     <div className="grid content-center">
       <Tabs />
       {/**third */}
-      <div className="lg:grid lg:gap-2 grid-cols-2 lg:grid-cols-4 mx-2 ">
+      <div className="flex mx-2 flex-wrap">
         {data.map((item, index) => {
           return (
             <Card
