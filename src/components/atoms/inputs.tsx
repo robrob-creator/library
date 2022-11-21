@@ -8,7 +8,7 @@ export interface InputProps {
   type?: string;
   name?: string;
   errorMessage?: string;
-  width: String;
+  width?: String;
   placeholder?: string;
   size?: Size;
   style?: object;
