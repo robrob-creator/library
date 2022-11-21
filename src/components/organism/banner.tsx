@@ -109,7 +109,7 @@ export const Banner = <PROPS extends BannerProps>({}: PROPS): JSX.Element => {
         <div className="w-full sm:inline-flex  h-8 space-x-4  items-center sm:justify-center justify-start">
           <p
             className={`text-base leading-normal text-center ${
-              !setSearchMode ? "text-white" : "text-black"
+              !searchMode && "text-white"
             }`}
           >
             {!searchMode ? "Top searches" : "Related"}

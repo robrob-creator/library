@@ -11,6 +11,7 @@ export type CardProps = {
   downloads?: string;
   rating?: string;
   platforms?: { name: string; icon: string }[];
+  className?: string;
   stacks?: { name: string }[];
   onClick?: () => void;
 };
@@ -22,17 +23,21 @@ export const Card = <PROPS extends CardProps>({
   rating,
   platforms,
   stacks,
+  className,
   onClick,
 }: PROPS): JSX.Element => {
   return (
     <div
-      className="inline-flex lg:m-4 flex-col justify-end lg:w-64 md:w-38 md:mx-4  h-72 pl-0.5 pb-2"
+      className={`${className} inline-flex lg:mt-4 flex-col w-1/2 px-4 justify-end lg:w-64 md:w-1/3 md:mx-4 lg:h-64 h-60 pl-0.5 pb-2`}
       onClick={onClick}
     >
-      <img className=" sm:w-64 w-42 sm:h-48 h-28 rounded-2xl" src={imgUrl} />
+      <img
+        className=" sm:w-64 w-full sm:h-48 h-full rounded-2xl"
+        src={imgUrl}
+      />
 
-      <div className="inline-flex space-x-8 items-center justify-start">
-        <p className="w-full lg:w-36 h-6 text-sm font-semibold leading-normal">
+      <div className="inline-flex w-full space-x-8 items-center justify-start">
+        <p className=" lg:w-36 h-6 text-sm font-semibold leading-normal">
           {title}
         </p>
         <div className="flex space-x-2.5 items-start justify-start">

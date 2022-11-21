@@ -91,11 +91,12 @@ const Template: Story<FormProps> = (args) => (
     <div className="grid content-center">
       <Tabs />
       {/**third */}
-      <div className="flex mx-2 flex-wrap">
+      <div className="flex flex-wrap mt-8 lg:m-0 md:m-0 mr-8">
         {data.map((item, index) => {
           return (
             <Card
               title="eCommerce"
+              className="mb-4"
               downloads="4k"
               rating="4.5"
               stacks={[{ name: "Android" }]}
@@ -110,16 +111,18 @@ const Template: Story<FormProps> = (args) => (
       </div>
       {/**fourth */}
       <div
-        className="grid justify-center mt-8 mb-14
+        className="flex justify-center mt-8 mb-14
       "
       >
-        <div className="inline-flex space-x-20 items-center justify-center">
-          <div className="flex items-center justify-center w-56 px-5 py-2 bg-blue-700 rounded-lg">
+        <div className="sm:inline-flex  block sm:space-x-20 items-center justify-center">
+          <div className="flex items-center justify-center sm:w-56 w-full h-8 px-5 py-2 bg-blue-700 rounded-lg">
             <p className="text-xs font-semibold leading-snug text-center text-gray-50">
               Sign up to view more
             </p>
           </div>
-          <p className="text-sm leading-tight">Already a member? Sign In</p>
+          <p className="text-sm text-center leading-tight">
+            Already a member? Sign In
+          </p>
         </div>
       </div>
       {/**end offourth */}
