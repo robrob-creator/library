@@ -491,10 +491,10 @@ export const InformationCard = <
 };
 export const MoreCard = <PROPS extends CardProps>({}: PROPS): JSX.Element => {
   return (
-    <div className="px-12 border-b-2 border-gray-200 py-10 bg-gray-300 w-screen">
+    <div className="p-4 sm:px-12 border-b-2 border-gray-200 py-10 bg-gray-300 w-screen">
       <div className="flex justify-between">
         <div>
-          <p className="sm:text-2xl text-xl font-semibold leading-10 text-justify text-gray-900">
+          <p className="sm:text-2xl text-base font-semibold leading-10 text-justify text-gray-900">
             More by Project Moonshoot Inc.
           </p>
           <div className="inline-flex space-x-8 items-center justify-end w-80 h-36">
@@ -515,11 +515,11 @@ export const MoreCard = <PROPS extends CardProps>({}: PROPS): JSX.Element => {
           </div>
         </div>
         <div className="inline-flex space-x-96  items-start ">
-          <div className="inline-flex space-x-2.5 items-center w-36 ">
-            <p className="sm:text-2xl text-xl font-medium leading-10 text-right text-blue-700">
+          <div className="inline-flex space-x-2.5 items-center sm:w-36 w-28 ">
+            <p className="sm:text-2xl text-base font-medium leading-10 text-right text-blue-700">
               See All
             </p>
-            <ArrowStrokeDown />
+            <ArrowStrokeDown width="2px" />
           </div>
         </div>
       </div>
@@ -530,13 +530,13 @@ export const SimilarCard = <
   PROPS extends CardProps
 >({}: PROPS): JSX.Element => {
   return (
-    <div className="px-12 border-b-2 border-gray-200 py-10 overflow-x-auto">
-      <div className="inline-flex flex-col text-left space-y-6 items-center w-screen justify-start">
-        <p className=" text-2xl font-semibold leading-10 text-justify text-gray-900">
+    <div className="px-4 sm:px-12 border-b-2 border-gray-200 py-10 ">
+      <div className="text-left space-y-6 w-screen ">
+        <p className=" text-2xl font-semibold leading-10 text-left text-gray-900">
           Similar Apps
         </p>
-        <div className="inline-flex w-screen space-x-12 items-start justify-start">
-          <div className="inline-flex flex-col space-y-3 items-start justify-start overflow-x-auto">
+        <div className="inline-flex w-screen space-x-12 items-start justify-start overflow-x-auto">
+          <div className="inline-flex flex-col space-y-3 items-start justify-start ">
             <img
               className="w-96 h-56 rounded-lg"
               src="https://via.placeholder.com/355x225"
