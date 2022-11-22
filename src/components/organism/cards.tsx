@@ -284,9 +284,9 @@ export const DescriptionCard = <
 >({}: PROPS): JSX.Element => {
   return (
     <div className="px-6 sm:px-12 border-b-2 border-gray-200 py-10 w-screen">
-      <div className="grid sm:grid-cols-2 gap-2 ">
-        <img className="w-full h-full mx-2" src={imageOne} />
-        <img className="w-full h-full mx-2" src={imagetwo} />
+      <div className="sm:grid sm:grid-cols-2 gap-2 flex overflow-x-auto">
+        <img className="sm:w-full w-96 h-full mx-2" src={imageOne} />
+        <img className="sm:w-full w-96 h-full mx-2" src={imagetwo} />
       </div>
       <div className="flex justify-between sm:flex-nowrap flex-wrap pt-8 pb-16 ">
         <p className="text-lg w-screen leading-loose text-justify text-gray-900">
