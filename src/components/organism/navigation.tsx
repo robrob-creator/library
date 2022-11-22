@@ -2,11 +2,10 @@
 /* eslint-disable no-empty-pattern */
 /* eslint-disable prettier/prettier */
 import {
-  ArrowStrokeDown,
   BlueIsaacLogo,
-  Search,
   FilterIcon,
   UserAvatar,
+  ArrowStrokeDown,
 } from "../atoms/logo";
 import React, { useState } from "react";
 export type NavigationProps = {

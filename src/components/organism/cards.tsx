@@ -31,7 +31,10 @@ export const Card = <PROPS extends CardProps>({
       className={`${className} inline-flex lg:mt-4 flex-col w-52 px-4  justify-end lg:w-72 md:w-80 md:h-72 lg:h-72 h-64 pl-0.5 pb-2`}
       onClick={onClick}
     >
-      <img className=" sm:w-80 w-52 sm:h-72 h-64 rounded-2xl" src={imgUrl} />
+      <img
+        className=" sm:w-80 w-52 sm:h-72 h-64 rounded-2xl cover "
+        src={imgUrl}
+      />
 
       <div className="inline-flex w-full space-x-8 items-center justify-start">
         <p className=" lg:w-36 h-6 text-sm font-semibold leading-normal">
@@ -280,23 +283,23 @@ export const DescriptionCard = <
   PROPS extends CardProps
 >({}: PROPS): JSX.Element => {
   return (
-    <div className="px-12 border-b-2 border-gray-200 py-10 w-screen">
+    <div className="px-6 sm:px-12 border-b-2 border-gray-200 py-10 w-screen">
       <div className="grid sm:grid-cols-2 gap-2 ">
         <img className="w-full h-full mx-2" src={imageOne} />
         <img className="w-full h-full mx-2" src={imagetwo} />
       </div>
-      <div className="flex justify-between pt-8 pb-16 ">
+      <div className="flex justify-between sm:flex-nowrap flex-wrap pt-8 pb-16 ">
         <p className="text-lg w-screen leading-loose text-justify text-gray-900">
           Set up new stores quickly and easily with just an internet connection.
           Then use your Point of Sale everywhere, anytime. While an internet
           connection is required to start the Point of Sale, it will stay
           operational even after complete disconnection.
         </p>
-        <div className="inline-flex flex-col w-1/3 space-y-1.5 items-end justify-start">
+        <div className="sm:inline-flex sm:flex-col sm:w-1/3 sm:space-y-1.5 sm:items-end sm:justify-start flex w-full justify-between">
           <p className="text-lg font-medium text-justify text-blue-700">
             Project Moonshot Inc.
           </p>
-          <div className="inline-flex space-x-2.5 items-center justify-center">
+          <div className="ml-20 inline-flex space-x-2.5 items-center justify-center">
             <p className="text-xl font-medium text-justify text-gray-700">
               Support
             </p>
@@ -324,28 +327,42 @@ export const WhatsNewCard = <
   PROPS extends CardProps
 >({}: PROPS): JSX.Element => {
   return (
-    <div className="px-12 border-b-2 border-gray-200 py-10 ">
-      <div className="inline-flex space-x-96 items-start justify-start pt-8 pb-16 w-screen">
-        <p className="text-justify text-gray-900 ">
-          What’s New
+    <div className="px-4 sm:px-12 border-b-2 border-gray-200 py-4 w-screen">
+      <div className="sm:inline-flex flex w-full justify-between flex-wrap s sm:items-start  pt-8 pb-16">
+        <div className="sm:text-justify text-gray-900 ">
+          <span className="font-bold text-2xl">What’s New</span>
+          <br /> <br />
+          <span className="text-lg">Updates:</span>
           <br />
-          Updates:
-          <br />
-          Set up new stores quickly and easily with just an internet connection.
-          <br />
-          Set up new stores quickly and easily with just an internet connection.
-          <br />
-          Set up new stores quickly and easily with just an internet connection.
-          <br />
-          Set up new stores quickly and easily with just an internet connection.
-        </p>
-        <div className="inline-flex w-1/3 flex-col space-y-1.5 items-end justify-start">
+          <ul className="ml-10 list-disc">
+            <li className="text-lg">
+              Set up new stores quickly and easily with just an internet
+              connection.
+            </li>
+
+            <li className="text-lg">
+              Set up new stores quickly and easily with just an internet
+              connection.
+            </li>
+
+            <li className="text-lg">
+              Set up new stores quickly and easily with just an internet
+              connection.
+            </li>
+
+            <li className="text-lg">
+              Set up new stores quickly and easily with just an internet
+              connection.
+            </li>
+          </ul>
+        </div>
+        <div className="sm:inline-flex sm:w-1/3 w-full sm:flex-col sm:space-y-1.5 mt-8 sm:items-end sm:justify-start flex justify-between">
           <p className="text-lg font-medium text-right text-blue-700">
             Version History
           </p>
           <p className="text-lg font-medium text-right text-gray-600">
             1w ago
-            <br />
+            <br className="sm:inline hidden" />
             Version 7.1.1
           </p>
         </div>
@@ -357,110 +374,110 @@ export const InformationCard = <
   PROPS extends CardProps
 >({}: PROPS): JSX.Element => {
   return (
-    <div className="px-12 border-b-2 border-gray-200 py-10">
-      <div className="relative w-screen" style={{ height: 507 }}>
+    <div className="px-6 sm:px-12 border-b-2 border-gray-200 py-10">
+      <div className="relative w-screen ">
         <p
-          className="absolute text-2xl font-semibold leading-10 text-justify text-gray-900"
+          className=" text-2xl font-semibold leading-10 text-justify text-gray-900"
           style={{ left: 0, top: 30 }}
         >
           Information
         </p>
         <div
-          className="inline-flex space-x-32 items-start justify-start absolute"
+          className="sm:inline-flex flex flex-wrap sm:space-x-32 items-start justify-between sm:w-11/12 mr-14 "
           style={{ left: 0, top: 87 }}
         >
           <div className="inline-flex flex-col space-y-12 items-start justify-start">
-            <div className="relative" style={{ width: 213, height: 72 }}>
-              <p className="absolute left-0 top-0 text-xl leading-10 text-justify text-gray-600">
+            <div className="relative">
+              <p className="sm:text-xl text-base leading-10 text-justify text-gray-600">
                 Developer
               </p>
-              <p className="absolute left-0 bottom-0 text-xl font-medium leading-10 text-justify text-gray-900">
+              <p className="sm:text-xl text-base font-medium leading-10 text-justify text-gray-900">
                 Project Moonshot Inc.
               </p>
             </div>
-            <div className="relative" style={{ width: 171, height: 72 }}>
-              <p className="absolute left-0 top-0 text-xl leading-10 text-justify text-gray-600">
+            <div className="relative">
+              <p className="sm:text-xl text-base leading-10 text-justify text-gray-600">
                 Compatibility
               </p>
-              <p className="absolute left-0 bottom-0 text-xl font-medium leading-10 text-justify text-gray-900">
+              <p className="sm:text-xl text-base font-medium leading-10 text-justify text-gray-900">
                 Windows, MacOS
               </p>
             </div>
-            <div className="relative" style={{ width: 234, height: 72 }}>
-              <p className="absolute left-0 top-0 text-xl leading-10 text-justify text-gray-600">
+            <div className="relative">
+              <p className="sm:text-xl text-base leading-10 text-justify text-gray-600">
                 Copyright
               </p>
-              <p className="absolute left-0 bottom-0 text-xl leading-10 text-justify text-gray-900">
+              <p className="sm:text-xl text-base font-medium leading-10 text-justify text-gray-900">
                 © Project Moonshot Inc.
               </p>
             </div>
           </div>
           <div className="inline-flex flex-col space-y-12 items-start justify-start">
-            <div className="relative" style={{ width: 89, height: 72 }}>
-              <p className="absolute left-0 top-0 text-xl leading-10 text-justify text-gray-600">
+            <div className="relative">
+              <p className="sm:text-xl text-base leading-10 text-justify text-gray-600">
                 Size
               </p>
-              <p className="absolute left-0 bottom-0 text-xl font-medium leading-10 text-justify text-gray-900">
+              <p className="sm:text-xl text-base font-medium leading-10 text-justify text-gray-900">
                 235.5 MB
               </p>
             </div>
-            <div className="relative" style={{ width: 192, height: 72 }}>
-              <p className="absolute left-0 top-0 text-xl leading-10 text-justify text-gray-600">
+            <div className="relative">
+              <p className="sm:text-xl text-base leading-10 text-justify text-gray-600">
                 Language
               </p>
-              <p className="absolute left-0 bottom-0 text-xl font-medium leading-10 text-justify text-gray-900">
+              <p className="sm:text-xl text-base font-medium leading-10 text-justify text-gray-900">
                 English and 4 more
               </p>
             </div>
-            <div className="relative" style={{ width: 123, height: 72 }}>
-              <p className="absolute left-0 top-0 text-xl leading-10 text-justify text-gray-600">
+            <div className="relative">
+              <p className="sm:text-xl text-base leading-10 text-justify text-gray-600">
                 Category
               </p>
-              <p className="absolute left-0 bottom-0 text-xl font-semibold leading-10 text-justify text-gray-900">
+              <p className="sm:text-xl text-base font-medium leading-10 text-justify text-gray-900">
                 Point of Sale
               </p>
             </div>
           </div>
           <div className="inline-flex flex-col space-y-12 items-start justify-start">
-            <div className="relative" style={{ width: 64, height: 72 }}>
-              <p className="absolute left-0 top-0 text-xl leading-10 text-justify text-gray-600">
+            <div className="relative">
+              <p className="sm:text-xl text-base leading-10 text-justify text-gray-600">
                 Rating
               </p>
-              <p className="absolute left-0 bottom-0 text-xl font-medium leading-10 text-justify text-gray-900">
+              <p className="sm:text-xl text-base font-medium leading-10 text-justify text-gray-900">
                 4.5
               </p>
             </div>
-            <div className="relative" style={{ width: 165, height: 72 }}>
-              <p className="absolute left-0 top-0 text-xl leading-10 text-justify text-gray-600">
+            <div className="relative">
+              <p className="sm:text-xl text-base leading-10 text-justify text-gray-600">
                 Release date
               </p>
-              <p className="absolute left-0 bottom-0 text-xl font-medium leading-10 text-justify text-gray-900">
+              <p className="sm:text-xl text-base font-medium leading-10 text-justify text-gray-900">
                 January 01, 2022
               </p>
             </div>
-            <div className="relative" style={{ width: 127, height: 72 }}>
-              <p className="absolute left-0 top-0 text-xl leading-10 text-justify text-gray-600">
+            <div className="relative">
+              <p className="sm:text-xl text-base leading-10 text-justify text-gray-600">
                 Build Version
               </p>
-              <p className="absolute left-0 bottom-0 text-xl font-medium leading-10 text-justify text-gray-900">
+              <p className="sm:text-xl text-base font-medium leading-10 text-justify text-gray-900">
                 7.1.1
               </p>
             </div>
           </div>
           <div className="inline-flex flex-col space-y-12 items-start justify-start">
-            <div className="relative" style={{ width: 111, height: 72 }}>
-              <p className="absolute left-0 top-0 text-xl leading-10 text-justify text-gray-600">
+            <div className="relative">
+              <p className="sm:text-xl text-base leading-10 text-justify text-gray-600">
                 Downloads
               </p>
-              <p className="absolute left-0 bottom-0 text-xl font-medium leading-10 text-justify text-gray-900">
+              <p className="sm:text-xl text-base font-medium leading-10 text-justify text-gray-900">
                 405
               </p>
             </div>
-            <div className="relative" style={{ width: 194, height: 92 }}>
-              <p className="absolute left-0 top-0 text-xl leading-10 text-justify text-gray-600">
+            <div className="relative">
+              <p className="sm:text-xl text-base leading-10 text-justify text-gray-600">
                 Technology Stacks
               </p>
-              <p className="absolute left-0 bottom-0 text-xl font-medium text-justify text-gray-900">
+              <p className="sm:text-xl text-base font-medium leading-10 text-justify text-gray-900">
                 React, React Native
                 <br />
                 C#
@@ -474,10 +491,10 @@ export const InformationCard = <
 };
 export const MoreCard = <PROPS extends CardProps>({}: PROPS): JSX.Element => {
   return (
-    <div className="px-12 border-b-2 border-gray-200 py-10 bg-gray-300">
+    <div className="px-12 border-b-2 border-gray-200 py-10 bg-gray-300 w-screen">
       <div className="flex justify-between">
         <div>
-          <p className="text-2xl font-semibold leading-10 text-justify text-gray-900">
+          <p className="sm:text-2xl text-xl font-semibold leading-10 text-justify text-gray-900">
             More by Project Moonshoot Inc.
           </p>
           <div className="inline-flex space-x-8 items-center justify-end w-80 h-36">
@@ -499,7 +516,7 @@ export const MoreCard = <PROPS extends CardProps>({}: PROPS): JSX.Element => {
         </div>
         <div className="inline-flex space-x-96  items-start ">
           <div className="inline-flex space-x-2.5 items-center w-36 ">
-            <p className="text-2xl font-medium leading-10 text-right text-blue-700">
+            <p className="sm:text-2xl text-xl font-medium leading-10 text-right text-blue-700">
               See All
             </p>
             <ArrowStrokeDown />

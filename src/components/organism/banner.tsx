@@ -40,33 +40,26 @@ export const ProductBanner = <PROPS extends BannerProps>({
   imgURL,
 }: PROPS): JSX.Element => {
   return (
-    <div className="relative w-screen" style={{ height: 540 }}>
+    <div className="relative w-screen sm:h-122 h-96">
       <div
-        className="relative bg-cover w-screen bg-gray-300"
+        className="relative bg-cover w-screen bg-gray-300 sm:h-122 h-96"
         style={{
-          height: 540,
           backgroundImage: `url(${imgURL || dummyProduct})`,
         }}
       >
-        <div
-          className="w-screen   opacity-50 bg-gradient-to-b from-black to-black"
-          style={{
-            height: 540,
-            width: "100vw",
-          }}
-        />
+        <div className="w-screen sm:h-122 h-96 opacity-50 bg-gradient-to-b from-black to-black" />
 
         <div
-          className="inline-flex  flex-col space-y-6 items-center justify-end w-80 h-36 absolute"
-          style={{ left: 62, top: 150 }}
+          className="inline-flex  flex-col space-y-6 items-center sm:top-36 top-10 justify-end w-80 h-36 absolute"
+          style={{ left: 62 }}
         >
           <p className="w-80 h-1/5 text-5xl font-semibold leading-tight text-white">
             {title}
           </p>
         </div>
         <div
-          className="inline-flex flex-col space-y-6 items-center  justify-end w-72 h-24 absolute"
-          style={{ left: 62, top: 294 }}
+          className="inline-flex flex-col space-y-6 items-center sm:top-72 top-44 justify-end w-72 h-24 top absolute"
+          style={{ left: 62 }}
         >
           <p className="text-lg sm:text-left text-center leading-relaxed text-white">
             {description}
@@ -108,7 +101,7 @@ export const Banner = ({}: BannerElementsProps): JSX.Element => {
   }, [input]);
   return (
     <div
-      className="flex justify-center sm:py-44 py-12 bg-cover bg-gray-200 w-full"
+      className="flex justify-center tablet:max-laptop:pb-48 laptop:pb-52 laptop:pt-36 desktop:py-44 py-12 bg-cover bg-gray-200 w-full"
       style={{ backgroundImage: `url(${!searchMode && background})` }}
     >
       <div className="sm:h-60 sm:w-7/12 inline-flex flex-col h-70 space-y-10 items-center justify-start">
@@ -156,17 +149,14 @@ export const Banner = ({}: BannerElementsProps): JSX.Element => {
 export const Bannesr = <PROPS extends BannerProps>({}: PROPS): JSX.Element => {
   return (
     <div className="grid place-items-center w-screen  bg-gray-300 overflow-x-auto">
-      <div
-        className="flex items-center center justify-content-center "
-        style={{ height: "173px" }}
-      >
+      <div className="flex items-center center sm:h-44 justify-content-center ">
         {/**new */}
-        <div className="inline-flex justify-items-center  px-24 flex-col  space-y-96 border-r-2 border-gray-400">
-          <div className="inline-flex flex-col items-center justify-end w-16 h-24">
-            <p className="w-full text-base font-bold leading-10 text-center text-gray-700">
+        <div className="inline-flex justify-items-center px-4 sm:px-24 flex-col  sm:space-y-96 border-r-2 border-gray-400">
+          <div className="inline-flex flex-col items-center justify-end sm:w-16 sm:h-24">
+            <p className="w-full text-xs sm:text-base font-bold  text-center text-gray-700">
               Ratings
             </p>
-            <p className="text-3xl font-semibold leading-10 text-center text-gray-700">
+            <p className="text-2xl sm:text-3xl font-semibold leading-10 text-center text-gray-700">
               4.5
             </p>
             <div className="inline-flex space-x-0.5 items-start justify-start">
@@ -195,30 +185,27 @@ export const Bannesr = <PROPS extends BannerProps>({}: PROPS): JSX.Element => {
         </div>
         {/**new */}
         {/**new */}
-        <div className="inline-flex flex-col  space-y-96 px-24 border-r-2 border-gray-400">
-          <div className="relative h-24" style={{ width: "81px" }}>
-            <p className="absolute right-0 top-0 w-16 text-center text-base font-bold leading-10 text-gray-700">
+        <div className="inline-flex flex-col  space-y-96 px-4 sm:px-24 border-r-2 border-gray-400">
+          <div className="relative h-24 w-20">
+            <p className="absolute right-0 top-0 w-16 text-center text-xs sm:text-base font-bold leading-10 text-gray-700">
               Chart
             </p>
             <p
-              className="absolute w-full text-3xl font-semibold leading-10 text-gray-700"
-              style={{ left: " 9px", top: "35px" }}
+              className="absolute w-full text-2xl sm:text-3xl font-semibold leading-10 text-gray-700"
+              style={{ left: " 9px", top: "30px" }}
             >
               No. 5
             </p>
-            <p className="absolute right-0 w-16 bottom-0 text-center mt-2 text-xs leading-10 text-gray-700">
+            <p className="absolute right-0 bottom-0 text-center mt-2 text-xs leading-10 text-gray-700">
               Point of sale
             </p>
           </div>
         </div>
         {/**new */}
         {/**new */}
-        <div className=" px-24 border-r-2 border-gray-400 flex justify-center space-y-96">
-          <div
-            className="flex justify-center relative h-24"
-            style={{ width: "81px" }}
-          >
-            <p className="absolute top-0 w-16 text-center text-base font-bold leading-10 text-gray-700">
+        <div className="px-4 sm:px-24 border-r-2 border-gray-400 flex justify-center space-y-96">
+          <div className="flex justify-center relative h-24 w-20">
+            <p className="absolute top-0 w-16 text-center text-sm sm:text-base font-bold leading-10 text-gray-700">
               Developer
             </p>
 
@@ -246,13 +233,13 @@ export const Bannesr = <PROPS extends BannerProps>({}: PROPS): JSX.Element => {
         </div>
         {/**new */}
         {/**new */}
-        <div className="inline-flex flex-col  space-y-96 px-28 border-r-2 border-gray-400">
+        <div className="px-4 inline-flex flex-col  space-y-96 sm:px-24 border-r-2 border-gray-400">
           <div className="relative h-24" style={{ width: "81px" }}>
-            <p className="absolute right-0 top-0 w-16 text-center text-base font-bold leading-10 text-gray-700">
+            <p className="absolute right-0 top-0 w-16 text-center text-sm sm:text-base font-bold leading-10 text-gray-700">
               Language
             </p>
             <p
-              className="absolute w-full text-3xl font-semibold leading-10 text-gray-700"
+              className="absolute w-full text-2xl sm:text-3xl font-semibold leading-10 text-gray-700"
               style={{ left: " 30px", top: "35px" }}
             >
               EN
@@ -264,13 +251,13 @@ export const Bannesr = <PROPS extends BannerProps>({}: PROPS): JSX.Element => {
         </div>
         {/**new */}
         {/**new */}
-        <div className="inline-flex w-36 px-28  flex-col  space-y-96">
+        <div className="px-4 inline-flex w-36 sm:px-24  flex-col  space-y-96">
           <div className="relative h-24" style={{ width: "81px" }}>
-            <p className="absolute right-0 top-0 w-16 text-center text-base font-bold leading-10 text-gray-700">
+            <p className="absolute right-0 top-0 w-16 text-center text-sm sm:text-base font-bold leading-10 text-gray-700">
               Size
             </p>
             <p
-              className="absolute w-full text-3xl font-semibold leading-10 text-gray-700"
+              className="absolute w-full text-2xl sm:text-3xl font-semibold leading-10 text-gray-700"
               style={{ left: " 9px", top: "35px" }}
             >
               235.5

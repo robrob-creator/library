@@ -59,20 +59,22 @@ const Template: Story<BannerProps> = (args) => (
       </div>
     </div>
     <ProductBanner
+      title="Point of sale"
+      description="here is the description,here is the description,here is the description"
       extra={
         <div className="flex flex-wrap  w-26">
           {" "}
           <div
-            className="inline-flex items-center justify-center w-36 px-5 py-2 absolute bg-blue-700 rounded-lg"
-            style={{ left: 61, top: 440 }}
+            className="inline-flex items-center justify-center w-36 px-5 py-2 sm:top-120 top-72 absolute bg-blue-700 rounded-lg"
+            style={{ left: 61 }}
           >
             <p className="text-xs font-semibold leading-snug text-center text-gray-50">
               ₱ 2,000.00
             </p>
           </div>
           <div
-            className="inline-flex items-center justify-center w-36 px-5 py-2 absolute bg-gray-900 border rounded-lg border-gray-300"
-            style={{ left: 226, top: 440 }}
+            className="inline-flex items-center justify-center w-36 px-5 py-2 sm:top-120 top-72 absolute bg-gray-900 border rounded-lg border-gray-300"
+            style={{ left: 226 }}
           >
             <p className="text-xs font-semibold leading-snug text-center text-gray-50">
               Demo

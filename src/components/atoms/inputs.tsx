@@ -98,7 +98,7 @@ export const SearchField = ({ width, onChange }: InputProps) => {
       <label htmlFor="simple-search" className="sr-only">
         Search
       </label>
-      <div className={`relative  sm:w-126`}>
+      <div className={`relative mobile:max-tablet:w-96 tablet:w-124 lg:w-126`}>
         <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-10 pr-5">
           <svg
             aria-hidden="true"
@@ -117,7 +117,7 @@ export const SearchField = ({ width, onChange }: InputProps) => {
         <input
           type="text"
           id="simple-search"
-          className="block w-full  rounded-full border border-gray-300 bg-gray-50 pl-20 pr-5 sm:py-8 py-4 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+          className="block w-full  rounded-full border border-gray-300 bg-gray-50 pl-20 pr-5 tablet:py-6 lg:py-8 py-4 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
           placeholder="Search"
           onChange={onChange}
         />
