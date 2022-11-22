@@ -514,7 +514,7 @@ export const MoreCard = <PROPS extends CardProps>({}: PROPS): JSX.Element => {
             </div>
           </div>
         </div>
-        <div className="inline-flex space-x-96  items-start ">
+        <div className="inline-flex sm:space-x-96  items-start ">
           <div className="inline-flex space-x-2.5 items-center sm:w-36 w-28 ">
             <p className="sm:text-2xl text-base font-medium leading-10 text-right text-blue-700">
               See All
