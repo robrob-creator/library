@@ -50,22 +50,39 @@ export const SideBar = <PROPS extends SideDisplayProps>({
   className,
 }: PROPS): JSX.Element => {
   return (
-    <div
-      className={`lg:w-48 sm:visible invisible w-0 sm:w-24 shadow-md ${className}`}
-    >
-      <div className="flex items-start justify-center flex-1 pb-96 bg-white ">
-        <div className="lg:ml-0 ml-8 inline-flex flex-col items-center justify-start flex-1 pb-96">
-          <div className="inline-flex space-x-2.5 items-center justify-start w-full h-1/3 px-5 py-10  text-gray-600 hover:font-semibold hover:bg-gray-200 hover:text-blue-700">
+    <div className="inline-flex items-start justify-start w-60">
+      <div className="inline-flex flex-col items-start justify-start flex-1 py-8 bg-white h-screen border border-gray-200">
+        <div className="inline-flex  items-center justify-between w-full h-20 px-5 py-10 rounded-full">
+          <div className="flex space-x-2.5 items-center justify-start px-2.5 py-1 rounded-full">
             <CogIcon />
-            <p className="text-xs  lg:visible invisible">Account Settings</p>
+            <p className="text-xs text-gray-600 w-full sm:inline-block hidden">
+              Account Settings
+            </p>
           </div>
-          <div className="inline-flex space-x-2.5 items-center justify-start w-full h-1/3 px-5 py-10  text-gray-600 hover:font-semibold hover:bg-gray-200 hover:text-blue-700">
+          <div className="inline-flex flex-col items-center justify-center w-7 h-4 bg-indigo-700 rounded-full">
+            <p className="text-xs font-medium text-center text-white">34</p>
+          </div>
+        </div>
+        <div className="inline-flex space-x-2.5 items-center justify-between w-full h-20 px-5 py-10">
+          <div className="flex space-x-2.5 items-center justify-start w-3/4 px-2.5 py-1 rounded-full">
             <GridIcon />
-            <p className="text-xs lg:visible invisible">Dashboards</p>
+            <p className="text-xs text-gray-600 sm:inline-block hidden">
+              Dashboards
+            </p>
           </div>
-          <div className="inline-flex space-x-2.5 items-center justify-start w-full h-1/3 px-5 py-10  text-gray-600 hover:font-semibold hover:bg-gray-200 hover:text-blue-700">
+          <div className="inline-flex flex-col items-center justify-center w-7 h-4 bg-indigo-700 rounded-full">
+            <p className="text-xs font-medium text-center text-white">34</p>
+          </div>
+        </div>
+        <div className="inline-flex space-x-2.5 items-center justify-between w-full h-20 px-5 py-10">
+          <div className="inline-flex space-x-2.5 items-center justify-start py-1 sm:pl-2.5 sm:pr-14 pr-4 pl-2 bg-blue-100 rounded-full">
             <Puzzle />
-            <p className="text-xs lg:visible invisible">My Apps</p>
+            <p className="text-xs font-semibold text-blue-700 w-full sm:inline-block hidden">
+              My Apps
+            </p>
+          </div>
+          <div className="inline-flex flex-col items-center justify-center w-7 h-4 bg-indigo-700 rounded-full">
+            <p className="text-xs font-medium text-center text-white">34</p>
           </div>
         </div>
       </div>

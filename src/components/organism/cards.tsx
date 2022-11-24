@@ -2,13 +2,19 @@
 import imageOne from "../../../assets/images/cover1.png";
 import imagetwo from "../../../assets/images/cover2.png";
 import sampleApp from "../../../assets/images/sampleApp.png";
-import { DownloadIcon } from "../atoms/logo";
-import { ArrowStrokeDown } from "../atoms/logo";
+import {
+  ArrowStrokeDown,
+  StackIcon,
+  EllipsesIcon,
+  DownloadIcon,
+} from "../atoms/logo";
+import { Text, HeaderText } from "../atoms/Text";
 
 export type CardProps = {
   title?: string;
   imgUrl?: string;
   downloads?: string;
+  description?: string;
   rating?: string;
   platforms?: { name: string; icon: string }[];
   className?: string;
@@ -374,18 +380,12 @@ export const InformationCard = <
   PROPS extends CardProps
 >({}: PROPS): JSX.Element => {
   return (
-    <div className="px-6 sm:px-12 border-b-2 border-gray-200 py-10">
-      <div className="relative w-screen ">
-        <p
-          className=" text-2xl font-semibold leading-10 text-justify text-gray-900"
-          style={{ left: 0, top: 30 }}
-        >
+    <div className="px-6 sm:px-4 border-b-2 border-gray-200 py-10">
+      <div className="relative w-full ">
+        <p className=" text-2xl font-semibold leading-10 text-justify text-gray-900">
           Information
         </p>
-        <div
-          className="sm:inline-flex flex flex-wrap sm:space-x-32 items-start justify-between sm:w-11/12 mr-14 "
-          style={{ left: 0, top: 87 }}
-        >
+        <div className="sm:inline-flex flex flex-wrap sm:space-x-32 items-start justify-between mr-14 ">
           <div className="inline-flex flex-col space-y-12 items-start justify-start">
             <div className="relative">
               <p className="sm:text-xl text-base leading-10 text-justify text-gray-600">
@@ -514,7 +514,7 @@ export const MoreCard = <PROPS extends CardProps>({}: PROPS): JSX.Element => {
             </div>
           </div>
         </div>
-        <div className="inline-flex sm:space-x-96  items-start ">
+        <div className="inline-flex sm:space-x-96 items-start ">
           <div className="inline-flex space-x-2.5 items-center sm:w-36 w-28 ">
             <p className="sm:text-2xl text-base font-medium leading-10 text-right text-blue-700">
               See All
@@ -587,6 +587,237 @@ export const SimilarCard = <
               </p>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+//polishing naming convention
+export const StatusCard = <PROPS extends CardProps>({}: PROPS): JSX.Element => {
+  return (
+    <div className="flex justify-between pb-14 border-b-2 border-opacity-5 border-gray-800 px-14 pt-14">
+      <div
+        className="inline-flex items-center justify-end space-x-9"
+        style={{ width: "437.32px", height: "159px" }}
+      >
+        <img
+          className="h-full w-52 rounded-lg"
+          src="https://f4.bcbits.com/img/a2964941556_16.jpg"
+        />
+        <div className="inline-flex h-36 w-48 flex-col items-center justify-end space-y-8">
+          <div className="relative w-full h-14">
+            <HeaderText size="sm" fontStyle="medium" color="gray-600">
+              Point of Sale
+            </HeaderText>
+            <Text size="md" color="gray-600">
+              Project Moonshot Inc.
+            </Text>
+          </div>
+          <div className="flex flex-col items-start justify-start w-full">
+            <div className="inline-flex items-start justify-start space-x-5">
+              <div className="flex items-center justify-start space-x-1">
+                <StackIcon />
+                <p className="text-xs leading-7 text-gray-600">Windows</p>
+              </div>
+              <div className="flex items-center justify-start space-x-1">
+                <StackIcon />
+                <p className="text-xs leading-7 text-gray-600">Mac</p>
+              </div>
+              <div className="flex items-center justify-start space-x-1">
+                <StackIcon />
+                <p className="text-xs leading-7 text-gray-600">Web</p>
+              </div>
+            </div>
+            <div className="inline-flex items-center justify-start space-x-1">
+              <StackIcon />
+              <p className="text-xs leading-7 text-gray-600">
+                Stack: Linux, MySQL, C#
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col justify-between w-60">
+        <div className="inline-flex space-x-32 items-center justify-start">
+          <p className="text-base font-semibold leading-snug text-gray-600">
+            Status:
+          </p>
+          <p className="text-base font-semibold leading-snug text-green-600">
+            Active
+          </p>
+        </div>
+        <div className="inline-flex space-x-8 items-center justify-start">
+          <div className="flex items-center justify-center w-36 px-5 py-2 border rounded-lg border-gray-600">
+            <p className="text-xs font-semibold leading-snug text-center text-gray-600">
+              Deactivate
+            </p>
+          </div>
+          <p className="text-base font-medium text-red-700">Remove</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+//component name subject for change
+export const ListCard = <PROPS extends CardProps>({}: PROPS): JSX.Element => {
+  return (
+    <div
+      className="inline-flex flex-col items-start justify-start w-full"
+      style={{ height: 500 }}
+    >
+      <div
+        className="inline-flex items-start justify-start w-full"
+        style={{ height: 50 }}
+      >
+        <div
+          className="flex items-center justify-start pl-5 w-full"
+          style={{ height: 50 }}
+        >
+          <p className="text-xl font-medium leading-10 text-gray-600">
+            Active User
+          </p>
+        </div>
+        <div
+          className="flex items-center justify-end pr-5 w-full"
+          style={{ height: 50 }}
+        >
+          <p className="text-xl font-medium leading-10 text-right text-gray-600">
+            5000
+          </p>
+        </div>
+      </div>
+      <div
+        className="inline-flex items-start justify-start bg-gray-200 w-full"
+        style={{ height: 50 }}
+      >
+        <div
+          className="flex items-center justify-start pl-5 w-full"
+          style={{ height: 50 }}
+        >
+          <p className="text-xl font-medium leading-10 text-gray-600">
+            Active session
+          </p>
+        </div>
+        <div
+          className="flex items-center justify-end pr-5 w-full"
+          style={{ height: 50 }}
+        >
+          <p className="text-xl font-medium leading-10 text-right text-gray-600">
+            345
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+//subject for change
+export const DataCard = <PROPS extends CardProps>({}: PROPS): JSX.Element => {
+  return (
+    <div className="shadow rounded-lg w-1/2" style={{ height: 307 }}>
+      <div
+        className=" flex flex-col relative bg-white rounded-lg "
+        style={{ height: 307 }}
+      >
+        <div className="inline-flex space-x-44 items-center justify-between mx-6 mt-10">
+          <p className="text-base font-medium text-gray-800">Data Name</p>
+          <div className="flex space-x-2 items-center justify-start p-2 border rounded-lg border-gray-400 border-opacity-25">
+            <p className="text-xs font-medium text-gray-400">This month</p>
+            <img
+              className="w-2 h-2 rounded-full"
+              src="https://via.placeholder.com/9x9"
+            />
+          </div>
+        </div>
+        <div className="inline-flex flex-col space-y-6 items-end justify-end w-full px-10 h-32 mt-4                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ">
+          <div className="flex flex-col space-y-4 items-start justify-end w-11 h-14">
+            <div className="inline-flex space-x-2 items-center justify-end w-full h-4">
+              <div className="w-3 h-3/4 bg-purple-800 rounded-full" />
+              <p className="text-xs text-gray-400">Sold</p>
+            </div>
+            <p className="text-base font-semibold text-gray-800">10K</p>
+          </div>
+          <div className="flex flex-col space-y-4 items-start justify-end w-11 h-14">
+            <div className="inline-flex space-x-2 items-center justify-end w-full h-4">
+              <div className="w-3 h-3/4 bg-green-600 rounded-full" />
+              <p className="text-xs text-gray-400">Sold</p>
+            </div>
+            <p className="text-base font-semibold text-gray-800">10K</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+export const BasicCard = <PROPS extends CardProps>({
+  imgUrl,
+  title,
+  description,
+}: PROPS): JSX.Element => {
+  return (
+    <div className="inline-flex flex-col space-y-2.5 items-start justify-start">
+      <img
+        className="w-full h-20 rounded-lg"
+        src={imgUrl ? imageOne : "https://via.placeholder.com/100x80"}
+      />
+      <p className="text-base leading-normal text-gray-600">{title}</p>
+      <p className="text-sm leading-normal text-gray-600">{description}</p>
+    </div>
+  );
+};
+export const AppCard = <PROPS extends CardProps>({
+  imgUrl,
+  title,
+  description,
+}: PROPS): JSX.Element => {
+  return (
+    <div className="px-14 py-12 border-b-2 border-gray-800 border-opacity-5">
+      <div className="flex w-full">
+        <img
+          className="w-64 h-44  rounded-lg"
+          src="https://via.placeholder.com/250x183"
+        />
+        <div className="flex  px-8">
+          <div>
+            <Text color="black" size="xl" fontStyle="semibold">
+              APP NAME
+            </Text>
+            <p className="text-base leading-loose text-justify text-gray-600 w-10/12">
+              Lorem ipsum dolor sit amet. Aut soluta neque a placeat voluptates
+              sed voluptatem voluptatem ut galisum placeat rem rerum tenetur hic
+              odit aliquid. Non neque iure qui repellendus temporibus ut aliquid
+              numquam ex sequi maxime est repellat dolor sed nihil
+              necessitatibus?
+            </p>
+          </div>
+          <EllipsesIcon width="8" />
+        </div>
+      </div>
+      <div className="inline-flex space-x-2  items-center justify-start">
+        <p className="text-xs leading-7">Status: </p>
+        <div className="flex items-center justify-center w-16 h-5 px-2.5 bg-green-400 rounded-full">
+          <p className="text-xs leading-7 text-white">Active</p>
+        </div>
+      </div>
+      <div className="flex flex-col items-start justify-start w-full">
+        <div className="inline-flex items-start justify-start space-x-5">
+          <div className="flex items-center justify-start space-x-1">
+            <StackIcon />
+            <p className="text-xs leading-7 text-gray-600">Windows</p>
+          </div>
+          <div className="flex items-center justify-start space-x-1">
+            <StackIcon />
+            <p className="text-xs leading-7 text-gray-600">Mac</p>
+          </div>
+          <div className="flex items-center justify-start space-x-1">
+            <StackIcon />
+            <p className="text-xs leading-7 text-gray-600">Web</p>
+          </div>
+        </div>
+        <div className="inline-flex items-center justify-start space-x-1">
+          <StackIcon />
+          <p className="text-xs leading-7 text-gray-600">
+            Stack: Linux, MySQL, C#
+          </p>
         </div>
       </div>
     </div>

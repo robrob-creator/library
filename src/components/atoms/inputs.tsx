@@ -27,6 +27,34 @@ function getStylesBySize(size: Size) {
       return { input: "h-12", label: "-mt-12 peer-placeholder-shown:-mt-9" };
   }
 }
+function getSearchFieldBySize(size: Size) {
+  switch (size) {
+    case "lg":
+      return {
+        input: "lg:py-8 py-4",
+        container: "mobile:max-tablet:w-96 tablet:w-124 lg:w-126",
+        logo: "h-8 w-8",
+      };
+    case "md":
+      return {
+        input: "lg:py-8 py-4",
+        container: "mobile:max-tablet:w-96 tablet:w-124 lg:w-126",
+        logo: "h-8 w-8",
+      };
+    case "sm":
+      return {
+        input: "lg:py-4 py-2",
+        container: "mobile:max-tablet:w-72 tablet:w-80 lg:w-96 h-14",
+        logo: "h-6 w-6",
+      };
+    default:
+      return {
+        input: "lg:py-8 py-4",
+        container: "mobile:max-tablet:w-96 tablet:w-124 lg:w-126",
+        logo: "h-8 w-8",
+      };
+  }
+}
 export const InputField = ({
   type,
   name = "",
@@ -92,17 +120,18 @@ export const InputField = ({
     </form>
   );
 };
-export const SearchField = ({ width, onChange }: InputProps) => {
+export const SearchField = ({ size = "lg", onChange }: InputProps) => {
+  const stylesBySize = getSearchFieldBySize(size);
   return (
     <form className="flex items-center">
       <label htmlFor="simple-search" className="sr-only">
         Search
       </label>
-      <div className={`relative mobile:max-tablet:w-96 tablet:w-124 lg:w-126`}>
+      <div className={`relative ${stylesBySize.container}`}>
         <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-10 pr-5">
           <svg
             aria-hidden="true"
-            className="h-8 w-8  text-gray-500 dark:text-gray-400"
+            className={`${stylesBySize.logo} text-gray-500 dark:text-gray-400`}
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -117,7 +146,7 @@ export const SearchField = ({ width, onChange }: InputProps) => {
         <input
           type="text"
           id="simple-search"
-          className="block w-full  rounded-full border border-gray-300 bg-gray-50 pl-20 pr-5 tablet:py-6 lg:py-8 py-4 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+          className={`block w-full  rounded-full border border-gray-300 bg-gray-50 pl-20 pr-5 tablet:py-6 ${stylesBySize.input} text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500`}
           placeholder="Search"
           onChange={onChange}
         />

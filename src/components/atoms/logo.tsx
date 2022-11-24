@@ -252,3 +252,54 @@ export const DownloadIcon = ({
     </svg>
   );
 };
+export const StackIcon = ({
+  size = "sm",
+  className,
+  color = "#5C5C5C",
+  width = "10",
+  height = "10",
+}: LogoProps) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 10 10"
+      className={className}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M4.77639 0.0527864C4.91716 -0.0175955 5.08284 -0.0175955 5.22361 0.0527864L9.22361 2.05279C9.393 2.13748 9.5 2.31061 9.5 2.5V7.5C9.5 7.68939 9.393 7.86252 9.22361 7.94721L5.22361 9.94721C5.08284 10.0176 4.91716 10.0176 4.77639 9.94721L0.776393 7.94721C0.607001 7.86252 0.5 7.68939 0.5 7.5V2.5C0.5 2.31061 0.607001 2.13748 0.776393 2.05279L4.77639 0.0527864ZM1.5 3.30902L4.5 4.80902V8.69098L1.5 7.19098V3.30902ZM5.5 8.69098L8.5 7.19098V3.30902L5.5 4.80902V8.69098ZM5 3.94098L7.88197 2.5L5 1.05902L2.11803 2.5L5 3.94098Z"
+        fill={color}
+      />
+    </svg>
+  );
+};
+export const EllipsesIcon = ({
+  size = "sm",
+  className,
+  color = "#111827",
+  width = "4",
+  height = "18",
+}: LogoProps) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 4 18"
+      className={className}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M2 2L2 2.01M2 9L2 9.01M2 16L2 16.01M2 3C1.44772 3 1 2.55228 1 2C1 1.44772 1.44772 1 2 1C2.55228 1 3 1.44772 3 2C3 2.55228 2.55228 3 2 3ZM2 10C1.44771 10 1 9.55228 1 9C1 8.44772 1.44771 8 2 8C2.55228 8 3 8.44772 3 9C3 9.55228 2.55228 10 2 10ZM2 17C1.44771 17 0.999999 16.5523 0.999999 16C0.999999 15.4477 1.44771 15 2 15C2.55228 15 3 15.4477 3 16C3 16.5523 2.55228 17 2 17Z"
+        stroke={color}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};

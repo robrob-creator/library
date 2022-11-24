@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable react/no-unknown-property */
 import React from "react";
-import { Size } from "../types";
+import { Size, FontStyle } from "../types";
 
 export interface TextProps {
   text?: string;
@@ -10,7 +10,7 @@ export interface TextProps {
   className?: string;
   children?: React.ReactNode;
   style?: object;
-  fontStyle?: string;
+  fontStyle?: FontStyle;
   onClick?: () => void;
 }
 
@@ -48,13 +48,16 @@ export const Text = ({
   size = "md",
   className,
   children,
+  fontStyle,
   style,
   onClick,
 }: TextProps) => {
   const stylesBySize = getTextBySize(size);
   return (
     <p
-      className={`${stylesBySize}  tracking-wider text-${color} ${className}`}
+      className={`${stylesBySize} font-${
+        fontStyle && fontStyle
+      } tracking-wider text-${color} ${className}`}
       style={style}
       onClick={onClick}
     >
@@ -70,7 +73,7 @@ export const HeaderText = ({
   size = "lg",
   className,
   children,
-  fontStyle = "font-bold",
+  fontStyle = "bold",
   onClick,
 }: TextProps) => {
   const stylesBySize = getHeaderBySize(size);
