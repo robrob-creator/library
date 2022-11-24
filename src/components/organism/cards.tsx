@@ -830,7 +830,7 @@ export const BasicDataCard = <PROPS extends CardProps>({
 }: PROPS): JSX.Element => {
   return (
     <div
-      className={`${className} inline-flex space-x-80 items-end justify-end h-72 shadow rounded-lg`}
+      className={`${className} inline-flex space-x-80 items-end justify-end  shadow rounded-lg`}
     >
       <div className="inline-flex flex-col space-y-11 items-center justify-end flex-1 h-full pb-14 bg-white rounded-lg">
         <div className="inline-flex items-center justify-start w-full h-1/5 px-6 py-2.5 border border-gray-200">
