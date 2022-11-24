@@ -7,7 +7,7 @@ import {
   DataCard,
   ArrowLeft,
   AppCard,
-  Table,
+  BasicDataCard,
 } from "../components";
 import { List } from "../components";
 
@@ -46,8 +46,8 @@ const Template: Story<NavigationProps> = (args) => (
         <AppCard />
         <div className="sm:py-8 sm:px-16 sm:mx-0 mx-8 ">
           <div className="flex sm:flex-nowrap flex-wrap justify-between  gap-4 pb-14 border-b-2 border-gray-800 border-opacity-5">
-            <DataCard />
-            <DataCard />
+            <DataCard className="w-4/5" />
+            <BasicDataCard />
           </div>
           {/**table start */}
           <table className="w-full table-auto">

@@ -35,7 +35,7 @@ const Template: Story<LayoutProps> = (args) => (
       </div>
       <HeaderText
         text="Sign In"
-        fontStyle="font-medium"
+        fontStyle="medium"
         color="black"
         size="md"
         className="mt-10 "

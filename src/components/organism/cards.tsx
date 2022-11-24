@@ -711,9 +711,11 @@ export const ListCard = <PROPS extends CardProps>({}: PROPS): JSX.Element => {
   );
 };
 //subject for change
-export const DataCard = <PROPS extends CardProps>({}: PROPS): JSX.Element => {
+export const DataCard = <PROPS extends CardProps>({
+  className,
+}: PROPS): JSX.Element => {
   return (
-    <div className="shadow rounded-lg w-1/2" style={{ height: 307 }}>
+    <div className={`${className} shadow rounded-lg`} style={{ height: 307 }}>
       <div
         className=" flex flex-col relative bg-white rounded-lg "
         style={{ height: 307 }}
@@ -818,6 +820,37 @@ export const AppCard = <PROPS extends CardProps>({
           <p className="text-xs leading-7 text-gray-600">
             Stack: Linux, MySQL, C#
           </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+export const BasicDataCard = <PROPS extends CardProps>({
+  className,
+}: PROPS): JSX.Element => {
+  return (
+    <div
+      className={`${className} inline-flex space-x-80 items-end justify-end h-72 shadow rounded-lg`}
+    >
+      <div className="inline-flex flex-col space-y-11 items-center justify-end flex-1 h-full pb-14 bg-white rounded-lg">
+        <div className="inline-flex items-center justify-start w-full h-1/5 px-6 py-2.5 border border-gray-200">
+          <p className="text-base font-semibold text-gray-700">Entity by</p>
+        </div>
+        <div className="flex flex-col space-y-6 items-center justify-end w-32 h-36">
+          <img
+            className="w-28 h-28 rounded-lg"
+            src="https://via.placeholder.com/108x108"
+          />
+          <div className="inline-flex space-x-8 items-start justify-start">
+            <div className="flex space-x-1 items-center justify-start">
+              <div className="w-1/5 h-2.5 bg-green-400 rounded-full" />
+              <p className="text-xs text-gray-900">Entity</p>
+            </div>
+            <div className="flex space-x-1 items-center justify-start">
+              <div className="w-1/5 h-2.5 bg-purple-500 rounded-full" />
+              <p className="text-xs text-gray-900">Entity</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
