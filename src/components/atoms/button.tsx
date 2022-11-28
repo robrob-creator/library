@@ -9,7 +9,7 @@ export interface ButtonProps {
   size?: Size;
   type?: Type;
   className?: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 function getStylesBySize(size: Size) {

@@ -1,26 +1,39 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-empty-pattern */
 
+import { Size } from "../types";
+import { Text } from "../atoms/Text";
 export type AvatarProps = {
   name: string;
-  color?: string;
+  size: Size;
+  fontColor: string;
 };
-
+function getAvatarBySize(type: Size) {
+  switch (type) {
+    case "xl":
+      return "w-14 h-14";
+    case "lg":
+      return "w-12 h-12";
+    case "md":
+      return "w-10 h-10";
+    case "sm":
+      return "w-8 h-8";
+    default:
+      return "w-10 h-10";
+  }
+}
 export const Avatar = <PROPS extends AvatarProps>({
   name,
-  color,
+  size,
+  fontColor = "gray-600",
 }: PROPS): JSX.Element => {
+  const stylesBySize = getAvatarBySize(size);
+
   return (
-    <div className="relative" style={{ width: 56, height: 56, margin: 1 }}>
-      <div
-        className={`inline-flex items-center justify-center w-12 h-12 py-4 absolute left-0 top-0 bg-${
-          color || "gray"
-        }-700 rounded-full`}
-      >
-        <p className="flex-1 h-full text-sm font-semibold leading-none text-center text-gray-50">
-          {name}
-        </p>
-      </div>
+    <div
+      className={`${stylesBySize} inline-flex overflow-hidden relative justify-center items-center  bg-gray-100 rounded-full dark:bg-gray-600`}
+    >
+      <Text color={fontColor}>{name && name.charAt(0)}</Text>
     </div>
   );
 };

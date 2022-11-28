@@ -9,38 +9,39 @@ export interface ListProps {
 export const List = <PROPS extends ListProps>({ data }: PROPS): JSX.Element => {
   return (
     <div className="inline-flex flex-col items-start justify-start w-full">
-      {data?.map((item, index) => {
-        return (
-          <div
-            className={`inline-flex items-start justify-start w-full ${
-              index % 2 != 0 && "bg-gray-200"
-            }`}
-            style={{ height: 50 }}
-          >
+      {data &&
+        data?.map((item, index) => {
+          return (
             <div
-              className="flex items-center justify-start pl-5 w-full"
+              className={`inline-flex items-start justify-start w-full ${
+                index % 2 != 0 && "bg-gray-200"
+              }`}
               style={{ height: 50 }}
             >
-              <Text size="xl" color="gray-600" fontStyle="medium">
-                {item?.label}
-              </Text>
-            </div>
-            <div
-              className="flex items-center justify-end pr-5 w-full"
-              style={{ height: 50 }}
-            >
-              <Text
-                size="xl"
-                color="gray-600"
-                fontStyle="medium"
-                className="text-right"
+              <div
+                className="flex items-center justify-start pl-5 w-full"
+                style={{ height: 50 }}
               >
-                {item?.value}
-              </Text>
+                <Text size="xl" color="gray-600" fontStyle="medium">
+                  {item?.label}
+                </Text>
+              </div>
+              <div
+                className="flex items-center justify-end pr-5 w-full"
+                style={{ height: 50 }}
+              >
+                <Text
+                  size="xl"
+                  color="gray-600"
+                  fontStyle="medium"
+                  className="text-right"
+                >
+                  {item?.value}
+                </Text>
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
     </div>
   );
 };
