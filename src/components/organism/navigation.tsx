@@ -22,8 +22,21 @@ export const NavigationBar = <PROPS extends NavigationProps>({
 }: PROPS): JSX.Element => {
   const [showlist, setShowList] = useState(false);
   return (
-    <nav className="flex items-center justify-between flex-wrap  py-3.5 pl-11 pr-14">
-      <div className="flex items-center flex-shrink-0 text-white mr-6">
+    <nav className="flex items-center justify-between flex-wrap  py-3.5 pl-11 sm:pr-14">
+      <button
+        className="flex items-center px-3 py-2 border rounded text-gray-200 border-gray-400 hover:text-white hover:border-white"
+        onClick={() => setShowList(true)}
+      >
+        <svg
+          className="fill-current h-3 w-3"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+        </svg>
+      </button>
+      <div className="flex items-center flex-shrink-0 text-white sm:mr-6">
         {logo ? (
           <img className="w-15 h-10" src={logo} />
         ) : (
@@ -46,19 +59,7 @@ export const NavigationBar = <PROPS extends NavigationProps>({
             </svg>
           </button>
         ) : (
-          <button
-            className="flex items-center px-3 py-2 border rounded text-gray-200 border-gray-400 hover:text-white hover:border-white"
-            onClick={() => setShowList(true)}
-          >
-            <svg
-              className="fill-current h-3 w-3"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>Menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-            </svg>
-          </button>
+          ""
         )}
       </div>
       <div
@@ -144,7 +145,7 @@ export const Tabs = <PROPS extends NavigationProps>({}: PROPS): JSX.Element => {
           <p className="text-sm leading-tight text-gray-600">Filter</p>
         </div>
       </div>
-      <div className="flex space-x-2.5 sm:invisible visible sm:hidden sm:h-0 h4 mobile:w-122 w-96 overflow-x-auto mr-8 ml-2">
+      <div className="flex space-x-2.5 sm:invisible visible sm:hidden sm:h-0 h4 mobile:w-full w-96 overflow-x-auto mr-8 ml-2">
         <div className="flex items-center justify-center h-full px-5 py-1 bg-gray-300 rounded-full">
           <p className="text-xs font-semibold tracking-wider leading-normal text-center">
             Discover
