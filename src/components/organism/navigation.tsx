@@ -24,7 +24,7 @@ export const NavigationBar = <PROPS extends NavigationProps>({
   return (
     <nav className="flex items-center justify-between flex-wrap  py-3.5 pl-11 sm:pr-14">
       <button
-        className="flex items-center px-3 py-2 border rounded text-gray-200 border-gray-400 hover:text-white hover:border-white"
+        className="tablet:hidden items-center px-3 py-2 border rounded text-gray-200 border-gray-400 hover:text-white hover:border-white"
         onClick={() => setShowList(true)}
       >
         <svg
