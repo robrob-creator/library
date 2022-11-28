@@ -3,7 +3,7 @@ import { Meta, Story } from "@storybook/react";
 import { HeaderText, TextProps } from "../components";
 
 const meta: Meta = {
-  title: "Header Text",
+  title: "components/Header Text",
   component: HeaderText,
   argTypes: {
     children: {

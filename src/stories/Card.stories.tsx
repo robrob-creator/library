@@ -3,7 +3,7 @@ import { Meta, Story } from "@storybook/react";
 import { Card, CardProps } from "../components";
 
 const meta: Meta = {
-  title: "Card",
+  title: "components/Card",
   component: Card,
   argTypes: {
     children: {

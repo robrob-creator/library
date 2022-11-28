@@ -3,7 +3,7 @@ import { Meta, Story } from "@storybook/react";
 import { Footer, FooterProps } from "../components";
 
 const meta: Meta = {
-  title: "Footer",
+  title: "components/Footer",
   component: Footer,
   argTypes: {
     children: {

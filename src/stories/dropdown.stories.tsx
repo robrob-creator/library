@@ -3,7 +3,7 @@ import { Meta, Story } from "@storybook/react";
 import { Dropdown, DropdownProps, Option } from "../components";
 
 const meta: Meta = {
-  title: "Dropdown",
+  title: "components/Dropdown",
   component: Dropdown,
   argTypes: {
     children: {

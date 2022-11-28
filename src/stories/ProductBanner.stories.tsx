@@ -13,7 +13,7 @@ import {
 } from "../components";
 
 const meta: Meta = {
-  title: "Product Banner",
+  title: "components/Product Banner",
   component: ProductBanner,
   argTypes: {
     children: {

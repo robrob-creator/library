@@ -3,7 +3,7 @@ import { Meta, Story } from "@storybook/react";
 import { Modal, ModalProps } from "../components";
 
 const meta: Meta = {
-  title: "Modal",
+  title: "components/Modal",
   component: Modal,
   argTypes: {
     children: {

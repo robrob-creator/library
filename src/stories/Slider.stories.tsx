@@ -3,7 +3,7 @@ import { Meta, Story } from "@storybook/react";
 import { Slider, SliderProps } from "../components";
 
 const meta: Meta = {
-  title: "Slider",
+  title: "components/Slider",
   component: Slider,
   argTypes: {
     children: {

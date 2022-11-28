@@ -3,7 +3,7 @@ import { Meta, Story } from "@storybook/react";
 import { NavigationBar, NavigationProps } from "../components";
 
 const meta: Meta = {
-  title: "Navbar",
+  title: "components/Navbar",
   component: NavigationBar,
   argTypes: {
     children: {

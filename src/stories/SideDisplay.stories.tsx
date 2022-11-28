@@ -3,7 +3,7 @@ import { Meta, Story } from "@storybook/react";
 import { SideDisplay, SideDisplayProps } from "../components";
 
 const meta: Meta = {
-  title: "Side Display",
+  title: "components/Side Display",
   component: SideDisplay,
   argTypes: {
     children: {
