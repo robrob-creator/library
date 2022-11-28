@@ -25,7 +25,6 @@ const Template: Story<NavigationProps> = (args) => (
     rightElements={
       <div>
         <p>hello</p>
-        <p>hello</p>
       </div>
     }
     {...args}

@@ -3,7 +3,7 @@ import { Meta, Story } from "@storybook/react";
 import { Button, ButtonProps } from "../components";
 
 const meta: Meta = {
-  title: "Isaac Button",
+  title: "Button",
   component: Button,
   argTypes: {
     color: { control: "color" },
@@ -24,6 +24,24 @@ const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 
 // By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
 // https://storybook.js.org/docs/react/workflows/unit-testing
-export const Default = Template.bind({});
-
-Default.args = {};
+export const Primary = Template.bind({});
+export const text = Template.bind({});
+export const Secondary = Template.bind({});
+export const Subtle = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+Primary.args = {
+  type: "primary",
+  text: "Button",
+};
+text.args = {
+  type: "text",
+  text: "Button",
+};
+Secondary.args = {
+  type: "secondary",
+  text: "Button",
+};
+Subtle.args = {
+  type: "subtle",
+  text: "Button",
+};

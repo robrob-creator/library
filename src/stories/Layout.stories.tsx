@@ -12,7 +12,7 @@ import {
 } from "../components";
 
 const meta: Meta = {
-  title: "Layout",
+  title: "pages/Layout",
   component: OutlinedForm,
   argTypes: {
     children: {
