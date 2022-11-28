@@ -6,7 +6,7 @@ export * from "./atoms/toogles";
 export * from "./atoms/slider";
 export * from "./atoms/checkboxes";
 export * from "./atoms/Text";
-export * from "./atoms/logo";
+export * from "./atoms/icons";
 export * from "./atoms/option";
 export * from "./molecules/avatars";
 export * from "./molecules/dropdown";

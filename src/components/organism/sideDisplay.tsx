@@ -3,7 +3,7 @@
 /* eslint-disable prettier/prettier */
 import logo from "../../../assets/images/logo-white.svg";
 import background from "../../../assets/images/bg.png";
-import { Puzzle, GridIcon, CogIcon } from "../atoms/logo";
+import { Puzzle, GridIcon, CogIcon } from "../atoms/icons";
 
 export type SideDisplayProps = {
   header?: string;
