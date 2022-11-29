@@ -4,22 +4,22 @@
 import { Shape, Size } from "../types";
 import { Text } from "../atoms/Text";
 export type BadgeProps = {
-  count: string;
+  count: number;
   shape?: Shape;
   color?: string;
 };
 function getStylesByShape(shape: Shape) {
   switch (shape) {
     case "rectangle":
-      return "w-7 h-4";
+      return "w-10 h-6";
     case "square":
-      return "w-7 h-7";
+      return "w-10 h-10";
     case "circle":
-      return "w-7 h-7 rounded-full";
+      return "w-10 h-10 rounded-full";
     case "oval":
-      return "w-7 h-4 rounded-full";
+      return "w-10 h-6 rounded-full";
     default:
-      return "w-7 h-4 rounded-full";
+      return "w-10 h-6 rounded-full";
   }
 }
 
@@ -34,7 +34,7 @@ export const Badge = <PROPS extends BadgeProps>({
       className={`${stylesByShape} inline-flex flex-col items-center justify-center`}
       style={{ backgroundColor: color }}
     >
-      <Text size="sm">{count}</Text>
+      <Text size="sm">{count > 99 ? "99+" : count}</Text>
     </div>
   );
 };

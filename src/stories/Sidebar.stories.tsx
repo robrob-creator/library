@@ -33,8 +33,8 @@ export const Default = Template.bind({});
 
 Default.args = {
   items: [
-    { name: "Account Settings", icon: <CogIcon />, notification: "48" },
+    { name: "Account Settings", icon: <CogIcon />, notification: 48 },
     { name: "Dashboards", icon: <GridIcon /> },
-    { name: "My Apps", icon: <Puzzle />, notification: "44" },
+    { name: "My Apps", icon: <Puzzle />, notification: 44 },
   ],
 };

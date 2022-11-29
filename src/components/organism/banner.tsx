@@ -146,7 +146,9 @@ export const Banner = ({}: BannerElementsProps): JSX.Element => {
     </div>
   );
 };
-export const Bannesr = <PROPS extends BannerProps>({}: PROPS): JSX.Element => {
+export const InfoBanner = <
+  PROPS extends BannerProps
+>({}: PROPS): JSX.Element => {
   return (
     <div className="grid place-items-center w-screen  bg-gray-300 overflow-x-auto">
       <div className="flex items-center center sm:h-44 justify-content-center ">

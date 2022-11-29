@@ -13,7 +13,7 @@ export type SideDisplayProps = {
   backgroundImageURL?: string;
 };
 export type SideBarProps = {
-  items: { name: string; icon: React.ReactNode; notification: string }[];
+  items: { name: string; icon: React.ReactNode; notification: number }[];
 };
 export const SideDisplay = <PROPS extends SideDisplayProps>({
   header = "Welcome guest!",
