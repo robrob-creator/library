@@ -6,7 +6,7 @@ import {
   FilterIcon,
   UserAvatar,
   ArrowStrokeDown,
-} from "../atoms/logo";
+} from "../atoms/icons";
 import React, { useState } from "react";
 export type NavigationProps = {
   logo?: string;

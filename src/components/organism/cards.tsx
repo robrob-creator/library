@@ -7,7 +7,7 @@ import {
   StackIcon,
   EllipsesIcon,
   DownloadIcon,
-} from "../atoms/logo";
+} from "../atoms/icons";
 import { Text, HeaderText } from "../atoms/Text";
 
 export type CardProps = {

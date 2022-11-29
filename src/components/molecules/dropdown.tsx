@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unknown-property */
 import React, { Children, ReactChild } from "react";
 import { Text } from "../atoms/Text";
-import { ArrowStrokeDown } from "../atoms/logo";
+import { ArrowStrokeDown } from "../atoms/icons";
 import { Option } from "../atoms/option";
 
 export interface DropdownProps {

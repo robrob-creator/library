@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-empty-pattern */
 /* eslint-disable prettier/prettier */
-import { BlueIsaacLogo } from "../atoms/logo";
+import { BlueIsaacLogo } from "../atoms/icons";
 import { Text } from "../atoms/Text";
 export type FooterProps = {
   title?: string;
