@@ -60,8 +60,8 @@ export const SideBar = <PROPS extends SideBarProps>({
   items,
 }: PROPS): JSX.Element => {
   return (
-    <div className="inline-flex items-start justify-start w-60">
-      <div className="inline-flex flex-col items-start justify-start flex-1 py-8 bg-white h-screen border border-gray-200">
+    <div className="w-72 border border-gray-200">
+      <div className="inline-flex flex-col items-start justify-start flex-1 py-8 bg-white h-screen ">
         {items &&
           items?.map((item, index) => (
             <div
