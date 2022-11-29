@@ -3,7 +3,7 @@
 /* eslint-disable prettier/prettier */
 import logo from "../../../assets/images/logo-white.svg";
 import background from "../../../assets/images/bg.png";
-import { Puzzle, GridIcon, CogIcon } from "../atoms/icons";
+import { Badge } from "../molecules/badges";
 import React from "react";
 
 export type SideDisplayProps = {
@@ -13,7 +13,7 @@ export type SideDisplayProps = {
   backgroundImageURL?: string;
 };
 export type SideBarProps = {
-  items: { name: string; icon: React.ReactNode }[];
+  items: { name: string; icon: React.ReactNode; notification: string }[];
 };
 export const SideDisplay = <PROPS extends SideDisplayProps>({
   header = "Welcome guest!",
@@ -58,20 +58,18 @@ export const SideBar = <PROPS extends SideBarProps>({
     <div className="inline-flex items-start justify-start w-60">
       <div className="inline-flex flex-col items-start justify-start flex-1 py-8 bg-white h-screen border border-gray-200">
         {items &&
-          items.map((item, index) => (
+          items?.map((item, index) => (
             <div
               className="inline-flex  items-center justify-between w-full h-20 px-5 py-10 rounded-full"
               key={index}
             >
               <div className="flex space-x-2.5 items-center justify-start px-2.5 py-1 rounded-full">
-                {item.icon}
+                {item?.icon}
                 <p className="text-xs text-gray-600 w-full sm:inline-block hidden">
-                  {item.name}
+                  {item?.name}
                 </p>
               </div>
-              <div className="inline-flex flex-col items-center justify-center w-7 h-4 bg-indigo-700 rounded-full">
-                <p className="text-xs font-medium text-center text-white">34</p>
-              </div>
+              {item?.notification && <Badge count={item?.notification} />}
             </div>
           ))}
       </div>
