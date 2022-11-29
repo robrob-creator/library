@@ -7,6 +7,7 @@ export type AvatarProps = {
   name: string;
   size: Size;
   fontColor: string;
+  backgroundColor: string;
 };
 function getAvatarBySize(type: Size) {
   switch (type) {
@@ -26,12 +27,14 @@ export const Avatar = <PROPS extends AvatarProps>({
   name,
   size,
   fontColor = "gray-600",
+  backgroundColor = "#e8e8e8",
 }: PROPS): JSX.Element => {
   const stylesBySize = getAvatarBySize(size);
 
   return (
     <div
       className={`${stylesBySize} inline-flex overflow-hidden relative justify-center items-center  bg-gray-100 rounded-full dark:bg-gray-600`}
+      style={{ backgroundColor: backgroundColor }}
     >
       <Text color={fontColor}>{name && name.charAt(0)}</Text>
     </div>
