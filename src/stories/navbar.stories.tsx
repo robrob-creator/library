@@ -21,13 +21,7 @@ export default meta;
 
 const Template: Story<NavigationProps> = (args) => (
   <NavigationBar
-    centerElements={<p>hellos</p>}
-    rightElements={
-      <div>
-        <p>hello</p>
-      </div>
-    }
-    {...args}
+   rightElements={<p>Hello</p>}
   />
 );
 

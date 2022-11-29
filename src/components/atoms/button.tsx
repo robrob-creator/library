@@ -12,6 +12,7 @@ export interface ButtonProps {
   onClick?: () => void;
 }
 
+
 function getStylesBySize(size: Size) {
   switch (size) {
     case "xl":
@@ -60,3 +61,5 @@ export const Button = ({
     </button>
   );
 };
+
+
