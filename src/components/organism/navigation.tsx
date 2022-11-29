@@ -145,7 +145,7 @@ export const Tabs = <PROPS extends NavigationProps>({}: PROPS): JSX.Element => {
           <p className="text-sm leading-tight text-gray-600">Filter</p>
         </div>
       </div>
-      <div className="flex space-x-2.5 sm:invisible visible sm:hidden sm:h-0 h4 mobile:w-full w-96 overflow-x-auto mr-8 ml-2">
+      <div className="flex space-x-2.5 sm:invisible visible sm:hidden sm:h-0 h4 mobile:w-full w-80 overflow-x-auto mr-8 ml-2">
         <div className="flex items-center justify-center h-full px-5 py-1 bg-gray-300 rounded-full">
           <p className="text-xs font-semibold tracking-wider leading-normal text-center">
             Discover

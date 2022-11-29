@@ -133,7 +133,7 @@ export const Banner = ({}: BannerElementsProps): JSX.Element => {
             {!searchMode ? "Top searches" : "Related"}
           </p>
           <div className="flex items-center">
-            <div className="h-8 w-80 sm:w-auto  flex sm:space-x-2.5 items-start justify-start sm:overflow-x-visible overflow-x-scroll">
+            <div className="h-8 w-80 tablet:w-auto  flex sm:space-x-2.5 items-start justify-start sm:overflow-x-visible overflow-x-scroll">
               <div className={`${stylesByType}`}>Landing page</div>
               <div className={`${stylesByType}`}>ios</div>
               <div className={`${stylesByType}`}>food</div>

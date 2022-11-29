@@ -8,6 +8,9 @@ import {
   InformationCard,
   DataCard,
   ArrowLeft,
+  CogIcon,
+  Puzzle,
+  GridIcon,
 } from "../components";
 import { List } from "../components";
 const meta: Meta = {
@@ -31,7 +34,34 @@ const Template: Story<NavigationProps> = (args) => (
   <div>
     <WhiteNavBar {...args} />
     <div className="flex">
-      <SideBar />
+      <SideBar
+        items={[
+          {
+            name: "Account Settings",
+            icon: <CogIcon />,
+            notification: 48,
+            handleClick: () => {
+              console.log("hello 1");
+            },
+          },
+          {
+            name: "Dashboards",
+            icon: <GridIcon />,
+            notification: 48,
+            handleClick: () => {
+              console.log("hello 2");
+            },
+          },
+          {
+            name: "My Apps",
+            icon: <Puzzle />,
+            notification: 44,
+            handleClick: () => {
+              console.log("hello 3");
+            },
+          },
+        ]}
+      />
       <div className="flex-auto bg-gray-100">
         <div
           className="flex items-center justify-start  pr-96 pt-5 pb-4 bg-white border border-gray-200 w-full"
