@@ -13,7 +13,12 @@ export type SideDisplayProps = {
   backgroundImageURL?: string;
 };
 export type SideBarProps = {
-  items: { name: string; icon: React.ReactNode; notification: number }[];
+  items: {
+    name: string;
+    icon: React.ReactNode;
+    notification: number;
+    onClick?: () => void;
+  }[];
 };
 export const SideDisplay = <PROPS extends SideDisplayProps>({
   header = "Welcome guest!",
@@ -62,6 +67,7 @@ export const SideBar = <PROPS extends SideBarProps>({
             <div
               className="inline-flex  items-center justify-between w-full h-20 px-5 py-10 rounded-full"
               key={index}
+              onClick={item.onClick}
             >
               <div className="flex space-x-2.5 items-center justify-start px-2.5 py-1 rounded-full">
                 {item?.icon}
