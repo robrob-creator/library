@@ -13,12 +13,14 @@ export type NavigationProps = {
   profileImage?: string;
   centerElements?: React.ReactNode;
   rightElements?: React.ReactNode;
+  leftElements?: React.ReactNode;
   className?: string;
 };
 
 export const NavigationBar = <PROPS extends NavigationProps>({
   logo,
   rightElements,
+  leftElements,
   centerElements,
   className,
 }: PROPS): JSX.Element => {
@@ -66,6 +68,7 @@ export const NavigationBar = <PROPS extends NavigationProps>({
           ""
         )}
       </div>
+      <div className="flex justify-start">{leftElements && leftElements}</div>
       <div
         className={`w-full ${
           !showlist && "hidden"
