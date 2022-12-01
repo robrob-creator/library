@@ -36,6 +36,7 @@ Default.args = {
     {
       name: "Account Settings",
       icon: <CogIcon />,
+      rightIcon: <CogIcon />,
       notification: 48,
       handleClick: () => {
         console.log("hello 1");
@@ -44,6 +45,7 @@ Default.args = {
     {
       name: "Dashboards",
       icon: <GridIcon />,
+      fontStyle: "bold",
       handleClick: () => {
         console.log("hello 2");
       },

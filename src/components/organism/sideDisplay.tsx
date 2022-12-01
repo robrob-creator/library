@@ -5,6 +5,7 @@ import logo from "../../../assets/images/logo-white.svg";
 import background from "../../../assets/images/bg.png";
 import { Badge } from "../molecules/badges";
 import React from "react";
+import { FontStyle } from "../types";
 
 export type SideDisplayProps = {
   header?: string;
@@ -15,8 +16,10 @@ export type SideDisplayProps = {
 export type SideBarProps = {
   items: {
     name: string;
-    icon: React.ReactNode;
-    notification: number;
+    icon?: React.ReactNode;
+    rightIcon?: React.ReactNode;
+    fontStyle?: FontStyle;
+    notification?: number;
     className?: string;
     handleClick?: React.MouseEventHandler<HTMLDivElement>;
   }[];
@@ -72,11 +75,15 @@ export const SideBar = <PROPS extends SideBarProps>({
             >
               <div className="flex space-x-2.5 items-center justify-start px-2.5 py-1 rounded-full">
                 {item?.icon}
-                <p className="text-xs text-gray-600 w-full sm:inline-block hidden">
+                <p
+                  className={`font-${item.fontStyle} text-xs text-gray-600 w-full sm:inline-block hidden`}
+                >
                   {item?.name}
                 </p>
               </div>
-              {item?.notification && <Badge count={item?.notification} />}
+              {item.rightIcon
+                ? item.rightIcon
+                : item?.notification && <Badge count={item?.notification} />}
             </div>
           ))}
       </div>
