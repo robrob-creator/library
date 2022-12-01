@@ -1,6 +1,6 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
-import { List, ListProps } from "../components";
+import { List, ListProps, CogIcon } from "../components";
 
 const meta: Meta = {
   title: "components/List",
@@ -27,7 +27,7 @@ export const Default = Template.bind({});
 
 Default.args = {
   data: [
-    { label: "string1", value: "string1" },
+    { label: "string1", value: "string1", rightIcon: <CogIcon /> },
     { label: "string1", value: "string2" },
   ],
 };
