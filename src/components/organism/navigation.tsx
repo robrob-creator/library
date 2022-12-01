@@ -13,16 +13,20 @@ export type NavigationProps = {
   profileImage?: string;
   centerElements?: React.ReactNode;
   rightElements?: React.ReactNode;
+  className?: string;
 };
 
 export const NavigationBar = <PROPS extends NavigationProps>({
   logo,
   rightElements,
   centerElements,
+  className,
 }: PROPS): JSX.Element => {
   const [showlist, setShowList] = useState(false);
   return (
-    <nav className="flex items-center justify-between flex-wrap  py-3.5 pl-11 sm:pr-14">
+    <nav
+      className={`${className} flex items-center justify-between flex-wrap  py-3.5 pl-11 sm:pr-14`}
+    >
       <button
         className="tablet:hidden items-center px-3 py-2 border rounded text-gray-200 border-gray-400 hover:text-white hover:border-white"
         onClick={() => setShowList(true)}
