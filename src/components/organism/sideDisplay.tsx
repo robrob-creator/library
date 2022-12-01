@@ -17,6 +17,7 @@ export type SideBarProps = {
     name: string;
     icon: React.ReactNode;
     notification: number;
+    className?: string;
     handleClick?: React.MouseEventHandler<HTMLDivElement>;
   }[];
 };
@@ -61,11 +62,11 @@ export const SideBar = <PROPS extends SideBarProps>({
 }: PROPS): JSX.Element => {
   return (
     <div className="w-72 border border-gray-200">
-      <div className="inline-flex flex-col items-start justify-start flex-1 py-8 bg-white h-screen ">
+      <div className="inline-flex flex-col items-start justify-start flex-1 py-8 w-full bg-white h-screen ">
         {items &&
           items?.map((item, index) => (
             <div
-              className="inline-flex  items-center justify-between w-full h-20 px-5 py-10 rounded-full cursor-pointer"
+              className={`${item.className} inline-flex  items-center justify-between w-full h-20 px-5 py-10 cursor-pointer`}
               key={index}
               onClick={item.handleClick}
             >

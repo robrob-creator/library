@@ -52,6 +52,7 @@ Default.args = {
       name: "My Apps",
       icon: <Puzzle />,
       notification: 44,
+      className: " border-t-2 ",
       handleClick: () => {
         console.log("hello 3");
       },
