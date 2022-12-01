@@ -7,7 +7,7 @@ import {
   UserAvatar,
   ArrowStrokeDown,
 } from "../atoms/icons";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 export type NavigationProps = {
   logo?: string;
   profileImage?: string;
@@ -75,6 +75,27 @@ export const NavigationBar = <PROPS extends NavigationProps>({
 };
 
 export const Tabs = <PROPS extends NavigationProps>({}: PROPS): JSX.Element => {
+  const [windowSize, setWindowSize] = useState(getWindowSize());
+
+  useEffect(() => {
+    function handleWindowResize() {
+      setWindowSize(getWindowSize());
+    }
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
+
+  function getWindowSize() {
+    let { innerWidth, innerHeight } = window;
+    let width = innerWidth - 40;
+    return { width, innerHeight };
+  }
+
+  console.log(windowSize);
   return (
     <div>
       <div className="flex mb-4 py-4 sm:px-4 sm:w-full w-screen items-center sm:space-x-12  sm:justify-between sm:border-0 border-b-2 border-b-gray-200 ">
@@ -145,7 +166,10 @@ export const Tabs = <PROPS extends NavigationProps>({}: PROPS): JSX.Element => {
           <p className="text-sm leading-tight text-gray-600">Filter</p>
         </div>
       </div>
-      <div className="flex space-x-2.5 sm:invisible visible sm:hidden sm:h-0 h4 mobile:w-full w-80 overflow-x-auto mr-8 ml-2">
+      <div
+        className={`flex space-x-2.5 sm:invisible visible sm:hidden sm:h-0 h4 overflow-x-auto mr-8 ml-2`}
+        style={{ width: windowSize.width }}
+      >
         <div className="flex items-center justify-center h-full px-5 py-1 bg-gray-300 rounded-full">
           <p className="text-xs font-semibold tracking-wider leading-normal text-center">
             Discover
