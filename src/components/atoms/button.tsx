@@ -9,9 +9,9 @@ export interface ButtonProps {
   size?: Size;
   type?: Type;
   className?: string;
+  children?: React.ReactNode;
   onClick?: () => void;
 }
-
 
 function getStylesBySize(size: Size) {
   switch (size) {
@@ -48,6 +48,7 @@ export const Button = ({
   text,
   type = "primary",
   className = "",
+  children,
   onClick,
 }: ButtonProps) => {
   const stylesBySize = getStylesBySize(size);
@@ -57,9 +58,7 @@ export const Button = ({
       onClick={onClick}
       className={`${className}${stylesBySize} ${stylesByType} font-poppins inline-flex items-center justify-center font-semibold tracking-wider  text-center rounded-lg`}
     >
-      {text}
+      {children || text}
     </button>
   );
 };
-
-
