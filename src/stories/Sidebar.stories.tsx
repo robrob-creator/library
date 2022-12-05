@@ -44,6 +44,7 @@ Default.args = {
     {
       name: "Dashboards",
       icon: <GridIcon />,
+      notification: 48,
       handleClick: () => {
         console.log("hello 2");
       },

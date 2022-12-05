@@ -28,6 +28,7 @@ export const Primary = Template.bind({});
 export const text = Template.bind({});
 export const Secondary = Template.bind({});
 export const Subtle = Template.bind({});
+export const Danger = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
   type: "primary",
@@ -43,5 +44,10 @@ Secondary.args = {
 };
 Subtle.args = {
   type: "subtle",
+  text: "Button",
+};
+
+Danger.args = {
+  type: "danger",
   text: "Button",
 };

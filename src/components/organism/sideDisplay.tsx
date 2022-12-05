@@ -15,6 +15,7 @@ export type SideDisplayProps = {
 export type SideBarProps = {
   items: {
     name: string;
+    isActive: boolean;
     icon: React.ReactNode;
     notification: number;
     handleClick?: React.MouseEventHandler<HTMLDivElement>;
@@ -56,6 +57,9 @@ export const SideDisplay = <PROPS extends SideDisplayProps>({
     </div>
   );
 };
+
+
+
 export const SideBar = <PROPS extends SideBarProps>({
   items,
 }: PROPS): JSX.Element => {
@@ -65,16 +69,21 @@ export const SideBar = <PROPS extends SideBarProps>({
         {items &&
           items?.map((item, index) => (
             <div
-              className="inline-flex  items-center justify-between w-full h-20 px-5 py-10 rounded-full cursor-pointer"
+              className={
+                "inline-flex items-center justify-between w-full h-20 px-5 py-10 cursor-pointer gap-2"
+              }
               key={index}
               onClick={item.handleClick}
             >
-              <div className="flex space-x-2.5 items-center justify-start px-2.5 py-1 rounded-full">
-                {item?.icon}
-                <p className="text-xs text-gray-600 w-full sm:inline-block hidden">
-                  {item?.name}
-                </p>
+              <div className="bg-[#EAEDFE] w-full h-15 px-4 py-2 rounded-xl">
+                <div className="flex space-x-2.5 items-center justify-start px-2.5 py-1 rounded-full">
+                  {item?.icon}
+                  <p className="text-xs text-gray-600 w-full sm:inline-block hidden">
+                    {item?.name}
+                  </p>
+                </div>
               </div>
+
               {item?.notification && <Badge count={item?.notification} />}
             </div>
           ))}

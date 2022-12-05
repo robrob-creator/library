@@ -12,7 +12,6 @@ export interface ButtonProps {
   onClick?: () => void;
 }
 
-
 function getStylesBySize(size: Size) {
   switch (size) {
     case "xl":
@@ -38,6 +37,8 @@ function getStylesByType(type: Type) {
       return " border-2 border-gray-200 text-blue-700 hover:text-blue-900 active:bg-violet-700  focus:outline-none focus:ring-8 focus:ring-gray-100";
     case "text":
       return "focus:bg-gray-100 border-2 border-gray-50 border-opacity-0 text-blue-700";
+    case "danger":
+      return " border-2 border-red-500 hover:border-red-700 text-red-500 hover:text-red-700 active:bg-red-700 active:text-white focus:outline-none focus:ring-8 focus:ring-gray-100";
     default:
       return "bg-blue-700 hover:bg-blue-900 text-gray-50 hover:bg-violet-600 active:bg-gray-900 focus:outline-none focus:ring-8 focus:ring-blue-200";
   }
@@ -55,11 +56,9 @@ export const Button = ({
   return (
     <button
       onClick={onClick}
-      className={`${className}${stylesBySize} ${stylesByType} font-poppins inline-flex items-center justify-center font-semibold tracking-wider  text-center rounded-lg`}
+      className={`${className}${stylesBySize} ${stylesByType}font-poppins inline-flex items-center justify-center font-semibold tracking-wider  text-center rounded-lg`}
     >
       {text}
     </button>
   );
 };
-
-
