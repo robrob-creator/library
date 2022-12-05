@@ -24,7 +24,6 @@ const meta: Meta = {
 };
 
 export default meta;
-
 const Template: Story<SideBarProps> = (args) => <SideBar {...args} />;
 
 // By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
@@ -37,6 +36,7 @@ Default.args = {
       name: "Account Settings",
       icon: <CogIcon />,
       rightIcon: <CogIcon />,
+      isActive: true,
       notification: 48,
       handleClick: () => {
         console.log("hello 1");
@@ -45,11 +45,7 @@ Default.args = {
     {
       name: "Dashboards",
       icon: <GridIcon />,
-<<<<<<< HEAD
-      notification: 48,
-=======
       fontStyle: "bold",
->>>>>>> origin
       handleClick: () => {
         console.log("hello 2");
       },

@@ -20,6 +20,7 @@ export type SideBarProps = {
     rightIcon?: React.ReactNode;
     fontStyle?: FontStyle;
     notification?: number;
+    isActive?: boolean;
     className?: string;
     handleClick?: React.MouseEventHandler<HTMLDivElement>;
   }[];
@@ -70,11 +71,15 @@ export const SideBar = <PROPS extends SideBarProps>({
         {items &&
           items?.map((item, index) => (
             <div
-              className={`${item?.className} inline-flex  items-center justify-between w-full h-20 px-5 py-10 cursor-pointer gap-2`}
+              className={`${item?.className} inline-flex  items-center justify-between w-full h-20 px-5 py-10 cursor-pointer gap-2 `}
               key={index}
               onClick={item.handleClick}
             >
-              <div className="flex space-x-2.5 items-center justify-start px-2.5 py-1 rounded-full">
+              <div
+                className={`flex space-x-2.5 items-center justify-start ${
+                  item.isActive && `w-48 px-2.5 py-3 bg-blue-100 rounded-lg`
+                }`}
+              >
                 {item?.icon}
                 <p
                   className={`font-${item.fontStyle} text-xs text-gray-600 w-full sm:inline-block hidden`}
