@@ -45,7 +45,6 @@ Default.args = {
     {
       name: "Dashboards",
       icon: <GridIcon />,
-      fontStyle: "bold",
       handleClick: () => {
         console.log("hello 2");
       },

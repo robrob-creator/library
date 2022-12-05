@@ -82,7 +82,9 @@ export const SideBar = <PROPS extends SideBarProps>({
               >
                 {item?.icon}
                 <p
-                  className={`font-${item.fontStyle} text-xs text-gray-600 w-full sm:inline-block hidden`}
+                  className={`font-${
+                    item.isActive ? "semibold text-indigo-700" : item.fontStyle
+                  } text-xs text-gray-600 w-full sm:inline-block hidden`}
                 >
                   {item?.name}
                 </p>
