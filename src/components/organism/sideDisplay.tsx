@@ -60,6 +60,7 @@ export const SideDisplay = <PROPS extends SideDisplayProps>({
     </div>
   );
 };
+
 export const SideBar = <PROPS extends SideBarProps>({
   items,
 }: PROPS): JSX.Element => {
@@ -69,7 +70,7 @@ export const SideBar = <PROPS extends SideBarProps>({
         {items &&
           items?.map((item, index) => (
             <div
-              className={`${item?.className} inline-flex  items-center justify-between w-full h-20 px-5 py-10 cursor-pointer`}
+              className={`${item?.className} inline-flex  items-center justify-between w-full h-20 px-5 py-10 cursor-pointer gap-2`}
               key={index}
               onClick={item.handleClick}
             >
