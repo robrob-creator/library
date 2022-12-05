@@ -13,7 +13,7 @@ export * from "./molecules/dropdown";
 export * from "./molecules/list";
 export * from "./molecules/badges";
 export * from "./organism/navigation";
-export * from "./organism/cards";
+export * from "./organism/cards/cards";
 export * from "./organism/footer";
 export * from "./organism/modals";
 export * from "./organism/sideDisplay";
