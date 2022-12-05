@@ -38,6 +38,8 @@ function getTextBySize(type: Size) {
       return "text-base";
     case "sm":
       return "text-sm";
+    case "xs":
+      return "text-xs";
     default:
       return "text-sm";
   }

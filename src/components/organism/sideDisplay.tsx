@@ -4,6 +4,7 @@
 import logo from "../../../assets/images/logo-white.svg";
 import background from "../../../assets/images/bg.png";
 import { Badge } from "../molecules/badges";
+import { Text } from "../atoms/Text";
 import React from "react";
 import { FontStyle } from "../types";
 
@@ -81,13 +82,13 @@ export const SideBar = <PROPS extends SideBarProps>({
                 }`}
               >
                 {item?.icon}
-                <p
-                  className={`font-${
-                    item.isActive ? "semibold text-indigo-700" : item.fontStyle
-                  } text-xs text-gray-600 w-full sm:inline-block hidden`}
+                <Text
+                  size="xs"
+                  fontStyle={item.isActive ? "semibold" : item.fontStyle}
+                  color={item.isActive ? "indigo-700" : "gray-600"}
                 >
                   {item?.name}
-                </p>
+                </Text>
               </div>
               {item.rightIcon
                 ? item.rightIcon
