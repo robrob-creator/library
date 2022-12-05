@@ -5,8 +5,8 @@ import { Text } from "../atoms/Text";
 
 export interface ListProps {
   data?: {
-    label?: string;
-    value: string;
+    label?: React.ReactNode;
+    value: React.ReactNode;
     leftIcon?: React.ReactNode;
     rightIcon?: React.ReactNode;
   }[];
