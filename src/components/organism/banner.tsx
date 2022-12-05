@@ -124,7 +124,7 @@ export const Banner = ({}: BannerElementsProps): JSX.Element => {
         />
         {searchMode && <div className="flex items-center">Results for</div>}
         <HeaderText>{searchMode}</HeaderText>
-        <div className="w-full sm:inline-flex  h-8 space-x-4  items-center sm:justify-center justify-start">
+        <div className="w-full laptop:inline-flex  h-8 space-x-4  items-center sm:justify-center justify-start">
           <p
             className={`text-base leading-normal text-center ${
               !searchMode && "text-white"
@@ -132,8 +132,8 @@ export const Banner = ({}: BannerElementsProps): JSX.Element => {
           >
             {!searchMode ? "Top searches" : "Related"}
           </p>
-          <div className="flex items-center">
-            <div className="h-8 w-80 sm:w-auto  flex sm:space-x-2.5 items-start justify-start sm:overflow-x-visible overflow-x-scroll">
+          <div className="flex items-center justify-center ">
+            <div className="h-8 w-80 mobile:w-120 tablet:w-124 laptop:w-122 flex sm:space-x-2.5 items-start justify-center overflow-x-scroll">
               <div className={`${stylesByType}`}>Landing page</div>
               <div className={`${stylesByType}`}>ios</div>
               <div className={`${stylesByType}`}>food</div>

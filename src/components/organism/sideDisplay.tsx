@@ -5,6 +5,7 @@ import logo from "../../../assets/images/logo-white.svg";
 import background from "../../../assets/images/bg.png";
 import { Badge } from "../molecules/badges";
 import React from "react";
+import { FontStyle } from "../types";
 
 export type SideDisplayProps = {
   header?: string;
@@ -15,9 +16,11 @@ export type SideDisplayProps = {
 export type SideBarProps = {
   items: {
     name: string;
-    isActive: boolean;
-    icon: React.ReactNode;
-    notification: number;
+    icon?: React.ReactNode;
+    rightIcon?: React.ReactNode;
+    fontStyle?: FontStyle;
+    notification?: number;
+    className?: string;
     handleClick?: React.MouseEventHandler<HTMLDivElement>;
   }[];
 };
@@ -58,33 +61,30 @@ export const SideDisplay = <PROPS extends SideDisplayProps>({
   );
 };
 
-
-
 export const SideBar = <PROPS extends SideBarProps>({
   items,
 }: PROPS): JSX.Element => {
   return (
-    <div className="inline-flex items-start justify-start w-60">
-      <div className="inline-flex flex-col items-start justify-start flex-1 py-8 bg-white h-screen border border-gray-200">
+    <div className="w-72 border border-gray-200">
+      <div className="inline-flex flex-col items-start justify-start flex-1 py-8 w-full bg-white h-screen ">
         {items &&
           items?.map((item, index) => (
             <div
-              className={
-                "inline-flex items-center justify-between w-full h-20 px-5 py-10 cursor-pointer gap-2"
-              }
+              className={`${item?.className} inline-flex  items-center justify-between w-full h-20 px-5 py-10 cursor-pointer gap-2`}
               key={index}
               onClick={item.handleClick}
             >
-              <div className="bg-[#EAEDFE] w-full h-15 px-4 py-2 rounded-xl">
-                <div className="flex space-x-2.5 items-center justify-start px-2.5 py-1 rounded-full">
-                  {item?.icon}
-                  <p className="text-xs text-gray-600 w-full sm:inline-block hidden">
-                    {item?.name}
-                  </p>
-                </div>
+              <div className="flex space-x-2.5 items-center justify-start px-2.5 py-1 rounded-full">
+                {item?.icon}
+                <p
+                  className={`font-${item.fontStyle} text-xs text-gray-600 w-full sm:inline-block hidden`}
+                >
+                  {item?.name}
+                </p>
               </div>
-
-              {item?.notification && <Badge count={item?.notification} />}
+              {item.rightIcon
+                ? item.rightIcon
+                : item?.notification && <Badge count={item?.notification} />}
             </div>
           ))}
       </div>

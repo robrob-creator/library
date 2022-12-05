@@ -7,22 +7,28 @@ import {
   UserAvatar,
   ArrowStrokeDown,
 } from "../atoms/icons";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 export type NavigationProps = {
   logo?: string;
   profileImage?: string;
   centerElements?: React.ReactNode;
   rightElements?: React.ReactNode;
+  leftElements?: React.ReactNode;
+  className?: string;
 };
 
 export const NavigationBar = <PROPS extends NavigationProps>({
   logo,
   rightElements,
+  leftElements,
   centerElements,
+  className,
 }: PROPS): JSX.Element => {
   const [showlist, setShowList] = useState(false);
   return (
-    <nav className="flex items-center justify-between flex-wrap  py-3.5 pl-11 sm:pr-14">
+    <nav
+      className={`${className} flex items-center justify-between flex-wrap  py-3.5 pl-11 sm:pr-14`}
+    >
       <button
         className="tablet:hidden items-center px-3 py-2 border rounded text-gray-200 border-gray-400 hover:text-white hover:border-white"
         onClick={() => setShowList(true)}
@@ -62,6 +68,7 @@ export const NavigationBar = <PROPS extends NavigationProps>({
           ""
         )}
       </div>
+      <div className="flex justify-start">{leftElements && leftElements}</div>
       <div
         className={`w-full ${
           !showlist && "hidden"
@@ -75,6 +82,27 @@ export const NavigationBar = <PROPS extends NavigationProps>({
 };
 
 export const Tabs = <PROPS extends NavigationProps>({}: PROPS): JSX.Element => {
+  const [windowSize, setWindowSize] = useState(getWindowSize());
+
+  useEffect(() => {
+    function handleWindowResize() {
+      setWindowSize(getWindowSize());
+    }
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
+
+  function getWindowSize() {
+    let { innerWidth, innerHeight } = window;
+    let width = innerWidth - 40;
+    return { width, innerHeight };
+  }
+
+  console.log(windowSize);
   return (
     <div>
       <div className="flex mb-4 py-4 sm:px-4 sm:w-full w-screen items-center sm:space-x-12  sm:justify-between sm:border-0 border-b-2 border-b-gray-200 ">
@@ -145,7 +173,10 @@ export const Tabs = <PROPS extends NavigationProps>({}: PROPS): JSX.Element => {
           <p className="text-sm leading-tight text-gray-600">Filter</p>
         </div>
       </div>
-      <div className="flex space-x-2.5 sm:invisible visible sm:hidden sm:h-0 h4 mobile:w-full w-96 overflow-x-auto mr-8 ml-2">
+      <div
+        className={`flex space-x-2.5 sm:invisible visible sm:hidden sm:h-0 h4 overflow-x-auto mr-8 ml-2`}
+        style={{ width: windowSize.width }}
+      >
         <div className="flex items-center justify-center h-full px-5 py-1 bg-gray-300 rounded-full">
           <p className="text-xs font-semibold tracking-wider leading-normal text-center">
             Discover

@@ -19,10 +19,7 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<NavigationProps> = (args) => (
-  <NavigationBar
-  />
-);
+const Template: Story<NavigationProps> = (args) => <NavigationBar />;
 
 export const Default = Template.bind({});
 
