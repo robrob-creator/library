@@ -1,6 +1,5 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-empty-pattern */
-
 import { Size } from "../types";
 import { Text } from "../atoms/Text";
 export type AvatarProps = {
