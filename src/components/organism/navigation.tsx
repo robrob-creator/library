@@ -85,15 +85,17 @@ export const Tabs = <PROPS extends NavigationProps>({}: PROPS): JSX.Element => {
   const [windowSize, setWindowSize] = useState(getWindowSize());
 
   useEffect(() => {
-    function handleWindowResize() {
-      setWindowSize(getWindowSize());
+    if (typeof window === undefined) {
+      function handleWindowResize() {
+        setWindowSize(getWindowSize());
+      }
+
+      window.addEventListener("resize", handleWindowResize);
+
+      return () => {
+        window.removeEventListener("resize", handleWindowResize);
+      };
     }
-
-    window.addEventListener("resize", handleWindowResize);
-
-    return () => {
-      window.removeEventListener("resize", handleWindowResize);
-    };
   }, []);
 
   function getWindowSize() {
