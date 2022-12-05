@@ -1,13 +1,9 @@
 /* eslint-disable prettier/prettier */
-import imageOne from "../../../../assets/images/cover1.png";
-import imagetwo from "../../../../assets/images/cover2.png";
-import sampleApp from "../../../../assets/images/sampleApp.png";
-import { ArrowStrokeDown, StackIcon, DownloadIcon } from "../../atoms/icons";
 import { Layout } from "src/components/types";
-import { Text, HeaderText } from "../../atoms/Text";
 import { HorizontalCard } from "./horizontalCard";
 import { VerticalCard } from "./verticalCard";
 import React from "react";
+import { subtle } from "crypto";
 
 export type CardProps = {
   title?: React.ReactNode;
@@ -17,6 +13,9 @@ export type CardProps = {
   subtitle?: React.ReactNode;
   description?: string;
   rating?: string;
+  downloads?: string;
+  platforms?: { name: string; icon: string }[];
+  stacks?: { name: string }[];
   className?: string;
   onClick?: () => void;
 };
@@ -24,8 +23,8 @@ export type CardProps = {
 export const Card = <PROPS extends CardProps>({
   imgUrl,
   title,
-
   className,
+  subtitle,
   layout,
   content,
   onClick,
@@ -35,14 +34,18 @@ export const Card = <PROPS extends CardProps>({
       title={title}
       imgUrl={imgUrl}
       content={content}
+      subtitle={subtitle}
       className={className}
+      onClick={onClick}
     />
   ) : (
     <HorizontalCard
       title={title}
       imgUrl={imgUrl}
       content={content}
+      subtitle={subtitle}
       className={className}
+      onClick={onClick}
     />
   );
 };
