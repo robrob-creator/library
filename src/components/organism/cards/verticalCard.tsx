@@ -11,7 +11,7 @@ export const VerticalCard = <PROPS extends CardProps>({
 }: PROPS): JSX.Element => {
   return (
     <div
-      className={`${className} inline-flex lg:mt-4 flex-col w-52 px-4  justify-end lg:w-72 md:w-80 md:h-72 lg:h-72 h-64 pl-0.5 pb-2`}
+      className={`${className} inline-flex lg:mt-4 flex-col w-52 px-4  justify-end lg:w-72 md:w-80 md:h-72 lg:h-72 h-64 pl-0.5 pb-2 `}
       onClick={onClick}
     >
       <img
