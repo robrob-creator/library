@@ -6,6 +6,7 @@ import { Text } from "../atoms/Text";
 export interface ListProps {
   data?: {
     label?: React.ReactNode;
+    className?: string;
     value: React.ReactNode;
     leftIcon?: React.ReactNode;
     rightIcon?: React.ReactNode;
@@ -23,7 +24,9 @@ export const List = <PROPS extends ListProps>({
         data?.map((item, index) => {
           return (
             <div
-              className={`inline-flex items-start justify-start w-full ${
+              className={`${
+                item?.className
+              } inline-flex items-start justify-start w-full ${
                 alternate && index % 2 != 0 && "bg-gray-200"
               }`}
               style={{ height: 50 }}
