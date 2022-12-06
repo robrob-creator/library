@@ -9,7 +9,6 @@ export interface InputProps {
   name?: string;
   errorMessage?: string;
   width?: String;
-  value?: string;
   placeholder?: string;
   size?: Size;
   style?: object;
@@ -64,7 +63,6 @@ export const InputField = ({
   className,
   style,
   errorMessage,
-  value,
   onChange,
 }: InputProps) => {
   const inputRef = useRef<HTMLFormElement | null>(null);
@@ -82,7 +80,6 @@ export const InputField = ({
         <input
           type={type}
           id={name}
-          value={value}
           placeholder={placeholder}
           onChange={onChange}
           className={`outline-none  ${
