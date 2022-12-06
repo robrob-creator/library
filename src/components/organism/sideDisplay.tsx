@@ -16,7 +16,7 @@ export type SideDisplayProps = {
 };
 export type SideBarProps = {
   items: {
-    name: string;
+    name: React.ReactNode;
     icon?: React.ReactNode;
     rightIcon?: React.ReactNode;
     fontStyle?: FontStyle;
