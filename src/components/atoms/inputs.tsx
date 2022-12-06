@@ -18,13 +18,25 @@ export interface InputProps {
 function getStylesBySize(size: Size) {
   switch (size) {
     case "lg":
-      return { input: " h-16 ", label: "-mt-14 peer-placeholder-shown:-mt-11" };
+      return {
+        input: " h-16 ",
+        label: "-mt-14 peer-placeholder-shown:-mt-11 peer-focus:-mt-14",
+      };
     case "md":
-      return { input: " h-14 ", label: "-mt-14 peer-placeholder-shown:-mt-10" };
+      return {
+        input: " h-14 ",
+        label: "-mt-14 peer-placeholder-shown:-mt-10 peer-focus:-mt-14",
+      };
     case "sm":
-      return { input: "h-12", label: "-mt-12 peer-placeholder-shown:-mt-9" };
+      return {
+        input: "h-12",
+        label: "-mt-12 peer-placeholder-shown:-mt-9 peer-focus:-mt-12",
+      };
     default:
-      return { input: "h-12", label: "-mt-12 peer-placeholder-shown:-mt-9" };
+      return {
+        input: "h-12",
+        label: "-mt-12 peer-placeholder-shown:-mt-9 peer-focus:-mt-12",
+      };
   }
 }
 function getSearchFieldBySize(size: Size) {
