@@ -19,13 +19,13 @@ function getHeaderBySize(type: Size) {
     case "xl":
       return "laptop:text-5xl tablet:max-laptop:text-4xl text-3xl";
     case "lg":
-      return "text-4xl";
+      return "text-4xl tablet:max-laptop:text-2xl text-2xl";
     case "md":
-      return "text-3xl";
+      return "text-3xl tablet:max-laptop:text-2xl text-xl";
     case "sm":
-      return "text-2xl";
+      return "text-2xl tablet:max-laptop:text-xl text-lg";
     default:
-      return "text-2xl";
+      return "text-2xl tablet:max-laptop:text-xl text-lg";
   }
 }
 function getTextBySize(type: Size) {

@@ -21,11 +21,12 @@ type Country = {
 export const Select = <PROPS extends SelectProps>({
   defaultValue,
   label = "Mobile Phone Number",
+  onChange,
 }: PROPS): JSX.Element => {
   const [selected, setSelected] = useState<Country | undefined>();
 
   return (
-    <div className="p-2 relative w-96">
+    <div className="p-2 relative w-96" onChange={onChange}>
       <div className="select inline-block absolute w-4/12 ">
         <button className="femibold py-4 px-2 rounded-xl inline-flex h-14 items-center w-28 bg-gray-100 border border-gray-300">
           <Flag code={selected?.code || defaultValue?.code} width={30} />
@@ -48,7 +49,7 @@ export const Select = <PROPS extends SelectProps>({
         </ul>
       </div>
       <div className="absolute w-8/12 right-0">
-        <InputField size="md" placeholder={label} />
+        <InputField size="md" value={selected?.phone} placeholder={label} />
       </div>
     </div>
   );

@@ -20,7 +20,7 @@ const meta: Meta = {
 export default meta;
 
 const Template: Story<CardProps> = (args) => (
-  <Card {...args} content={<div>hello</div>} subtitle={<div>subtitle</div>} />
+  <Card {...args} content={<div>hello</div>} />
 );
 
 // By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
@@ -28,6 +28,11 @@ const Template: Story<CardProps> = (args) => (
 export const Default = Template.bind({});
 
 Default.args = {
+  subtitle: (
+    <div>
+      <p>hello1</p>
+    </div>
+  ),
   downloads: "4k",
   rating: "4/5",
   title: "eCommerce",
