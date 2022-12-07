@@ -19,7 +19,7 @@ function getHeaderBySize(type: Size) {
     case "xl":
       return "laptop:text-5xl tablet:max-laptop:text-4xl text-3xl";
     case "lg":
-      return "text-4xl tablet:max-laptop:text-2xl text-2xl";
+      return "text-4xl tablet:max-laptop:text-3xl text-2xl";
     case "md":
       return "text-3xl tablet:max-laptop:text-2xl text-xl";
     case "sm":
@@ -33,15 +33,15 @@ function getTextBySize(type: Size) {
     case "xl":
       return "laptop:text-xl tablet:max-laptop:text-base text-sm";
     case "lg":
-      return "text-lg";
+      return "laptop:text-lg tablet:max-laptop:text-base text-sm";
     case "md":
-      return "text-base";
+      return "laptop:text-base tablet:max-laptop:text-sm text-xs";
     case "sm":
-      return "text-sm";
+      return "laptop:text-sm text-xs";
     case "xs":
       return "text-xs";
     default:
-      return "text-sm";
+      return "laptop:text-sm text-xs";
   }
 }
 export const Text = ({

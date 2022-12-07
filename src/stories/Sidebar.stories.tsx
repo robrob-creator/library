@@ -31,12 +31,13 @@ const Template: Story<SideBarProps> = (args) => <SideBar {...args} />;
 export const Default = Template.bind({});
 
 Default.args = {
+  activeKey: "dashboard",
   items: [
     {
       name: "Account Settings",
       icon: <CogIcon />,
       rightIcon: <CogIcon />,
-      isActive: true,
+      key: "accountSetting",
       notification: 48,
       handleClick: () => {
         console.log("hello 1");
@@ -45,6 +46,7 @@ Default.args = {
     {
       name: "Dashboards",
       icon: <GridIcon />,
+      key: "dashboard",
       handleClick: () => {
         console.log("hello 2");
       },
@@ -53,6 +55,7 @@ Default.args = {
       name: "My Apps",
       icon: <Puzzle />,
       notification: 44,
+      key: "myApps",
       className: " border-t-2 ",
       handleClick: () => {
         console.log("hello 3");
