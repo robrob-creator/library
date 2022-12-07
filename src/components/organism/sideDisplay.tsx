@@ -15,13 +15,14 @@ export type SideDisplayProps = {
   backgroundImageURL?: string;
 };
 export type SideBarProps = {
+  activeKey?: string;
   items: {
+    key: String;
     name: React.ReactNode;
     icon?: React.ReactNode;
     rightIcon?: React.ReactNode;
     fontStyle?: FontStyle;
     notification?: number;
-    isActive?: boolean;
     className?: string;
     handleClick?: React.MouseEventHandler<HTMLDivElement>;
   }[];
@@ -65,6 +66,7 @@ export const SideDisplay = <PROPS extends SideDisplayProps>({
 
 export const SideBar = <PROPS extends SideBarProps>({
   items,
+  activeKey = "",
 }: PROPS): JSX.Element => {
   return (
     <div className="w-72 border border-gray-200">
@@ -78,14 +80,17 @@ export const SideBar = <PROPS extends SideBarProps>({
             >
               <div
                 className={`flex space-x-2.5 items-center justify-start ${
-                  item.isActive && `w-48 px-2.5 py-3 bg-blue-100 rounded-lg`
+                  item.key === activeKey &&
+                  `w-48 px-2.5 py-3 bg-blue-100 rounded-lg`
                 }`}
               >
                 {item?.icon}
                 <Text
                   size="xs"
-                  fontStyle={item.isActive ? "semibold" : item.fontStyle}
-                  color={item.isActive ? "indigo-700" : "gray-600"}
+                  fontStyle={
+                    item.key === activeKey ? "semibold" : item.fontStyle
+                  }
+                  color={item.key === activeKey ? "indigo-700" : "gray-600"}
                 >
                   {item?.name}
                 </Text>
