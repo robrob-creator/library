@@ -10,7 +10,7 @@
     "build-storybook": "build-storybook",
     "build:tailwind": "npx tailwindcss -o ./dist/tailwind.css --minify",
     "build:rollup": "rollup -c",
-    "copy-assets": "copy -rv ./assets/images ./dist/assets/",
+    "copy-assets": "cp -rv ./assets/images ./dist/assets/",
     "build:lib": "npm run build:tailwind && npm run build:rollup && npm run copy-assets ",
     "dev": "react-scripts start",
     "prepare": "npm run build:lib"
