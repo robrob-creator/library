@@ -21,3 +21,4 @@ export * from "./organism/form";
 export * from "./organism/layouts";
 export * from "./organism/banner";
 export * from "./organism/table";
+export * from "./organism/card/index";

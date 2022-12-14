@@ -1,5 +1,5 @@
 import { Meta, Story } from "@storybook/react";
-import { BasicDataCard, CardProps } from "../components";
+import { BasicDataCard, DecapcricatedCardProps } from "../components";
 
 const meta: Meta = {
   title: "components/Card/Basic Data Card",
@@ -18,7 +18,9 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<CardProps> = (args) => <BasicDataCard {...args} />;
+const Template: Story<DecapcricatedCardProps> = (args) => (
+  <BasicDataCard {...args} />
+);
 
 // By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
 // https://storybook.js.org/docs/react/workflows/unit-testing

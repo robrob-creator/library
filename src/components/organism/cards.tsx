@@ -10,7 +10,7 @@ import {
 } from "../atoms/icons";
 import { Text, HeaderText } from "../atoms/Text";
 
-export type CardProps = {
+export type DecapcricatedCardProps = {
   title?: string;
   imgUrl?: string;
   downloads?: string;
@@ -22,7 +22,7 @@ export type CardProps = {
   onClick?: () => void;
 };
 
-export const Card = <PROPS extends CardProps>({
+export const DecapricatedCard = <PROPS extends DecapcricatedCardProps>({
   imgUrl,
   title,
   downloads,
@@ -130,7 +130,9 @@ export const Card = <PROPS extends CardProps>({
   );
 };
 
-export const CardTwo = <PROPS extends CardProps>({}: PROPS): JSX.Element => {
+export const CardTwo = <
+  PROPS extends DecapcricatedCardProps
+>({}: PROPS): JSX.Element => {
   return (
     <div>
       <div className="relative" style={{ width: 1280, height: 540 }}>
@@ -286,7 +288,7 @@ export const CardTwo = <PROPS extends CardProps>({}: PROPS): JSX.Element => {
   );
 };
 export const DescriptionCard = <
-  PROPS extends CardProps
+  PROPS extends DecapcricatedCardProps
 >({}: PROPS): JSX.Element => {
   return (
     <div className="px-6 sm:px-12 border-b-2 border-gray-200 py-10 w-screen">
@@ -330,7 +332,7 @@ export const DescriptionCard = <
   );
 };
 export const WhatsNewCard = <
-  PROPS extends CardProps
+  PROPS extends DecapcricatedCardProps
 >({}: PROPS): JSX.Element => {
   return (
     <div className="px-4 sm:px-12 border-b-2 border-gray-200 py-4 w-screen">
@@ -377,7 +379,7 @@ export const WhatsNewCard = <
   );
 };
 export const InformationCard = <
-  PROPS extends CardProps
+  PROPS extends DecapcricatedCardProps
 >({}: PROPS): JSX.Element => {
   return (
     <div className="px-6 sm:px-4 border-b-2 border-gray-200 py-10">
@@ -489,7 +491,9 @@ export const InformationCard = <
     </div>
   );
 };
-export const MoreCard = <PROPS extends CardProps>({}: PROPS): JSX.Element => {
+export const MoreCard = <
+  PROPS extends DecapcricatedCardProps
+>({}: PROPS): JSX.Element => {
   return (
     <div className="p-4 sm:px-12 border-b-2 border-gray-200 py-10 bg-gray-300 w-screen">
       <div className="flex justify-between">
@@ -527,7 +531,7 @@ export const MoreCard = <PROPS extends CardProps>({}: PROPS): JSX.Element => {
   );
 };
 export const SimilarCard = <
-  PROPS extends CardProps
+  PROPS extends DecapcricatedCardProps
 >({}: PROPS): JSX.Element => {
   return (
     <div className="px-4 sm:px-12 border-b-2 border-gray-200 py-10 ">
@@ -593,7 +597,9 @@ export const SimilarCard = <
   );
 };
 //polishing naming convention
-export const StatusCard = <PROPS extends CardProps>({}: PROPS): JSX.Element => {
+export const StatusCard = <
+  PROPS extends DecapcricatedCardProps
+>({}: PROPS): JSX.Element => {
   return (
     <div className="flex justify-between pb-14 border-b-2 border-opacity-5 border-gray-800 px-14 pt-14">
       <div
@@ -659,7 +665,9 @@ export const StatusCard = <PROPS extends CardProps>({}: PROPS): JSX.Element => {
   );
 };
 //component name subject for change
-export const ListCard = <PROPS extends CardProps>({}: PROPS): JSX.Element => {
+export const ListCard = <
+  PROPS extends DecapcricatedCardProps
+>({}: PROPS): JSX.Element => {
   return (
     <div
       className="inline-flex flex-col items-start justify-start w-full"
@@ -711,7 +719,7 @@ export const ListCard = <PROPS extends CardProps>({}: PROPS): JSX.Element => {
   );
 };
 //subject for change
-export const DataCard = <PROPS extends CardProps>({
+export const DataCard = <PROPS extends DecapcricatedCardProps>({
   className,
 }: PROPS): JSX.Element => {
   return (
@@ -750,7 +758,7 @@ export const DataCard = <PROPS extends CardProps>({
     </div>
   );
 };
-export const BasicCard = <PROPS extends CardProps>({
+export const BasicCard = <PROPS extends DecapcricatedCardProps>({
   imgUrl,
   title,
   description,
@@ -766,7 +774,7 @@ export const BasicCard = <PROPS extends CardProps>({
     </div>
   );
 };
-export const AppCard = <PROPS extends CardProps>({
+export const AppCard = <PROPS extends DecapcricatedCardProps>({
   imgUrl,
   title,
   description,
@@ -825,7 +833,7 @@ export const AppCard = <PROPS extends CardProps>({
     </div>
   );
 };
-export const BasicDataCard = <PROPS extends CardProps>({
+export const BasicDataCard = <PROPS extends DecapcricatedCardProps>({
   className,
 }: PROPS): JSX.Element => {
   return (
