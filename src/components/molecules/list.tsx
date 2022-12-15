@@ -7,6 +7,7 @@ import { Layout } from "../types";
 export interface ListProps {
   data?: {
     label?: React.ReactNode;
+    content?: React.ReactNode;
     className?: string;
     value: React.ReactNode;
     leftIcon?: React.ReactNode;
@@ -57,7 +58,7 @@ export const List = <PROPS extends ListProps>({
                   fontStyle="medium"
                   className="text-right"
                 >
-                  {item?.value}
+                  {item?.value || item?.content}
                 </Text>
                 {item.rightIcon}
               </div>
