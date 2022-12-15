@@ -19,6 +19,7 @@ export type DecapcricatedCardProps = {
   rating?: string;
   platforms?: { name: string; icon: string }[];
   className?: string;
+  latestUpdates?: string;
   stacks?: { name: string }[];
   onClick?: () => void;
 };
@@ -330,9 +331,9 @@ export const DescriptionCard = <PROPS extends DecapcricatedCardProps>({
     </div>
   );
 };
-export const WhatsNewCard = <
-  PROPS extends DecapcricatedCardProps
->({}: PROPS): JSX.Element => {
+export const WhatsNewCard = <PROPS extends DecapcricatedCardProps>({
+  latestUpdates,
+}: PROPS): JSX.Element => {
   return (
     <div className="px-4 sm:px-12 border-b-2 border-gray-200 py-4 w-screen">
       <div className="sm:inline-flex flex w-full justify-between flex-wrap s sm:items-start  pt-8 pb-16">
@@ -342,25 +343,7 @@ export const WhatsNewCard = <
           <span className="text-lg">Updates:</span>
           <br />
           <ul className="ml-10 list-disc">
-            <li className="text-lg">
-              Set up new stores quickly and easily with just an internet
-              connection.
-            </li>
-
-            <li className="text-lg">
-              Set up new stores quickly and easily with just an internet
-              connection.
-            </li>
-
-            <li className="text-lg">
-              Set up new stores quickly and easily with just an internet
-              connection.
-            </li>
-
-            <li className="text-lg">
-              Set up new stores quickly and easily with just an internet
-              connection.
-            </li>
+            <li className="text-lg">{latestUpdates}</li>
           </ul>
         </div>
         <div className="sm:inline-flex sm:w-1/3 w-full sm:flex-col sm:space-y-1.5 mt-8 sm:items-end sm:justify-start flex justify-between">
