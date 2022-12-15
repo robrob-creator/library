@@ -15,6 +15,7 @@ export type DecapcricatedCardProps = {
   imgUrl?: string;
   downloads?: string;
   description?: string;
+  developer?: string;
   rating?: string;
   platforms?: { name: string; icon: string }[];
   className?: string;
@@ -287,9 +288,10 @@ export const CardTwo = <
     </div>
   );
 };
-export const DescriptionCard = <
-  PROPS extends DecapcricatedCardProps
->({}: PROPS): JSX.Element => {
+export const DescriptionCard = <PROPS extends DecapcricatedCardProps>({
+  description,
+  developer,
+}: PROPS): JSX.Element => {
   return (
     <div className="px-6 sm:px-12 border-b-2 border-gray-200 py-10 w-screen">
       <div className="sm:grid sm:grid-cols-2 gap-2 flex overflow-x-auto">
@@ -298,14 +300,11 @@ export const DescriptionCard = <
       </div>
       <div className="flex justify-between sm:flex-nowrap flex-wrap pt-8 pb-16 ">
         <p className="text-lg w-screen leading-loose text-justify text-gray-900">
-          Set up new stores quickly and easily with just an internet connection.
-          Then use your Point of Sale everywhere, anytime. While an internet
-          connection is required to start the Point of Sale, it will stay
-          operational even after complete disconnection.
+          {description}
         </p>
         <div className="sm:inline-flex sm:flex-col sm:w-1/3 sm:space-y-1.5 sm:items-end sm:justify-start flex w-full justify-between">
           <p className="text-lg font-medium text-justify text-blue-700">
-            Project Moonshot Inc.
+            {developer}
           </p>
           <div className="ml-20 inline-flex space-x-2.5 items-center justify-center">
             <p className="text-xl font-medium text-justify text-gray-700">
