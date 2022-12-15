@@ -8,7 +8,7 @@ export interface ListProps {
     label?: React.ReactNode;
     content?: React.ReactNode;
     className?: string;
-    value: React.ReactNode;
+    value?: React.ReactNode;
     leftIcon?: React.ReactNode;
     rightIcon?: React.ReactNode;
   }[];
