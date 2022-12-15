@@ -2,6 +2,7 @@
 /* eslint-disable react/no-unknown-property */
 import React from "react";
 import { Text } from "../atoms/Text";
+import { Layout } from "../types";
 
 export interface ListProps {
   data?: {
@@ -12,21 +13,27 @@ export interface ListProps {
     rightIcon?: React.ReactNode;
   }[];
   alternate?: boolean;
+  layout?: Layout;
 }
 
 export const List = <PROPS extends ListProps>({
   data,
   alternate,
+  layout = "vertical",
 }: PROPS): JSX.Element => {
   return (
-    <div className="inline-flex flex-col items-start justify-start w-full gap-2">
+    <div
+      className={`inline-flex ${
+        layout == "vertical" ? "flex-col" : "sm:flex-row flex-col"
+      }  items-start justify-start w-full gap-2`}
+    >
       {data &&
         data?.map((item, index) => {
           return (
             <div
               className={`${
                 item?.className
-              } inline-flex items-start justify-start w-full ${
+              } inline-flex items-start justify-start w-full${
                 alternate && index % 2 != 0 && "bg-gray-200"
               }`}
               style={{ height: 50 }}
