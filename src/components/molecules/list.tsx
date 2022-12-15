@@ -58,7 +58,7 @@ export const List = <PROPS extends ListProps>({
                   fontStyle="medium"
                   className="text-right"
                 >
-                  {item?.value || item?.content}
+                  {item?.value}
                 </Text>
                 {item.rightIcon}
               </div>
