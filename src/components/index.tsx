@@ -12,6 +12,7 @@ export * from "./molecules/avatars";
 export * from "./molecules/dropdown";
 export * from "./molecules/list";
 export * from "./molecules/badges";
+export * from "./molecules/carousel";
 export * from "./organism/navigation";
 export * from "./organism/cards";
 export * from "./organism/footer";
