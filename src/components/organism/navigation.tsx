@@ -1,13 +1,8 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-empty-pattern */
 /* eslint-disable prettier/prettier */
-import {
-  BlueIsaacLogo,
-  FilterIcon,
-  UserAvatar,
-  ArrowStrokeDown,
-} from "../atoms/icons";
-import React, { useEffect, useState } from "react";
+import { BlueIsaacLogo, FilterIcon, UserAvatar } from "../atoms/icons";
+import React, { useState } from "react";
 export type NavigationProps = {
   logo?: string;
   profileImage?: string;
@@ -30,7 +25,7 @@ export const NavigationBar = <PROPS extends NavigationProps>({
   return (
     <>
       <nav
-        className={`${className} flex items-center justify-between flex-wrap  py-3.5 pl-11 sm:pr-14 fixed w-screen bg-green-400  z-20 left-0 `}
+        className={`${className} flex items-center justify-between flex-wrap  py-3.5 pl-11 sm:pr-14 fixed w-screen bg-white  z-20 left-0 top-0`}
       >
         {showlist ? (
           <button
@@ -76,7 +71,7 @@ export const NavigationBar = <PROPS extends NavigationProps>({
         </div>
         <div className="flex justify-end">{rightElements && rightElements}</div>
       </nav>
-      <div className="bg-orange-400 w-screen h-screen fixed left-0 z-10">
+      <div className="bg-white w-screen h-screen fixed left-0 z-10">
         {centerElements}
       </div>
     </>
