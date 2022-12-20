@@ -8,9 +8,13 @@ export const HorizontalCard = <PROPS extends CardProps>({
   title,
   content,
   subtitle,
+  handleClick,
 }: PROPS): JSX.Element => {
   return (
-    <div className="px-14 py-12 border-b-2 border-gray-800 border-opacity-5">
+    <div
+      className="px-14 py-12 border-b-2 border-gray-800 border-opacity-5"
+      onClick={handleClick}
+    >
       <div className="flex w-full">
         <img
           className="w-64 h-44  rounded-lg"

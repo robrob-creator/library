@@ -7,12 +7,12 @@ export const VerticalCard = <PROPS extends CardProps>({
   subtitle,
   content,
   className,
-  onClick,
+  handleClick,
 }: PROPS): JSX.Element => {
   return (
     <div
       className={`${className} inline-flex lg:mt-4 flex-col w-1/2 px-4  justify-end lg:w-72 md:w-80 md:h-72 lg:h-72 h-auto pl-0.5 pb-2 `}
-      onClick={onClick}
+      onClick={handleClick}
     >
       <img
         className=" sm:w-80 w-full sm:h-72 h-auto rounded-2xl cover "

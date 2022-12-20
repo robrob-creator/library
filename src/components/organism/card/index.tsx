@@ -12,7 +12,7 @@ export type CardProps = {
   subtitle?: React.ReactNode;
   description?: string;
   className?: string;
-  onClick?: () => void;
+  handleClick?: React.MouseEventHandler<HTMLDivElement>;
 };
 
 export const Card = <PROPS extends CardProps>({
@@ -22,7 +22,7 @@ export const Card = <PROPS extends CardProps>({
   subtitle,
   layout,
   content,
-  onClick,
+  handleClick,
 }: PROPS): JSX.Element => {
   return layout == "vertical" ? (
     <VerticalCard
@@ -31,7 +31,7 @@ export const Card = <PROPS extends CardProps>({
       content={content}
       subtitle={subtitle}
       className={className}
-      onClick={onClick}
+      handleClick={handleClick}
     />
   ) : (
     <HorizontalCard
@@ -40,7 +40,7 @@ export const Card = <PROPS extends CardProps>({
       content={content}
       subtitle={subtitle}
       className={className}
-      onClick={onClick}
+      handleClick={handleClick}
     />
   );
 };
