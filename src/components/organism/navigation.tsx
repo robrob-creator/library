@@ -28,36 +28,15 @@ export const NavigationBar = <PROPS extends NavigationProps>({
 }: PROPS): JSX.Element => {
   const [showlist, setShowList] = useState(false);
   return (
-    <nav
-      className={`${className} flex items-center justify-between flex-wrap  py-3.5 pl-11 sm:pr-14`}
-    >
-      <button
-        className="tablet:hidden items-center px-3 py-2 border rounded text-gray-200 border-gray-400 hover:text-white hover:border-white"
-        onClick={() => setShowList(true)}
+    <>
+      <nav
+        className={`${className} flex items-center justify-between flex-wrap  py-3.5 pl-11 sm:pr-14 fixed w-screen bg-green-400  z-20 left-0 `}
       >
-        <svg
-          className="fill-current h-3 w-3"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <title>Menu</title>
-          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-        </svg>
-      </button>
-      <div className="flex items-center flex-shrink-0 text-white sm:mr-6">
-        {logo ? (
-          <img className="w-15 h-10" src={logo} />
-        ) : (
-          <BlueIsaacLogo className="w-32 h-3/4" />
-        )}
-      </div>
-      <div className="block lg:hidden">
         {showlist ? (
           <button
-            className="flex items-center px-3 py-2 border rounded text-gray-200 border-gray-400 hover:text-white hover:border-white"
+            className="tablet:hidden items-center px-3 py-2 border rounded text-gray-200 border-gray-400 hover:text-white hover:border-white"
             onClick={() => setShowList(false)}
           >
-            {" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="fill-current h-3 w-3"
@@ -67,19 +46,40 @@ export const NavigationBar = <PROPS extends NavigationProps>({
             </svg>
           </button>
         ) : (
-          ""
+          <button
+            className="tablet:hidden items-center px-3 py-2 border rounded text-gray-200 border-gray-400 hover:text-white hover:border-white"
+            onClick={() => setShowList(true)}
+          >
+            <svg
+              className="fill-current h-3 w-3"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+          </button>
         )}
+        <div className="flex items-center flex-shrink-0 text-white sm:mr-6">
+          {logo ? (
+            <img className="w-15 h-10" src={logo} />
+          ) : (
+            <BlueIsaacLogo className="w-32 h-3/4" />
+          )}
+        </div>
+
+        <div className="flex justify-start">{leftElements && leftElements}</div>
+        <div
+          className={`w-full hidden sm:block flex-grow lg:flex lg:items-center lg:justify-center lg:w-auto`}
+        >
+          {centerElements && centerElements}
+        </div>
+        <div className="flex justify-end">{rightElements && rightElements}</div>
+      </nav>
+      <div className="bg-orange-400 w-screen h-screen fixed left-0 z-10">
+        {centerElements}
       </div>
-      <div className="flex justify-start">{leftElements && leftElements}</div>
-      <div
-        className={`w-full ${
-          !showlist && "hidden"
-        } sm:block flex-grow lg:flex lg:items-center lg:justify-center lg:w-auto`}
-      >
-        {centerElements && centerElements}
-      </div>
-      <div className="flex justify-end">{rightElements && rightElements}</div>
-    </nav>
+    </>
   );
 };
 
