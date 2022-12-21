@@ -199,6 +199,15 @@ export const Tabs = <PROPS extends TabProps>({
     </div>
   );
 };
+const tabItem = (item: string) => {
+  return (
+    <div className="flex items-center justify-center h-full px-5 py-1 border rounded-full border-gray-200">
+      <p className="text-xs tracking-wider leading-normal text-center text-gray-600">
+        Web
+      </p>
+    </div>
+  );
+};
 export const WhiteNavBar = <PROPS extends NavigationProps>({
   profileImage,
   logo,
