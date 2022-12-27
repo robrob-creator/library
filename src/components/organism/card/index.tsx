@@ -24,6 +24,7 @@ export const Card = <PROPS extends CardProps>({
   content,
   handleClick,
 }: PROPS): JSX.Element => {
+//card component vertical | horizontal
   return layout == "vertical" ? (
     <VerticalCard
       title={title}

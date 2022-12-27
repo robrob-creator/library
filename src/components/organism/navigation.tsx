@@ -14,6 +14,9 @@ export type NavigationProps = {
 type TabProps = {
   width?: string;
 };
+type TabItemProps={
+ item?:string;
+}
 export const NavigationBar = <PROPS extends NavigationProps>({
   logo,
   rightElements,
@@ -71,7 +74,7 @@ export const NavigationBar = <PROPS extends NavigationProps>({
         </div>
         <div className="flex justify-end">{rightElements && rightElements}</div>
       </nav>
-      <div className="bg-white w-screen h-screen fixed left-0 z-10">
+      <div className=" bg-white w-screen h-screen fixed left-0 z-10">
         {centerElements}
       </div>
     </>
@@ -135,18 +138,17 @@ export const Tabs = <PROPS extends TabProps>({
               Payments
             </p>
           </div>
+
           <div className="flex items-center justify-center h-full px-5 py-1 border rounded-full border-gray-200">
             <p className="text-xs tracking-wider leading-normal text-center text-gray-600">
               Logistics
             </p>
           </div>
-          <div className="flex items-center justify-center h-full px-5 py-1 border rounded-full border-gray-200">
-            <p className="text-xs tracking-wider leading-normal text-center text-gray-600">
-              Systems
-            </p>
-          </div>
-        </div>
-        <div className="flex sm:relative absolute space-x-2 items-center justify-center sm:w-24  right-4 px-5 py-2.5 bg-gray-100 border rounded-lg border-gray-600">
+	</div>
+        
+	<TabItem item="web"/>
+
+	<div className="flex sm:relative absolute space-x-2 items-center justify-center sm:w-24  right-4 px-5 py-2.5 bg-gray-100 border rounded-lg border-gray-600">
           <FilterIcon />
           <p className="text-sm leading-tight text-gray-600">Filter</p>
         </div>
@@ -199,11 +201,11 @@ export const Tabs = <PROPS extends TabProps>({
     </div>
   );
 };
-const tabItem = (item: string) => {
+const TabItem = ({item}:TabItemProps) => {
   return (
     <div className="flex items-center justify-center h-full px-5 py-1 border rounded-full border-gray-200">
       <p className="text-xs tracking-wider leading-normal text-center text-gray-600">
-        Web
+        {item}
       </p>
     </div>
   );
