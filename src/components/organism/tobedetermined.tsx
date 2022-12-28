@@ -1,4 +1,4 @@
-/*
+/* to be deleted
 <div class="inline-flex flex-col space-y-10 items-center justify-start" style="width: 839px; height: 309px;">
     <div class="flex flex-col space-y-4 items-center justify-start" style="width: 839px; height: 148px;">
         <p class="text-5xl font-semibold tracking-wider text-center text-white">Welcome to ISAAC Marketplace!</p>
