@@ -26,14 +26,13 @@ const Template: Story<ButtonProps> = (args) => (
   </Button>
 );
 
-// By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
-// https://storybook.js.org/docs/react/workflows/unit-testing
+
 export const Primary = Template.bind({});
 export const text = Template.bind({});
 export const Secondary = Template.bind({});
 export const Subtle = Template.bind({});
 export const Danger = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
+
 Primary.args = {
   type: "primary",
   text: "Button",

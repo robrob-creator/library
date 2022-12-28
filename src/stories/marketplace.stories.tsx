@@ -97,20 +97,19 @@ const Template: Story<FormProps> = (args) => (
       <div className="mt-4 flex flex-wrap ">
         {data.map((item, index) => {
           return (
-            <div className="w-1/2 tablet:w-auto desktop:w-1/4">
-              <Card
-                title="eCommerce"
-                className="mb-4"
-                downloads="4k"
-                rating="4.5"
-                stacks={[{ name: "Android" }]}
-                platforms={[
-                  { name: "Android", icon: "hr" },
-                  { name: "Windows", icon: "hr" },
-                ]}
-                imgUrl="https://www.91-cdn.com/hub/wp-content/uploads/2022/07/Top-laptop-brands-in-India.jpg"
-              />
-            </div>
+            <Card
+              title="eCommerce"
+              layout="vertical"
+              className="mb-4"
+              downloads="4k"
+              rating="4.5"
+              stacks={[{ name: "Android" }]}
+              platforms={[
+                { name: "Android", icon: "hr" },
+                { name: "Windows", icon: "hr" },
+              ]}
+              imgUrl="https://www.91-cdn.com/hub/wp-content/uploads/2022/07/Top-laptop-brands-in-India.jpg"
+            />
           );
         })}
       </div>

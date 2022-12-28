@@ -516,7 +516,7 @@ export const SimilarCard = <
   PROPS extends DecapcricatedCardProps
 >({}: PROPS): JSX.Element => {
   return (
-    <div className="px-4 sm:px-12 border-b-2 border-gray-200 py-10 ">
+    <div className="px-4 sm:px-12 border-b-2 border-gray-200 py-10  w-screen">
       <div className="text-left space-y-6 w-screen ">
         <p className=" text-2xl font-semibold leading-10 text-left text-gray-900">
           Similar Apps
