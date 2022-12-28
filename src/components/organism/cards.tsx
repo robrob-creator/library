@@ -364,12 +364,12 @@ export const InformationCard = <
   PROPS extends DecapcricatedCardProps
 >({}: PROPS): JSX.Element => {
   return (
-    <div className="px-6 sm:px-4 border-b-2 border-gray-200 py-10">
-      <div className="relative w-full ">
+    <div className=" sm:px-4 border-b-2 border-gray-200 w-screen py-10">
+      <div className="relative w-screen">
         <p className=" text-2xl font-semibold leading-10 text-justify text-gray-900">
           Information
         </p>
-        <div className="sm:inline-flex flex flex-wrap sm:space-x-32 items-start justify-between mr-14 ">
+        <div className="sm:inline-flex flex flex-wrap sm:space-x-32 items-start justify-between sm:mr-14  mr-8">
           <div className="inline-flex flex-col space-y-12 items-start justify-start">
             <div className="relative">
               <p className="sm:text-xl text-base leading-10 text-justify text-gray-600">
